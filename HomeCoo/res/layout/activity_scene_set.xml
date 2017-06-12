@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <include android:id="@+id/lv_item_header"
+             layout="@layout/item_header"/>
+    <LinearLayout 
+        style="@style/content_layout"
+        android:background="@drawable/bg_content_base">
+    <LinearLayout
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="@drawable/background_white_corner"
+        android:orientation="vertical">
+      <TextView 
+             android:id="@+id/tv_refresh_themestate"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:padding="10dp"
+	         android:layout_alignParentRight="true"
+	         android:text="同步情景设置"
+	         android:visibility="gone"/>
+        
+        <com.tuwa.smarthome.view.NoScrollViewPager
+	        android:id="@+id/vp_scene_vpager"
+	        android:layout_weight="1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="match_parent" >   
+        </com.tuwa.smarthome.view.NoScrollViewPager> 
+        
+       </LinearLayout> 
+    </LinearLayout>
+      
+  <include android:id="@+id/lv_item_bottom"
+             layout="@layout/item_sceneset_bottom"/>
+   
+</LinearLayout>

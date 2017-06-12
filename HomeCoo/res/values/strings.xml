@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="NS">http://schemas.android.com/apk/res/com.tuwa.smarthome</string>
+
+    <!-- 标题 -->
+    <string name="app_name">弘柯智能</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="header_exit">退出</string>
+    <string name="header_back">返回</string>
+    <string name="header_title">标题</string>
+    <string name="header_submit">完成</string>
+    <string name="exit_notice">确认要退出HomeCoo系统吗？</string>
+
+    <!-- 对话框 -->
+    <string name="dialog_notice">提示：</string>
+    <string name="dialog_exit_notice">确认要退出HomeCoo系统吗？</string>
+    <string name="dialog_confirm">确认</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="error_network">操作失败，请检查网络！</string>
+
+    <!-- 底部导航栏 -->
+    <string name="bottom_room">空  间</string>
+    <string name="bottom_scene">情景模式</string>
+    <string name="bottom_network">远程</string>
+    <string name="bottom_alert">防区管理</string>
+    <string name="bottom_set">设置</string>
+
+    <!-- 情景联动底部导航栏 -->
+    <string name="btm_scene_qingjing">情  景</string>
+    <string name="btm_scene_yaokong">遥  控</string>
+    <string name="btm_scene_zhaoming">照  明</string>
+    <string name="btm_scene_chazuo">插  座</string>
+    <string name="btm_scene_menchuang">门  窗</string>
+    <string name="btm_scene_weikong">微  控</string>
+    <string name="btm_scene_anfang">安  防</string>
+    <string name="btm_scene_yinyue">音  乐</string>
+
+    <!-- registerActivity -->
+    <string name="username">用户名</string>
+    <string name="passwd">密   码</string>
+    <string name="confirm_passwd">确认密码</string>
+    <string name="email">邮  箱</string>
+    <string name="realname">姓  名</string>
+    <string name="forgetpwd">找回用户名或密码</string>
+    <string name="userRegister">注册</string>
+    <string name="gatewayno">网关编号</string>
+    <string name="userLogin">登录</string>
+    <string name="notice">带*号的为必填项，手机号或邮箱用来找回密码</string>
+    <string name="asterisk">*</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_user_register">UserRegisterActivity</string>
+    <string name="title_activity_set">SetActivity</string>
+    <string name="title_activity_gateway_set">GatewaySetActivity</string>
+    <string name="title_activity_space_manege">SpaceManegeActivity</string>
+    <string name="title_activity_device_manege">DeviceManegeActivity</string>
+    <string name="title_activity_device_kind">DeviceKindActivity</string>
+    <string name="title_activity_device_sock">DeviceSockActivity</string>
+    <string name="title_activity_device_window">DeviceWindowActivity</string>
+    <string name="title_activity_space_devices">SpaceDevicesActivity</string>
+    <string name="title_activity_device_sensor">DeviceSensorActivity</string>
+    <string name="title_activity_scene_set">SceneSetActivity</string>
+    <string name="title_activity_scene_list">SceneListActivity</string>
+    <string name="title_activity_scene_model">SceneModelActivity</string>
+    <string name="title_activity_camera_type">CameraTypeActivity</string>
+    <string name="title_activity_defence_area_set">DefenceAreaSetActivity</string>
+    <string name="title_activity_defence_area">DefenceAreaActivity</string>
+    <string name="title_activity_time_task">TimeTaskActivity</string>
+    <string name="title_activity_defence_area_manege">DefenceAreaManegeActivity</string>
+    <string name="title_activity_device_wei_kong">DeviceWeiKongActivity</string>
+    <string name="title_activity_system_set">SystemSetActivity</string>
+    <string name="title_activity_rigster_one">RigsterOneActivity</string>
+    <string name="title_activity_time_test">TimeTestActivity</string>
+
+</resources>

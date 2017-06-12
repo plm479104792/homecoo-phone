@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="subtitle_color">#ff494949</color>
+    <color name="color_white">#ffffffff</color>
+    <color name="color_shadow">#ff333333</color>
+    <color name="cache_color_hint">#00000000</color>
+    <color name="color_divider">#ffdddddd</color>
+    <color name="color_black">#ff000000</color>
+    <color name="color_less_black">#ee000000</color>
+    <color name="color_info">#ff7F7F7F</color>
+    <color name="more_subtitle">#ff3cc0fa</color>
+    <color name="color_blue">#ff0000ff</color>
+    <color name="color_bg_less_shadow">#ff888888</color>
+</resources>

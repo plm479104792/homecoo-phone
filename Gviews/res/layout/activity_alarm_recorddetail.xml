@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/main_bg"
+    android:orientation="vertical"
+    tools:context=".activity.BaseActivity" >
+
+    <RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/change_ui_hc"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            style="@style/top_left_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/alarmrecorddetail_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dip"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/alarmrecorddetail_defaultpic"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/Detail_Pic_Height"
+            android:scaleType="fitXY"
+            android:src="@drawable/alarmrecorddetail_defaultpic" >
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="30dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alarmrecorddetail_sj"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_text_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/alarmrecorddetail_sj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_weight="3"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title_text_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alarmrecorddetail_sb"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/alarmrecorddetail_sb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_weight="3"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alarmrecorddetail_sbid"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/alarmrecorddetail_sbid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_weight="3"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/isSupportDefence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alarm_defence2"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/alarmrecorddetail_sbdefencename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_weight="3"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alarmrecorddetail_time"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/alarmrecorddetail_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_weight="3"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/alarmrecorddetail_content"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+
+                <TextView
+                    android:id="@+id/alarmrecorddetail_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_weight="3"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/title_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/alarmrecorddetail_btnvideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/sharecf_blue_btn_selector"
+            android:paddingBottom="10dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="10dp"
+            android:text="@string/messagevedio_str"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_nowvideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/sharecf_blue_btn_selector"
+            android:paddingBottom="10dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="10dp"
+            android:text="@string/live_video"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

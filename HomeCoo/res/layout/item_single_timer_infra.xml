@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffcc66"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="2" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp">
+        <TextView 
+            android:id="@+id/tv_schedule_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设定设备状态：" />
+
+        <GridView
+            android:id="@+id/gv_timer_devstate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:horizontalSpacing="5dp"
+            android:numColumns="1"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="0dp" >
+        </GridView>
+    </LinearLayout>
+    
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+         <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设定定时时间：" />
+         
+        <DatePicker
+            android:id="@+id/datepicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:spinnersShown="false" 
+            />
+         <TimePicker
+            android:id="@+id/time_picker_single1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:requiresFadingEdge="horizontal" />
+         <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
+             
+         </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

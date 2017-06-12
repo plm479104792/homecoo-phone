@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_black"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/mail_126"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_126" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_163"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_163" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_21cn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_21cn" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_263"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_263" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_eyou"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_eyou" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_gmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:textColor="@color/color_white"
+                android:text="@string/mail_gmail" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_qq"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_qq" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_sina"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_sina" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_sohu"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_sohu" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_tom"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_tom" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <Button
+                android:id="@+id/mail_yahoo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:background="#00000000"
+                android:gravity="center"
+                android:text="@string/mail_yahoo_com" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+
+            <TextView
+                android:id="@+id/mail_yeah"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                android:text="@string/mail_yeah" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@color/color_line" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

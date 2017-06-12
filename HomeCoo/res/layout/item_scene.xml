@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_bground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_bgleft" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+          android:layout_centerInParent="true"   />
+    <TextView
+        android:id="@+id/tv_list_scenename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/list_text_size"
+        android:text="回家" 
+        android:gravity="center"
+        android:layout_centerInParent="true"  />
+    
+     <ImageView
+         android:id="@+id/im_list_right"
+        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+        android:src="@drawable/list_bgright" 
+        android:layout_alignParentRight="true"/>
+ 
+     <ImageView
+        android:id="@+id/im_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/down_set" 
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/im_list_right"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        />
+      <ToggleButton
+        android:id="@+id/tg_scene_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/im_list_right"
+        android:textOff="启动"
+        android:textOn="启动"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

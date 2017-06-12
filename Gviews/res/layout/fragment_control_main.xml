@@ -1,0 +1,429 @@
+<com.homecoolink.widget.BounceScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginTop="10dp"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:id="@+id/control_main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"            
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+
+            <RelativeLayout
+                android:id="@+id/time_control"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_time"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/time_settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/icon_ctl_time"
+                    android:text="@string/time_control"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/sharecf_arrow_settings"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+
+            <RelativeLayout
+                android:id="@+id/video_control"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_media"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/media_settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/icon_ctl_media"
+                    android:text="@string/audio_video_control"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/sharecf_arrow_settings"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+
+            <RelativeLayout
+                android:id="@+id/security_control"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_security"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/security_settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/icon_ctl_security"
+                    android:text="@string/security_control"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/sharecf_arrow_settings"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+
+            <RelativeLayout
+                android:id="@+id/net_control"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_net"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/network_settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/icon_ctl_net"
+                    android:text="@string/network_control"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/sharecf_arrow_settings"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+
+            <RelativeLayout
+                android:id="@+id/alarm_control"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_alarm"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/alarm_setting" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/icon_ctl_alarm"
+                    android:text="@string/alarm_control"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/sharecf_arrow_settings"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+
+            <RelativeLayout
+                android:id="@+id/record_control"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_record"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/video_settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/icon_ctl_record"
+                    android:text="@string/record_control"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/sharecf_arrow_settings"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+
+            <RelativeLayout
+                android:id="@+id/defenceArea_control"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_defence_area"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/defense_settings" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/icon_ctl_defence_area"
+                    android:text="@string/defence_area_control"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/sharecf_arrow_settings"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+
+            <RelativeLayout
+                android:id="@+id/remote_control"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height"
+                android:background="@drawable/tiao_bg_center"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_remote"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_ctl_remote" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/icon_ctl_remote"
+                    android:text="@string/remote_control"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/arrow"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/check_device_update"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_height" >
+
+                <ImageView
+                    android:id="@+id/icon_ctl_remote"
+                    android:layout_width="@dimen/item_left_icon_width_height"
+                    android:layout_height="@dimen/item_left_icon_width_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/check_update" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/icon_ctl_remote"
+                    android:text="@string/check_device_update"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/update_progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/up_arrow"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/text_size_small"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/up_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:background="@drawable/sharecf_arrow_settings"
+                    android:contentDescription="@string/imagedes" />
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_gray"
+                android:focusable="false"
+                android:focusableInTouchMode="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+</com.homecoolink.widget.BounceScrollView>

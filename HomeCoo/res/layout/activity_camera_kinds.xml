@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tuwa.smarthome.activity.HomeActivity" 
+    android:orientation="vertical"
+    >
+    <include android:id="@+id/lv_item_header"
+             layout="@layout/item_header"/>
+    <LinearLayout
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_content_base"
+        android:padding="@dimen/content_padding">
+        
+     <GridView
+		    android:id="@+id/gv_camera_kind" 
+			android:layout_height="wrap_content" 
+			android:layout_width="match_parent" 
+			android:gravity="center_horizontal"
+			android:layout_gravity="center_vertical"
+	        android:layout_weight="1"
+			android:stretchMode="columnWidth"
+			android:verticalSpacing="0dp"
+			android:horizontalSpacing="5dp"
+			android:numColumns="2">
+		</GridView>
+		
+     </LinearLayout>
+    <include android:id="@+id/lv_item_bottom"
+             layout="@layout/item_bottom"/>
+   
+</LinearLayout>

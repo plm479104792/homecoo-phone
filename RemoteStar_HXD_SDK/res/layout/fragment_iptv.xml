@@ -1,0 +1,250 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+                android:background="#eee"
+    android:scrollbarStyle="outsideOverlay" >
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="1dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_iptv_power"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_power_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+<TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/text_iptv_home"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+        
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_iptv_123"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_button_cast_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_123"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_iptv_play_pause"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_button_cast_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_media_play_pause"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_iptv_back"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_button_cast_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_back"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_iptv_mute"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_button_cast_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_mute"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="70dp"
+                                  android:layout_height="match_parent"
+            android:background="@drawable/bg_double"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_iptv_vol_add"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="100dip"
+                android:background="@drawable/ic_button_round_selector"
+                android:clickable="true"
+                android:gravity="center"
+                                android:text="@string/str_other_voladd"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_iptv_vol_sub"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/ic_button_round_selector"
+                android:clickable="true"
+                android:gravity="center" 
+                                android:text="@string/str_other_volsub"
+                android:textColor="#000000"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+ <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/text_iptv_up"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/text_iptv_left"
+                    android:layout_width="50dp"
+                    android:layout_height="120dp"
+                    android:layout_marginRight="20dip"
+                   
+                    android:clickable="true"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/text_iptv_ok"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+              
+                    android:clickable="true"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/text_iptv_right"
+                    android:layout_width="50dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dip"
+                    
+                    android:clickable="true"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/text_iptv_down"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    
+                    android:clickable="true"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="70dp"
+                                  android:layout_height="match_parent"
+            android:background="@drawable/bg_double"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_iptv_ch_add"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="100dip"
+                android:background="@drawable/ic_button_round_selector"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_chadd"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/text_iptv_ch_sub"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/ic_button_round_selector"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_chsub"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

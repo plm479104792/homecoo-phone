@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:orientation="vertical" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent">
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical" >
+	    
+	    <SurfaceView
+	        android:id="@+id/playSurface"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent"/>
+	
+	</LinearLayout>
+
+	<LinearLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:gravity="center"
+	    android:id="@+id/progressLayout">
+
+	    <ProgressBar
+	        style="?android:attr/progressBarStyleLarge"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center" />
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:text="@string/connecting" />
+	</LinearLayout>
+	
+    <RelativeLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="horizontal"
+	    android:padding="10dip"
+	    android:id="@+id/osdlayout">	   
+	     
+	    <TextView
+	        android:id="@+id/textosd"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18.0sp" 
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:background="@drawable/background_osd"
+            android:layout_alignParentLeft="true"
+            />	 
+            
+	   	<ImageView
+            android:id="@+id/imgAudio"
+            android:layout_width="38dip"
+            android:layout_height="38dip"
+            android:background="@drawable/audio_off"          
+            android:visibility="invisible"
+            android:layout_below="@id/textosd"
+            android:layout_marginTop="10dip"/>
+	   	
+	   	<ImageView
+            android:id="@+id/imgTalk"
+            android:layout_width="38dip"
+            android:layout_height="38dip"        
+            android:visibility="invisible"
+            android:background="@drawable/microphone_off"
+            android:layout_below="@id/imgAudio"
+            android:layout_marginTop="10dip"/>
+	   	
+	   	<TextView
+	        android:id="@+id/textCodec"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18.0sp" 
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:background="@drawable/background_osd"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/textosd"/>
+            
+	   	<TextView
+	        android:id="@+id/textResolution"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18.0sp" 
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:background="@drawable/background_osd"
+            android:layout_marginLeft="5dip"
+			android:layout_toRightOf="@id/textCodec"/>	   	
+	   	
+             
+        <TextView
+	        android:id="@+id/textTimeStamp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18.0sp" 
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:background="@drawable/background_osd"
+            android:layout_alignParentRight="true"
+            />
+        
+        <TextView 
+            android:id="@+id/textTimeout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/color_black"
+            android:background="@drawable/background_osd"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:visibility="invisible"/>
+	
+	</RelativeLayout>
+	
+    <LinearLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:padding="10dip"
+	    android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imgup"
+            android:layout_width="45dip"
+            android:layout_height="45dip"
+            android:src="@drawable/up" 
+            android:visibility="invisible"/>
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dip"
+            android:layout_marginTop="50dip"
+            android:layout_marginBottom="50dip">
+
+            <ImageView
+                android:id="@+id/imgleft"
+                android:layout_width="45dip"
+                android:layout_height="45dip"
+                android:layout_marginRight="100dip"
+                android:src="@drawable/left"
+                android:visibility="invisible"/>
+
+	        <ImageView
+	            android:id="@+id/imgright"
+	            android:layout_width="45dip"
+	            android:layout_height="45dip"
+	            android:layout_marginLeft="100dip"
+	            android:src="@drawable/right" 
+	            android:visibility="invisible"/>
+	
+		</LinearLayout>
+		
+		<ImageView
+            android:id="@+id/imgdown"
+            android:layout_width="45dip"
+            android:layout_height="45dip"
+            android:src="@drawable/down"
+            android:visibility="invisible"/>
+	
+	</LinearLayout>
+	
+    <LinearLayout
+	    xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:padding="10dip"
+	    android:gravity="center">	    
+	    <ImageView
+	        android:id="@+id/imgbrightcontrast"
+	        android:layout_width="100dip"
+	        android:layout_height="100dip"
+            android:background="@drawable/background_image"
+            android:src="@drawable/brightness"
+            android:visibility="invisible"/>	    
+	
+	</LinearLayout>
+	
+</FrameLayout>

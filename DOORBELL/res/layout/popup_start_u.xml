@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:background="#99ffffff"
+        android:gravity="center"
+        android:text="修改用户名密码"
+        android:textColor="@color/color_blue"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/user_new1"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/edit_bg"
+        android:gravity="center"
+        android:hint="新用户名"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textColorHint="#80ffffff" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/pwd_new1"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/edit_bg"
+        android:gravity="center"
+        android:hint="新密码"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textColorHint="#80ffffff" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/pwd_new2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/edit_bg"
+        android:gravity="center"
+        android:hint="再输一次新密码"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textColor="#ffffff"
+        android:textColorHint="#80ffffff" >
+    </EditText>
+
+    <Button
+        android:id="@+id/button_start_3"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_selector"
+        android:text="确认修改"
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_popu_cancel"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_selector"
+        android:gravity="center"
+        android:text="取        消 "
+        android:textColor="#000000"
+        android:textSize="14dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

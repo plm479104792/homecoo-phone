@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee" >
+
+    <RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/change_ui_hc"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/top_left_back_btn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/unbind_phone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_title"
+        android:layout_marginLeft="@dimen/item_left_right_margin"
+        android:layout_marginRight="@dimen/item_left_right_margin"
+        android:layout_marginTop="@dimen/item_group_margin_top" >
+
+        <TextView
+            android:id="@+id/phone_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#00000000"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="+86-15898587376"
+            android:textColor="@color/text_color_blue"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/unbind"
+        android:layout_width="@dimen/unbind_phone_btn_width"
+        android:layout_height="@dimen/globel_button_height"
+        android:layout_below="@+id/country"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/item_left_right_margin"
+        android:layout_marginRight="@dimen/item_left_right_margin"
+        android:layout_marginTop="@dimen/item_group_margin_top"
+        android:background="@drawable/button_bg_dialog_ok"
+        android:text="@string/unbind"
+        android:textColor="@color/dialog_title"
+        android:textSize="@dimen/text_size_normal" />
+
+    <RelativeLayout
+        android:id="@+id/dialog_input_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <include layout="@layout/dialog_input" />
+    </RelativeLayout>
+
+</RelativeLayout>

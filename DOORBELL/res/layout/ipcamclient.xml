@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ipcammain"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/newbg"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <ImageView
+            android:id="@+id/main_img_bottom_line"
+            android:layout_width="60dp"
+            android:layout_height="4dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:src="#ff0044ff"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/del_bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/main_bottom_bg"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"
+            android:visibility="gone"
+           >
+
+            <Button
+                android:id="@+id/main_selectall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/add_btn_selector"
+                android:text="@string/main_select_all"
+                android:textColor="@color/color_black" >
+            </Button>
+
+            <Button
+                android:id="@+id/main_selectreverse"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/add_btn_selector"
+                android:text="@string/main_select_reverse"
+                android:textColor="@color/color_black" >
+            </Button>
+
+            <Button
+                android:id="@+id/main_delete_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/add_btn_selector"
+                android:text="@string/delete_camera"
+                android:textColor="@color/color_black" >
+            </Button>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_layout" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/top_relativeLayout"
+                style="@style/top_bg_style"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:visibility="gone" >
+
+                <ImageButton
+                    android:id="@+id/app_home"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/app_select"
+                    android:focusable="false"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/main_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7.5dp"
+                    android:background="@drawable/btnselector"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:text="@string/main_edit"
+                    android:textColor="@color/color_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:shadowColor="@color/color_shadow"
+                    android:shadowDx="1.0"
+                    android:shadowDy="1.0"
+                    android:shadowRadius="1.0"
+                    android:text="@string/doorbell"
+                    android:textColor="@color/color_white"
+                    android:textSize="18.0sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/addvidicon_listitem"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ipclint_select"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/vidicon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/homecoo_mini_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/main_tap_here_add_vidicon"
+                        android:textColor="@color/color_black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical|right" >
+
+                        <ImageButton
+                            android:id="@+id/refresh"
+                            android:layout_width="60dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/listitem_pressed_selector"
+                            android:src="@drawable/refresh" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBar1"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="15dp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listviewCamera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#00000000"
+                android:cacheColorHint="#00000000"
+                android:divider="#00000000"
+                android:dividerHeight="3dp"
+                android:fadeScrollbars="true"
+                android:fadingEdge="none"
+                android:fastScrollEnabled="true"
+                android:padding="1dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/header_padd"
+    android:orientation="vertical"
+    android:background="@drawable/ha_basebg"
+    tools:context="com.tuwa.smarthome.activity.GatewayManegeActivity" >
+
+    <include android:id="@+id/lv_item_header"
+             layout="@layout/item_header"/>
+ 
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+             android:gravity="center_horizontal">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网关ID"/>
+            <EditText 
+                android:id="@+id/et_gatewayId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8"/>
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/asterisk"/>
+         
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+             android:gravity="center_horizontal">
+           
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="网关IP"
+                />
+
+            <EditText
+                android:id="@+id/et_gatewayIp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="8" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/asterisk"/>
+        </TableRow>
+       
+      
+
+        
+    </TableLayout>
+</LinearLayout>

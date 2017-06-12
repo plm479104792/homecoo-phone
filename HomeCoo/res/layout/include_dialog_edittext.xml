@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/dialog_edittext_enter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_default"
+        android:imeOptions="actionNext"
+        android:maxLength="16"
+        android:hint="空间名称在5个字以内"
+        android:singleLine="true" >
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>

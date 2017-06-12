@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_base"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"
+        android:background="@drawable/background_white_corner"
+        android:orientation="vertical">
+          <LinearLayout
+	        android:layout_width="match_parent" 
+	        android:layout_height="wrap_content"
+	        >
+	           <RadioGroup
+			        android:id="@+id/rg_timer"
+			        android:layout_width="fill_parent"
+			        android:layout_height="30dp"
+			        android:orientation="horizontal">
+	                 <RadioButton
+				        android:id="@+id/rb_single_timer"
+				        style="@style/timer_RadioButton"
+				        android:checked="true"
+				        android:text="单次" />
+	                 <TextView 
+	                     android:layout_width="1dp"
+	                     android:layout_height="fill_parent"
+	                     android:background="@color/color_blue"
+	                     android:visibility="gone"/>
+			         <RadioButton
+				        android:id="@+id/rb_cycle_timer"
+				        style="@style/timer_RadioButton"
+				        android:text="每周" />
+			    </RadioGroup>
+              
+          </LinearLayout>
+        
+        
+        <com.tuwa.smarthome.view.NoScrollViewPager
+	        android:id="@+id/vp_timer_vpager"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" >   
+        </com.tuwa.smarthome.view.NoScrollViewPager> 
+        
+    </LinearLayout>
+   
+</LinearLayout>

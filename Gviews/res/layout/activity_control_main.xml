@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_color" 
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/change_ui_hc"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/top_left_back_btn"/>
+
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"            
+            android:textColor="@color/black"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:focusableInTouchMode="true"            
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/sharecfline_color_gray" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ctl_top_info_bar_height"
+        android:layout_marginTop="10dp"
+        android:background="@color/white" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/sharecfline_color_gray" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/sharecfline_color_gray" />
+
+        <com.homecoolink.widget.HeaderView
+            android:id="@+id/header_img"
+            android:layout_width="@dimen/ctl_top_info_user_icon_width_height"
+            android:layout_height="@dimen/ctl_top_info_user_icon_width_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/header_icon" />
+
+        <LinearLayout
+            android:id="@+id/contact_pro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/header_img"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingBottom="5dp" >
+
+                <TextView
+                    android:id="@+id/contactName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="1111"
+                    android:textColor="@color/black"                    
+                    android:textSize="@dimen/text_size_large" />
+
+                <ImageView
+                    android:id="@+id/editaccount"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@+id/contactName"
+                    android:scaleType="center"
+                    android:layout_marginLeft="10dp"                                       
+                    android:src="@drawable/selector_personaluser" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingTop="5dp" >
+
+                <TextView
+                    android:id="@+id/divnum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1111111"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal"/>
+
+                <Button
+                    android:id="@+id/viewDeviceVersionBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"                    
+                    android:layout_marginRight="@dimen/inner_margin_right"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@drawable/sharecf_blue_btn_selector"
+                    android:text="@string/device_info"
+                    android:textColor="@color/white"                    
+                    android:textSize="@dimen/text_size_normal" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragContainer"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1" >
+    </RelativeLayout>
+
+</LinearLayout>

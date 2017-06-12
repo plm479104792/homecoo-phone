@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <include android:id="@+id/lv_item_header"
+             layout="@layout/item_header"/>
+       <LinearLayout
+        style="@style/content_layout"
+        android:background="@drawable/bg_content_base">
+     
+    <LinearLayout
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"
+        android:background="@drawable/background_white_corner"
+        android:orientation="vertical">
+       <LinearLayout  
+	        android:id="@+id/vg_indicator_img"  
+	        android:layout_weight="12"
+	        android:layout_width="fill_parent"  
+	        android:layout_height="match_parent"  
+	        android:gravity="center"  
+	        android:orientation="horizontal"      > 
+       </LinearLayout> 
+        
+        <android.support.v4.view.ViewPager
+	        android:id="@+id/vp_space_device"
+	        android:layout_weight="1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="match_parent" >   
+        </android.support.v4.view.ViewPager> 
+        
+       </LinearLayout>
+    </LinearLayout>
+      
+  <include android:id="@+id/lv_item_bottom"
+             layout="@layout/item_bottom"/>
+   
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>    
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+        
+    <RelativeLayout 
+        android:background="@drawable/background_grayblack" 
+        android:layout_width="fill_parent" 
+        android:layout_height="40.0dip">
+        <TextView 
+            android:textSize="18.0sp" 
+            android:textStyle="bold" 
+            android:textColor="@color/color_white" 
+            android:layout_centerVertical="true" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="5.0dip" 
+            android:text="@string/search_camera" 
+            android:shadowColor="@color/color_shadow" 
+            android:shadowDx="1.0" 
+            android:shadowDy="1.0" 
+            android:shadowRadius="1.0"
+            android:layout_alignParentLeft="true"/>
+        
+        <ImageView 
+            android:id="@+id/imgRefresh"
+            android:layout_centerVertical="true"
+            android:layout_width="25dip" 
+            android:layout_height="25dip"
+            android:layout_alignParentRight="true" 
+            android:background="@drawable/refresh"
+            android:layout_marginRight="10dip"/>
+    </RelativeLayout>
+    
+    <ImageView 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="2.0dip" 
+	    android:src="@drawable/background_separate_vertical" />
+    
+    <LinearLayout 
+        android:orientation="vertical" 
+        android:background="@color/color_white" 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" 
+        android:layout_weight="1.0">
+        <ListView 
+            android:id="@+id/cameralist" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content" 
+            android:cacheColorHint="@color/cache_color_hint" 
+            android:divider="@color/color_divider" 
+            android:dividerHeight="0.5dip" />
+    </LinearLayout>
+</LinearLayout>

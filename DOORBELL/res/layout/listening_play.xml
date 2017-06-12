@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/play"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff000000" >
+
+    <RelativeLayout
+        android:id="@+id/osdlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textosd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="17dp"
+            android:maxWidth="120dp"
+            android:singleLine="true"
+            android:textColor="@color/color_white"
+            android:textSize="16.0sp" />
+
+        <LinearLayout
+            android:id="@+id/linear_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/textTimeStamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/color_white"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@+id/tv_cancel_time"
+                android:layout_width="45dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textSize="16.0sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/video_lu_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/linear_time"
+            android:layout_marginRight="10dp"
+            android:background="#00000000"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible" >
+
+            <TextView
+                android:id="@+id/sdcard_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:background="#00000000"
+                android:textColor="#ff0033"
+                android:textSize="13.0sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:text="@string/videoing"
+                android:textColor="#ff0033"
+                android:textSize="13.0sp" />
+
+            <TextView
+                android:id="@+id/textTimevideoing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:textColor="#ff0033"
+                android:textSize="13.0sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textResolution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/background_osd"
+            android:textColor="@color/color_black"
+            android:textSize="18.0sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayoutplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/osdlayout" >
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/myhsurfaceview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/vedioview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#ff00ffff"
+            android:scaleType="fitXY"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/progressLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/connecting_show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/connecting" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ptz_othersetview_anim"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/ptz_audio"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/play_button_selector"
+                android:src="@drawable/ptz_audio_off"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ly_doorbell_video"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/video_normal"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+
+                <TextView
+                    android:id="@+id/tv_doorbell_video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:paddingTop="10dp"
+                    android:text="@string/doorbell_play_video"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/play_button_selector"
+                    android:gravity="center"
+                    android:visibility="gone" >
+
+                    <ImageButton
+                        android:id="@+id/ptz_takevideo"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:background="#00ffffff"
+                        android:src="@drawable/ptz_takevideo" />
+
+                    <ProgressBar
+                        android:id="@+id/ptz_takevideo_progress"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_doorbell_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/pic_normal"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+
+                <TextView
+                    android:id="@+id/tv_doorbell_pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:paddingTop="10dp"
+                    android:text="@string/doorbell_play_pic"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <ImageButton
+                    android:id="@+id/ptz_takepic"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/play_button_selector"
+                    android:src="@drawable/ptz_takepic"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_doorbell_sound"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/sound_normal"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+
+                <TextView
+                    android:id="@+id/tv_doorbell_sound  "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:paddingTop="10dp"
+                    android:text="@string/listen_play_title"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/quality"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/play_button_selector"
+                android:src="@drawable/led_close"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/ptz_resolution"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/play_button_selector"
+                android:text="QVGA"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/ptz_frame"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/play_button_selector"
+                android:text="10FPS"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/preset"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/play_button_selector"
+                android:text="@string/preset_show"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/ptz_brightness"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/play_button_selector"
+                android:src="@drawable/ptz_brightness"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="gone" >
+
+                <ImageButton
+                    android:id="@+id/ptz_contrast"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/play_button_selector"
+                    android:src="@drawable/ptz_contrast" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/ptz_default_set"
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/play_button_selector"
+                android:src="@drawable/ptz_default_set"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="gone" >
+
+                <ImageButton
+                    android:id="@+id/led_open"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/play_button_selector"
+                    android:src="@drawable/led_open" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/ly_doorbell_vq"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_doorbell_sou_normal"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+
+                <TextView
+                    android:id="@+id/tv_doorbell_vq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:paddingTop="10dp"
+                    android:text="@string/doorbell_play_vq"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+
+                <ImageButton
+                    android:id="@+id/show_and_gone"
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/play_button_selector"
+                    android:src="@drawable/show_and_gone"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_doorbell_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/doorbell_cancle"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+
+                <TextView
+                    android:id="@+id/tv_doorbell_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:paddingTop="10dp"
+                    android:text="@string/doorbell_play_cancel"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_doorbell_hz"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_time_play_selector"
+                android:gravity="bottom|center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#00000000" />
+
+                <TextView
+                    android:id="@+id/tv_doorbell_hz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:paddingTop="10dp"
+                    android:text="@string/doorbell_play_hz"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

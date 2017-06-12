@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/newbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top"
+        style="@style/top_bg_style"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_back_selector"
+            android:gravity="center"
+            android:text="@string/back"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_title_size" />
+
+        <TextView
+            android:id="@+id/tv_camera_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:shadowColor="@color/color_shadow"
+            android:shadowDx="1.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:text="@string/setting"
+            android:textColor="@color/color_white"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        style="@style/top_bg_style"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/line1"
+            android:layout_width="fill_parent"
+            android:layout_height="2.0dip"
+            android:layout_below="@+id/top"
+            android:src="@drawable/background_separate_vertical" />
+
+        <TextView
+            android:id="@+id/tv_camera_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5.0dip"
+            android:shadowColor="@color/color_shadow"
+            android:shadowDx="1.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:textColor="@color/color_white"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- android:layout_above="@+id/bottom" -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/setting_reboot"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/newbuttonall"
+                android:drawableLeft="@drawable/admin_settin"
+                android:drawablePadding="8dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+                android:text="@string/doorbell_setting_reboot"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.01dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#e4e4e4"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/setting_system"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/corner_select"
+                android:drawableLeft="@drawable/doorbell_setting_system"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/biz_btn_right_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="@string/doorbell_setting_system"
+                android:textSize="16dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.01dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#e4e4e4"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/setting_reset"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/newbuttonall"
+                android:drawableLeft="@drawable/sd_setting"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/biz_btn_right_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="@string/doorbell_setting_reset"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/setting_sdcard"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/newbuttonall"
+                android:drawableLeft="@drawable/sd_setting"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/biz_btn_right_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="@string/setting_sdcard"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.01dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#e4e4e4"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/setting_ftp"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/newbuttonbuttom"
+                android:drawableLeft="@drawable/ftp_setting"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/biz_btn_right_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:text="@string/setting_ftp"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/background_whitef10_corner"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/setting_use"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/listitem_pressed_selector"
+                    android:drawableLeft="@drawable/doorbell_setting_white"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/biz_btn_right_selector"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/doorbell_setting_white"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:background="#bcbab9" />
+
+                <Button
+                    android:id="@+id/setting_interface"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/listitem_pressed_selector"
+                    android:drawableLeft="@drawable/doorbell_setting_interface"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/biz_btn_right_selector"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/doorbell_setting_interface"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:background="#bcbab9" />
+
+                <Button
+                    android:id="@+id/setting_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/listitem_pressed_selector"
+                    android:drawableLeft="@drawable/doorbell_setting_interface"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/biz_btn_right_selector"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:visibility="gone"
+                    android:text="邮件设置"
+                    android:textSize="16dp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:visibility="gone"
+                    android:background="#bcbab9"
+                     />
+
+                <Button
+                    android:id="@+id/setting_alerm"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/listitem_pressed_selector"
+                    android:drawableLeft="@drawable/setting_alerm"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/biz_btn_right_selector"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/setting_alerm"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:background="#bcbab9" />
+
+                <Button
+                    android:id="@+id/setting_lock"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/listitem_pressed_selector"
+                    android:drawableLeft="@drawable/doorbell_setting_lock"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/biz_btn_right_selector"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/doorbell_setting_lock"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:background="#bcbab9" />
+
+                <Button
+                    android:id="@+id/setting_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/listitem_pressed_selector"
+                    android:drawableLeft="@drawable/setting_time"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/biz_btn_right_selector"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/setting_time"
+                    android:textSize="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:background="#bcbab9" />
+
+                <Button
+                    android:id="@+id/setting_wifi"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/listitem_pressed_selector"
+                    android:drawableLeft="@drawable/setting_wifi"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/biz_btn_right_selector"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/setting_wifi"
+                    android:textSize="16dp" />
+
+                <Button
+                    android:id="@+id/setting_ap"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/newbuttontop"
+                    android:drawableLeft="@drawable/ap_setting"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/biz_btn_right_selector"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="10dp"
+                    android:text="@string/setting_ap"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

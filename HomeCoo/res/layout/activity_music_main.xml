@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    >
+   
+     <include android:id="@+id/lv_item_header"
+             layout="@layout/item_header"/>
+      <LinearLayout
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:weightSum="3"
+        android:orientation="horizontal">
+     
+	    <LinearLayout 
+		    android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:paddingBottom="10dp"
+			android:layout_weight="1"
+		    >
+			    <TextView
+			        android:id="@+id/btn_allSongs"
+			        android:padding="5dp"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginTop="5dp"
+			        android:gravity="center"
+			        android:text="歌曲列表"
+			        android:textSize="@dimen/list_text_size" />
+	
+	 		  <ListView
+	 		      android:id="@+id/myArrayList"
+	 		      android:layout_width="fill_parent"
+	 		      android:layout_height="match_parent" 
+	 		      android:layout_marginLeft="10dp"
+	 		      android:layout_marginRight="10dp"
+	 		      android:layout_marginBottom="10dp"
+	 		      android:background="@drawable/bg_base"/>
+	    
+		</LinearLayout>
+     
+    <LinearLayout
+	   	 android:layout_width="match_parent"
+	     android:layout_height="wrap_content"
+	     android:layout_weight="2"
+	     android:layout_marginTop="25dp"
+	     android:gravity="center_horizontal"
+	   	 android:orientation="vertical">
+	     <!-- android:padding="5dp" -->
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/topname" />
+	      
+	    <TextView
+	        android:id="@+id/tv_songName"
+	        android:layout_width="match_parent"
+	        android:layout_height="25dp"
+	        android:gravity="center"/>
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:layout_marginBottom="10dp"
+	        android:orientation="horizontal" >
+
+	        <ImageButton
+	            android:id="@+id/btnSingle"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/single" />
+
+	        <ImageButton
+	            android:id="@+id/btnformerSong"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/next" />
+	        
+	        <ImageButton
+	            android:id="@+id/btnpause"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/pause" />
+
+	        <ImageButton
+	            android:id="@+id/btnnextSong"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/former" />
+	        
+	        <ImageButton
+	            android:id="@+id/btnRandom"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/random" />
+	    </LinearLayout>
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="10dp"
+	        android:orientation="horizontal" >
+	        
+	        <ImageButton 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/sound"
+	            />
+	    	<SeekBar 
+	    	    android:id="@+id/seekbar"
+	    	    android:layout_width="match_parent"
+	    	    android:layout_height="wrap_content"
+	    	    android:layout_marginRight="5dp"
+	    	    />
+	   	 </LinearLayout> 
+		</LinearLayout>    
+	</LinearLayout>
+    <include android:id="@+id/lv_item_bottom"
+            layout="@layout/item_bottom"/>
+    
+ </LinearLayout>
+
+     

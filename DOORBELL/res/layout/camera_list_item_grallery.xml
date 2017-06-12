@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="2dp" >
+
+    <LinearLayout
+        android:id="@+id/framLayout1"
+        android:layout_width="160dp"
+        android:layout_height="115dp"
+        android:background="@drawable/bg_selected"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/imgSnapshot"
+            android:layout_width="155dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- <TextView -->
+    <!-- android:id="@+id/cameraDevName" -->
+    <!-- android:layout_toRightOf="@+id/imgSnapshot" -->
+    <!-- android:layout_alignTop="@+id/imgSnapshot" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:textColor="@color/color_white" -->
+    <!-- android:layout_marginLeft="3dp" -->
+    <!-- android:gravity="top" -->
+    <!-- android:text="hh" -->
+    <!-- android:textSize="18sp" /> -->
+
+
+    <!-- <TextView -->
+    <!-- android:layout_toRightOf="@+id/imgSnapshot" -->
+
+
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:text="@string/device_status_name" -->
+    <!-- android:textColor="@color/color_black" -->
+    <!-- android:textSize="12sp" /> -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="155dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="2dp"
+        android:background="#80ffffff"
+        android:orientation="vertical"
+        android:paddingBottom="2dip"
+        android:paddingLeft="3dip"
+        android:paddingRight="3dip" >
+
+        <TextView
+            android:id="@+id/cameraDevName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_black"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_status_name"
+                android:textColor="@color/color_black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textPPPPStatus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3px"
+                android:text="initialing"
+                android:textColor="@color/color_blue"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

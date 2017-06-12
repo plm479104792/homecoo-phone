@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top"
+        style="@style/top_bg_style"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/alerm_cancel"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_back_selector"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/back"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_title_size" />
+
+        <TextView
+            android:id="@+id/tv_camera_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:shadowColor="@color/color_shadow"
+            android:shadowDx="1.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:text="@string/doorbell_setting_system"
+            android:textColor="@color/color_white"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/alerm_ok"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btnselector"
+            android:text="@string/done"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_title_size" />
+    </RelativeLayout>
+
+    <!-- <ImageView -->
+    <!-- android:id="@+id/line1" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="2.0dip" -->
+    <!-- android:layout_below="@+id/top" -->
+    <!-- android:src="@drawable/background_separate_vertical" /> -->
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/background_whitef10_corner"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:checkedButton="@+id/rad1"
+                        android:text="@string/doorbell_setting_system_disturb"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+
+                    <RadioGroup
+                        android:id="@+id/group1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone" >
+
+                        <RadioButton
+                            android:id="@+id/rb1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_system_open"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_system_close"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@color/color_grey"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:checkedButton="@+id/rad1"
+                        android:text="@string/doorbell_setting_system_speak"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/group2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/rb1_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_system_open"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb2_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_system_close"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#bcbab9" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:checkedButton="@+id/rad1"
+                        android:text="@string/doorbell_setting_system_set"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/group3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/rb1_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_system_open"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb2_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_system_close"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_alarm_view_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/background_whitef10_corner"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingRight="5dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/doorbell_setting_system_time1"
+                        android:textColor="@color/color_black"
+                        android:textSize="14dp" />
+
+                    <EditText
+                        android:id="@+id/edit_time1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:digits="0123456789"
+                        android:hint="10-300"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:singleLine="true" >
+                    </EditText>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#bcbab9" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingRight="5dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/doorbell_setting_system_time2"
+                        android:textColor="@color/color_black"
+                        android:textSize="14dp" />
+
+                    <EditText
+                        android:id="@+id/edit_time2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:digits="0123456789"
+                        android:hint="10-300"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:singleLine="true" >
+                    </EditText>
+                </LinearLayout>
+
+              <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.01dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#bcbab9" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:paddingRight="5dp" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/doorbell_setting_system_time3"
+                        android:textColor="@color/color_black"
+                        android:textSize="14dp" />
+
+                    <EditText
+                        android:id="@+id/edit_time3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:digits="0123456789"
+                        android:hint="10-60"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:singleLine="true" >
+                    </EditText>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/setting_reboot"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/corner_select"
+                android:drawableLeft="@drawable/restart_doorbell"
+                android:drawablePadding="8dp"
+                android:drawableRight="@drawable/biz_btn_right_selector"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/doorbell_setting_reboot"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

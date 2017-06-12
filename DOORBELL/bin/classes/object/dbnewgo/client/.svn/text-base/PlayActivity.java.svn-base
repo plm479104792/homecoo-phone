@@ -1,0 +1,949 @@
+package object.p2pipcam.client;
+
+import java.nio.ByteBuffer;
+import java.util.Calendar;
+
+import object.p2pipcam.utils.CustomBufferData;
+import object.p2pipcam.utils.CustomBufferHead;
+import object.p2pipcam.utils.CustomAudioRecorder;
+import object.p2pipcam.utils.AudioPlayer;
+import object.p2pipcam.utils.CustomBuffer;
+import object.p2pipcam.content.ContentCommon;
+import object.p2pipcam.nativecaller.NativeCaller;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.PixelFormat;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class PlayActivity extends Activity implements OnTouchListener,
+		OnGestureListener,CustomAudioRecorder.AudioRecordResult {
+
+	private static final String LOG_TAG = "PlayActivity";
+	private static final int MIN_FLIP_LEN = 100;
+	private static final int DIRECT_UP = 1;
+	private static final int DIRECT_DOWN = 2;
+	private static final int DIRECT_LEFT = 3;
+	private static final int DIRECT_RIGHT = 4;
+	private static final int DIRECT_BRIGHTNESS = 100;
+	private static final int DIRECT_CONTRAST = 101;	
+
+	private static final int FLIP_MODE_CONTRAST = 1;
+	private static final int FLIP_MODE_BRIGHT = 2;
+	private static final int FLIP_MODE_PTZ = 3;
+	
+	private static final int AUDIO_BUFFER_START_CODE = 0xff00ff;
+
+	private SurfaceView playSurface = null;
+	private SurfaceHolder playHolder = null;
+	private byte[] videodata = null;
+	private int videoDataLen = 0;
+	private int nVideoWidth = 0;
+	private int nVideoHeight = 0;
+
+	private View progressView = null;
+	private boolean bProgress = true;
+
+	private GestureDetector gt = new GestureDetector(this);
+	@SuppressWarnings("unused")
+	private int nSurfaceHeight = 0;
+	private int nSurfaceWidth = 0;
+
+	private int nResolution = 0;
+	private int nBrightness = 0;
+	private int nContrast = 0;
+	@SuppressWarnings("unused")
+	private int nMode = 0;
+	@SuppressWarnings("unused")
+	private int nFlip = 0;
+	@SuppressWarnings("unused")
+	private int nFramerate = 0;
+	private boolean bInitCameraParam = false;
+	private boolean bManualExit = false;
+
+	private TextView textosd = null;
+	private TextView textTimeStamp = null;
+	private TextView textResolution = null;
+	private TextView textCodec = null;
+	private String strName = null;
+	private String strDID = null;
+	private int streamType = ContentCommon.MJPEG_SUB_STREAM;
+
+	private View osdView = null;
+
+	private boolean bDisplayFinished = true;
+	private surfaceCallback videoCallback = new surfaceCallback();
+	
+	private ImageView imgup = null;
+	private ImageView imgdown = null;
+	private ImageView imgleft = null;
+	private ImageView imgright = null;
+	private ImageView imgBrightContrast = null;
+	private int nPlayCount = 0;	
+	
+	private ImageView imgAudio = null;
+	private ImageView imgTalk = null;
+	private CustomBuffer AudioBuffer = null;
+	private AudioPlayer audioPlayer = null;		
+	private boolean bAudioStart = false;
+	private CustomAudioRecorder customAudioRecorder = null;
+	private boolean bAudioRecordStart = false;
+	private boolean bGetStreamCodecType = false;
+	private int nStreamCodecType;
+	private int nP2PMode = ContentCommon.PPPP_MODE_P2P_NORMAL;
+	private TextView textTimeoutTextView = null;
+	private boolean bTimeoutStarted = false;
+	private int nTimeoutRemain = 10;
+	
+	private class surfaceCallback implements SurfaceHolder.Callback {
+		public void surfaceChanged(SurfaceHolder holder, int format, int width,
+				int height) {
+			if (holder == playHolder) {
+				//Log.d(LOG_TAG, "preview surfaceChanged: f: " + format + ", w: "
+				//		+ width + ", h: " + height);			
+
+				//手机通道
+				streamType = 10;
+				if (NativeCaller.StartPPPPLivestream(PlayActivity.this, strDID,
+						streamType) == 0) {
+					Toast.makeText(getApplicationContext(),
+							R.string.device_not_on_line, Toast.LENGTH_SHORT)
+							.show();
+					finish();
+					return;
+				}				
+			}
+		}
+
+		public void surfaceCreated(SurfaceHolder holder) {
+			Log.d(LOG_TAG, "surfaceCreated");
+		}
+
+		public void surfaceDestroyed(SurfaceHolder holder) {
+			Log.d(LOG_TAG, "surfaceDestroyed");
+			finish();
+		}
+	}
+
+	private void showSureDialog(Context context) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(context);
+		builder.setMessage(R.string.stopplay_alert);
+		builder.setPositiveButton(R.string.str_ok,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						finish();
+					}
+				});
+		builder.setNegativeButton(R.string.str_cancel,
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+
+					}
+				});
+		builder.show();
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// TODO Auto-generated method stub
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			bManualExit = true;
+			if (!bProgress) {
+				showSureDialog(this);
+				return true;
+			}
+		}		
+		if(keyCode == KeyEvent.KEYCODE_MENU){
+			defaultVideoParams();
+		}		
+		return super.onKeyDown(keyCode, event);
+	}
+	
+	private void defaultVideoParams() {
+		// TODO Auto-generated method stub
+		NativeCaller.PPPPCameraControl(strDID, 1, 0);
+		NativeCaller.PPPPCameraControl(strDID, 2, 128);
+	}
+	
+	private void updateTimeout(){		
+		textTimeoutTextView.setText(getString(R.string.p2p_relay_mode_time_out) + nTimeoutRemain + getString(R.string.str_second));
+	}
+	
+	private Handler timeoutHandle = new Handler(){
+		public void handleMessage(Message msg) {
+			
+			if(nTimeoutRemain > 0){
+				nTimeoutRemain = nTimeoutRemain - 1;
+				updateTimeout();
+				Message msgMessage = new Message();
+				timeoutHandle.sendMessageDelayed(msgMessage, 1000);
+			}else {
+				Toast.makeText(getApplicationContext(),
+						R.string.p2p_view_time_out, Toast.LENGTH_SHORT)
+						.show();
+				finish();
+			}
+		}
+	};
+	
+	
+	private void startTimeout(){
+		if(!bTimeoutStarted){
+			Message msgMessage = new Message();
+			timeoutHandle.sendMessageDelayed(msgMessage, 1000);
+			bTimeoutStarted = true;
+		}
+	}
+
+	private void setViewVisible() {
+		if (bProgress) {
+			bProgress = false;
+			progressView.setVisibility(View.INVISIBLE);
+			osdView.setVisibility(View.VISIBLE);
+			imgAudio.setVisibility(View.VISIBLE);
+			imgTalk.setVisibility(View.VISIBLE);
+			if (nP2PMode == ContentCommon.PPPP_MODE_P2P_RELAY) {
+				updateTimeout();
+				textTimeoutTextView.setVisibility(View.VISIBLE);
+				startTimeout();
+			}			
+			getCameraParams();
+		}
+	}
+
+	private Handler mHandler = new Handler() {
+		public void handleMessage(Message msg) {
+			if (msg.what == 1 || msg.what == 2) {
+				setViewVisible();
+			}
+
+			switch (msg.what) {
+				case 1: // 显示RGB565
+				{
+					ByteBuffer buffer = ByteBuffer.wrap(videodata);
+					Bitmap bmp = Bitmap.createBitmap(nVideoWidth, nVideoHeight,
+							Bitmap.Config.RGB_565);
+					bmp.copyPixelsFromBuffer(buffer);
+	
+					Drawable drawable = new BitmapDrawable(bmp);
+					playSurface.setBackgroundDrawable(drawable);
+				}
+					break;
+				case 2: // 显示JPEG
+				{
+					Bitmap bmp = BitmapFactory.decodeByteArray(videodata, 0,
+							videoDataLen);
+					if (bmp == null) {
+						Log.d(LOG_TAG, "bmp can't be decode...");
+						return;
+					}
+					Drawable drawable = new BitmapDrawable(bmp);
+					playSurface.setBackgroundDrawable(drawable);
+				}
+					break;
+	            case 3: //
+	            {		            	
+	            	displayResolution();		            	
+	            }
+	            break;
+			}  
+			
+            if (msg.what == 1 || msg.what == 2){   
+            	
+            	showTimeStamp();	            	
+            	bDisplayFinished = true;
+            	
+            	nPlayCount++;
+            	if(nPlayCount >= 100){
+            		nPlayCount = 0;
+            		getCameraParams();
+            	}
+            }
+		};
+	};
+	
+	@SuppressWarnings("unused")
+	private void CameraParamNotify(String did, int resolution, int brightness, int contrast, int hue, int saturation, int flip){
+		Log.d(LOG_TAG, "CameraParamNotify...did:" + did + " brightness: " + brightness + " resolution: " + 
+				resolution + " contrast: " + contrast + " hue: " + 
+				hue + " saturation: " + saturation + " flip: " + flip) ;
+		nBrightness = brightness;
+		nContrast = contrast;	
+		nResolution = resolution ;
+		
+		Message msg = new Message();
+		msg.what = 3;
+		mHandler.sendMessage(msg);
+		
+		bInitCameraParam = true;		
+	}
+
+	/**
+	 * jni回调视频
+	 * 
+	 * @param videobuf
+	 *            视频数据
+	 * @param h264Data
+	 *            表示数据类型 1:H264 2:MJPEG
+	 * @param len
+	 *            数据长度
+	 * @param width
+	 *            视频宽度
+	 * @param height
+	 *            视频高度
+	 */
+	@SuppressWarnings("unused")
+	private void VideoData(byte[] videobuf, int h264Data, int len, int width,
+			int height) {
+//		 Log.d(LOG_TAG, "Call VideoData...h264Data: " + h264Data + " len: " +
+//		 len + " videobuf len: " + videobuf.length);
+		if (!bDisplayFinished) {
+			return;
+		}
+
+		bDisplayFinished = false;
+
+		videodata = videobuf;
+		videoDataLen = len;
+		nVideoWidth = width;
+		nVideoHeight = height;
+
+		Message msg = new Message();
+		if (h264Data == 1) { // H264
+			msg.what = 1;
+		} else { // MJPEG
+			msg.what = 2;
+		}
+
+		mHandler.sendMessage(msg);
+	}
+	
+	protected void displayResolution() {
+		// TODO Auto-generated method stub
+		//---------------------
+    	/*0->640x480
+    	1->320x240
+    	2->160x120;
+    	3->1280x720
+    	4->640x360
+    	5->1280x960*/
+    	
+    	String strCurrResolution ;
+    	
+    	switch(nResolution)
+    	{
+    	case 0:
+    		strCurrResolution = "640x480" ;
+    		break;
+    	case 1:
+    		strCurrResolution = "320x240" ;
+    		break;
+    	case 2:
+    		strCurrResolution = "160x120" ;
+    		break;
+    	case 3:
+    		strCurrResolution = "1280x720" ;
+    		break;
+    	case 4:
+    		strCurrResolution = "640x360" ;
+    		break;
+    	case 5:
+    		strCurrResolution = "1280x960" ;
+    		break;
+    	default:
+    		return;		            			
+    	}
+    	
+    	textResolution.setText(strCurrResolution) ;
+	}
+
+	protected void showTimeStamp() {
+		// TODO Auto-generated method stub
+		Calendar calendar = Calendar.getInstance();  
+    	int year = calendar.get(Calendar.YEAR);  
+    	int month = calendar.get(Calendar.MONTH) + 1;  
+    	int day = calendar.get(Calendar.DAY_OF_MONTH);  
+    	int hour = calendar.get(Calendar.HOUR_OF_DAY);  
+    	int minute = calendar.get(Calendar.MINUTE);  
+    	int second = calendar.get(Calendar.SECOND);
+    	
+    	String strMonth = (month >= 10) ? String.valueOf(month) : "0" + month ;
+    	String strDay = (day >= 10) ? String.valueOf(day) : "0" + day ;
+    	String strHour = (hour >= 10) ? String.valueOf(hour) : "0" + hour ;
+    	String strMinite = (minute >= 10) ? String.valueOf(minute) : "0" + minute ;
+    	String strSecond = (second >= 10) ? String.valueOf(second) : "0" + second ;
+    	
+    	String strTimeStamp = year + "-" + strMonth + "-" + strDay + " " + strHour + ":" + strMinite + ":" + strSecond ;
+    	textTimeStamp.setText(strTimeStamp);
+	}
+
+	private void getCameraParams() {
+		// TODO Auto-generated method stub
+		NativeCaller.PPPPGetCGI(strDID, ContentCommon.CGI_IEGET_CAM_PARAMS);		
+	}
+
+	private Handler msgHandler = new Handler() {
+		public void handleMessage(Message msg) {
+			if (msg.what == 1) {
+				Toast.makeText(getApplicationContext(),
+						R.string.pppp_status_disconnect, Toast.LENGTH_SHORT)
+						.show();
+				finish();
+			}
+		}
+	};
+	
+	private Handler msgStreamCodecHandler = new Handler() {
+		public void handleMessage(Message msg) {
+			if(nStreamCodecType == ContentCommon.PPPP_STREAM_TYPE_JPEG){
+				textCodec.setText("JPEG");
+			}else {
+				textCodec.setText("H.264");
+			}
+		}
+	};
+
+	// jni 回调的事件通知
+	@SuppressWarnings("unused")
+	/**
+	 * PPPP消息通知
+	 * @param did
+	 * @param msgType
+	 * @param param
+	 */
+	private void MessageNotify(String did, int msgType, int param) {
+		Log.d(LOG_TAG, "MessageNotify did: " + did + " msgType: " + msgType
+				+ " param: " + param);
+
+		if (bManualExit)
+			return;
+		
+		//如果是H264码流
+		if (msgType == ContentCommon.PPPP_MSG_TYPE_STREAM){
+			nStreamCodecType = param;
+			bGetStreamCodecType = true;			
+			Message msgMessage = new Message();
+			msgStreamCodecHandler.sendMessage(msgMessage);
+			return;
+		}
+
+		if (msgType != ContentCommon.PPPP_MSG_TYPE_PPPP_STATUS) {
+			return;
+		}
+
+		if (!did.equals(strDID)) {
+			return;
+		}
+
+		Message msg = new Message();
+		msg.what = 1;
+
+		msgHandler.sendMessage(msg);
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		Log.d(LOG_TAG, "PlayActivity onCreate");
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.play);
+
+		Intent in = getIntent();
+		if (in != null) {
+			streamType = in.getIntExtra(ContentCommon.STR_STREAM_TYPE,
+					ContentCommon.MJPEG_SUB_STREAM);
+			strName = in.getStringExtra(ContentCommon.STR_CAMERA_NAME);
+			strDID = in.getStringExtra(ContentCommon.STR_CAMERA_ID);
+			nP2PMode = in.getIntExtra(ContentCommon.STR_CAMERA_TYPE, ContentCommon.PPPP_MODE_P2P_NORMAL);
+			Log.d(LOG_TAG, "strDID: " + strDID) ;
+		}
+
+		findView();
+		InitParams();
+		
+		AudioBuffer = new CustomBuffer();  
+        audioPlayer = new AudioPlayer(AudioBuffer);
+        
+        customAudioRecorder = new CustomAudioRecorder(this);
+
+		playHolder = playSurface.getHolder();
+		playHolder.setFormat(PixelFormat.RGB_565);
+		playHolder.addCallback(videoCallback);
+
+		playSurface.setOnTouchListener(this);
+		playSurface.setLongClickable(true);		
+
+		//获取视频参数
+		getCameraParams();
+	}
+
+	private void InitParams() {
+		// TODO Auto-generated method stub
+		DisplayMetrics dm = new DisplayMetrics();
+		;// 屏幕分辨率容器
+		this.getWindowManager().getDefaultDisplay().getMetrics(dm);
+		nSurfaceWidth = dm.widthPixels;
+		nSurfaceHeight = dm.heightPixels;
+
+		textosd.setText(strName);		
+		
+		textResolution.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(!bInitCameraParam || !bGetStreamCodecType)
+					return ;
+				
+				if (nStreamCodecType == ContentCommon.PPPP_STREAM_TYPE_JPEG) {
+					if(nResolution == 0){
+						nResolution = 1;
+					}else{
+						nResolution = 0;
+					}
+				}else {
+					switch (nResolution) {
+					case 0:
+						nResolution = 1;
+						break;
+					case 1:
+						nResolution = 3;
+						break;
+					case 3:
+						nResolution = 0;
+						break;
+					default:
+						return;
+					}
+				}
+				
+				//Log.d(LOG_TAG, "nResolution: " + nResolution);				
+				setResolution(nResolution);		
+			}
+			
+		});
+		
+		imgAudio.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				AudioControl();
+			}
+		});
+		
+		imgTalk.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				TalkControl();
+			}
+		});
+	}
+
+	protected void TalkControl() {
+		// TODO Auto-generated method stub
+		synchronized (this) {
+			if (bAudioRecordStart) {
+				imgTalk.setBackgroundResource(R.drawable.microphone_off);
+				StopTalk();
+			}else {
+				imgTalk.setBackgroundResource(R.drawable.microphone_on);
+				StartTalk();
+			}			
+			bAudioRecordStart = ! bAudioRecordStart;
+		}
+	}
+
+	protected void AudioControl() {
+		// TODO Auto-generated method stub
+		synchronized (this) {
+			if (bAudioStart) {
+				imgAudio.setBackgroundResource(R.drawable.audio_off);
+				StopAudio();				
+			}else{
+				imgAudio.setBackgroundResource(R.drawable.audio_on);
+				StartAudio();
+			}
+			
+			bAudioStart = !bAudioStart;
+		}		
+	}
+	
+	private void StartAudio(){
+		synchronized (this) {
+			AudioBuffer.ClearAll();
+			audioPlayer.AudioPlayStart();
+			NativeCaller.PPPPStartAudio(strDID);
+		}
+	}
+	
+	private void StopAudio(){
+		synchronized (this) {
+			audioPlayer.AudioPlayStop();
+	    	AudioBuffer.ClearAll();
+	    	NativeCaller.PPPPStopAudio(strDID);
+		}
+	}
+	
+	private void StartTalk(){
+		if (customAudioRecorder != null) {
+			customAudioRecorder.StartRecord();
+			NativeCaller.PPPPStartTalk(strDID);
+		}
+	}
+	
+	private void StopTalk(){
+		if (customAudioRecorder != null) {
+			customAudioRecorder.StopRecord();
+			NativeCaller.PPPPStopTalk(strDID);
+		}
+	}
+
+	protected void setResolution(int Resolution) {
+		// TODO Auto-generated method stub		
+		NativeCaller.PPPPCameraControl(strDID, 0, Resolution);		
+		displayResolution();		
+		nPlayCount = 90;		
+	}
+
+	private void findView() {
+		// TODO Auto-generated method stub
+		playSurface = (SurfaceView)findViewById(R.id.playSurface);
+		progressView = (View)findViewById(R.id.progressLayout);
+		textosd = (TextView)findViewById(R.id.textosd);
+		textTimeStamp = (TextView)findViewById(R.id.textTimeStamp);
+		textResolution = (TextView)findViewById(R.id.textResolution);
+		osdView = (View)findViewById(R.id.osdlayout);
+		imgup = (ImageView)findViewById(R.id.imgup);
+		imgdown = (ImageView)findViewById(R.id.imgdown);
+		imgleft = (ImageView)findViewById(R.id.imgleft);
+		imgright = (ImageView)findViewById(R.id.imgright);
+		imgBrightContrast = (ImageView)findViewById(R.id.imgbrightcontrast);
+		imgAudio = (ImageView)findViewById(R.id.imgAudio);
+		imgTalk = (ImageView)findViewById(R.id.imgTalk);
+		textCodec = (TextView)findViewById(R.id.textCodec);
+		textTimeoutTextView = (TextView)findViewById(R.id.textTimeout);
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub				
+		NativeCaller.StopPPPPLivestream(strDID);
+		StopAudio();
+		StopTalk();
+		super.onDestroy();
+		Log.d(LOG_TAG, "PlayActivity onDestroy");
+	}
+
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		// TODO Auto-generated method stub
+		return gt.onTouchEvent(event);
+	}
+
+	@Override
+	public boolean onDown(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+			float velocityY) {
+
+		// TODO Auto-generated method stub
+		Log.d(LOG_TAG, "onFling...");
+		if (bProgress) {
+			return false;
+		}
+
+		float x1 = e1.getX();
+		float x2 = e2.getX();
+		float y1 = e1.getY();
+		float y2 = e2.getY();
+
+		int direct_vertical;
+		int direct_horizontal;
+		direct_horizontal = (x1 > x2) ? DIRECT_LEFT : DIRECT_RIGHT;
+		direct_vertical = (y1 > y2) ? DIRECT_UP : DIRECT_DOWN;
+		
+		boolean bvertical = false;
+		boolean bhorizontal = false;	
+	
+		float x_len = (x1 > x2) ? (x1 - x2) : (x2 - x1);
+		float y_len = (y1 > y2) ? (y1 - y2) : (y2 - y1);
+		if (x_len < MIN_FLIP_LEN && y_len < MIN_FLIP_LEN) {
+			return false;
+		}
+		
+		if (y_len >= MIN_FLIP_LEN) {
+			bvertical = true;
+		}
+		
+		if (x_len >= MIN_FLIP_LEN) {
+			bhorizontal = true;			
+		}
+		
+		int flip_mode;
+		if (x1 <= (nSurfaceWidth / 5)) {
+			if (x2 > (nSurfaceWidth / 5)) {
+				return false;
+			}
+			
+			if(y_len < MIN_FLIP_LEN){
+				return false;
+			}
+
+			flip_mode = FLIP_MODE_CONTRAST;
+		} else if (x1 >= (nSurfaceWidth * 4 / 5)) {
+			if (x2 < (nSurfaceWidth * 4 / 5)) {
+				return false;
+			}
+			
+			if(y_len < MIN_FLIP_LEN){
+				return false;
+			}
+
+			flip_mode = FLIP_MODE_BRIGHT;
+		} else {
+			flip_mode = FLIP_MODE_PTZ;
+		}
+		Log.d(LOG_TAG, "flip_mode: " + flip_mode);
+
+		switch (flip_mode) {
+		case FLIP_MODE_CONTRAST:
+			setContrast(direct_vertical);
+			break;
+		case FLIP_MODE_BRIGHT:
+			setBright(direct_vertical);
+			break;
+		case FLIP_MODE_PTZ: {			
+			if (bvertical) {
+				decoderControl(direct_vertical);
+			}
+			if (bhorizontal) {
+				decoderControl(direct_horizontal);
+			}			
+		}
+			break;
+		default:
+			break;
+		}
+
+		return false;
+	}
+
+	private void setBright(int direct_vertical) {
+		// TODO Auto-generated method stub
+		if (!bInitCameraParam)
+			return;
+
+		int value = nBrightness;
+		if (direct_vertical == DIRECT_DOWN) {
+			value -= 20;
+			if (value < 0) {
+				value = 0;
+			}
+		} else {
+			value += 20;
+			if (value > 255) {
+				value = 255;
+			}
+		}
+		nBrightness = value;
+
+		NativeCaller.PPPPCameraControl(strDID, 1, nBrightness);
+		ShowControlImage(DIRECT_BRIGHTNESS);
+	}
+
+	private void setContrast(int direct_vertical) {
+		// TODO Auto-generated method stub
+		if (!bInitCameraParam)
+			return;
+
+		int value = nContrast;
+		if (direct_vertical == DIRECT_DOWN) {
+			value -= 20;
+			if (value < 0) {
+				value = 0;
+			}
+		} else {
+			value += 20;
+			if (value > 255) {
+				value = 255;
+			}
+		}
+
+		nContrast = value;
+
+		NativeCaller.PPPPCameraControl(strDID, 2, nContrast);
+		ShowControlImage(DIRECT_CONTRAST);
+	}
+
+	private void decoderControl(int direct) {
+		// TODO Auto-generated method stub
+		 int command = 0;
+		 
+		 switch(direct){
+		 case DIRECT_UP:
+			 command = ContentCommon.CMD_PTZ_UP;			 
+			 break;
+		 case DIRECT_DOWN:
+			 command = ContentCommon.CMD_PTZ_DOWN;
+			 break;
+		 case DIRECT_LEFT:
+			 command = ContentCommon.CMD_PTZ_LEFT;
+			 break;
+		 case DIRECT_RIGHT:
+			 command = ContentCommon.CMD_PTZ_RIGHT;
+			 break;
+		 default:
+			 return;		 
+		 }		
+		 
+		 NativeCaller.PPPPPTZControl(strDID, command);
+		 ShowControlImage(direct);
+	
+	}	
+	
+	private Handler ImageHandler = new Handler(){
+		public void handleMessage(Message msg) {
+			switch(msg.what){
+			 case DIRECT_UP:
+				 imgup.setVisibility(View.INVISIBLE); 			 
+				 break;
+			 case DIRECT_DOWN:
+				 imgdown.setVisibility(View.INVISIBLE); 
+				 break;
+			 case DIRECT_LEFT:
+				 imgleft.setVisibility(View.INVISIBLE); 
+				 break;
+			 case DIRECT_RIGHT:
+				 imgright.setVisibility(View.INVISIBLE); 
+				 break;
+			 case DIRECT_BRIGHTNESS:
+			 case DIRECT_CONTRAST:
+				 imgBrightContrast.setVisibility(View.INVISIBLE);
+				 break;
+			 default:
+				 return;		 
+			 }		
+		}
+	};
+
+	private void ShowControlImage(int type) {
+		// TODO Auto-generated method stub
+		switch(type){
+		 case DIRECT_UP:
+			 imgup.setVisibility(View.VISIBLE); 			 
+			 break;
+		 case DIRECT_DOWN:
+			 imgdown.setVisibility(View.VISIBLE); 
+			 break;
+		 case DIRECT_LEFT:
+			 imgleft.setVisibility(View.VISIBLE); 
+			 break;
+		 case DIRECT_RIGHT:
+			 imgright.setVisibility(View.VISIBLE); 
+			 break;
+		 case DIRECT_BRIGHTNESS:
+			 imgBrightContrast.setImageResource(R.drawable.brightness);
+			 imgBrightContrast.setVisibility(View.VISIBLE);
+			 break;
+		 case DIRECT_CONTRAST:
+			 imgBrightContrast.setImageResource(R.drawable.contrast);
+			 imgBrightContrast.setVisibility(View.VISIBLE);
+			 break;
+		 default:
+			 return;		 
+		 }		
+		
+		Message msg = new Message();
+		msg.what = type;
+		ImageHandler.sendMessageDelayed(msg, 1000);
+	}
+
+	@Override
+	public void onLongPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+			float distanceY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/**
+	 * AudioData
+	 * @param pcm
+	 * @param len
+	 */
+	@SuppressWarnings("unused")
+	private void AudioData(byte[] pcm, int len){
+		//Log.d(LOG_TAG, "AudioData: len :+ " + len);		
+		if (!audioPlayer.isAudioPlaying()) {
+			return ;
+		}
+		CustomBufferHead head = new CustomBufferHead();
+		CustomBufferData data = new CustomBufferData();
+		head.length = len;
+		head.startcode = AUDIO_BUFFER_START_CODE;
+		data.head = head;
+		data.data = pcm ;	
+		AudioBuffer.addData(data);
+	}
+
+	@Override
+	public void AudioRecordData(byte[] data, int len) {
+		// TODO Auto-generated method stub
+		if (bAudioRecordStart && len > 0) {
+			NativeCaller.PPPPTalkAudioData(strDID, data, len);
+		}
+	}
+
+
+}

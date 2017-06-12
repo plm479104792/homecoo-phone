@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_remind_width"
+    android:layout_height="@dimen/dialog_reming_height"
+    android:background="@drawable/remind"
+    android:layout_gravity="center"
+    >
+    <ImageView 
+        android:id="@+id/img_insert_infrared"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/insert"/>
+    <TextView 
+        android:id="@+id/tv_insert_infrared"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/remind_insert_infrared"
+        android:textColor="@color/text_color_black"/>
+    <Button 
+        android:id="@+id/bt_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_insert_infrared"
+        android:background="@drawable/hear"
+        android:text="@string/no_hear"
+        android:textColor="@color/text_color_white"/>
+</RelativeLayout>

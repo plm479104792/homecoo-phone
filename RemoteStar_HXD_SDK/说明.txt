@@ -1,0 +1,56 @@
+2016.02.21
+修复library project中switch case
+
+2016.03.31
+【ActivityMain】
+ 1、退出直接返回HomeActivity
+ 
+【FragmentGroup】
+ 1、发送当前红外转发器的devid给SocketService
+ 
+ 【FragmentAIR】
+ 1、提取红外码并发到SocketService
+ 
+ 【FragmentDevice】
+ 1、屏蔽弹出对话框广告
+ 
+ 2016.05.03
+【HomeActivity】
+ editor.putString("OPERATION_TYPE","SCENE_INFRA_SEND"); //主界面进入，操作类型为直接发送红外码
+ 
+【SceneSetActivity】
+ editor.putString("OPERATION_TYPE","SCENE_INFRA_SET"); //情景设置页面进入，操作类型为红外码设置
+ 
+ 【homecoolink集成修改记录】
+ 1、替换homecoolink、p2pcore的suport-v4
+ 2、修改HXD_SDK\res\values\attrs.xml
+ 
+ 2016.08.27
+ 【情景/定时联动红外广播格式】
+ intent.setAction("ACTION_SCENE_INFRA_SET");    //红外设置动作
+ intent.putExtra("infrared",keyValue);         //红外码
+ intent.putExtra("INFRA_TYPE",deviceType);     //红外控制设备名
+ intent.putExtra("INFRA_MODEL","关");           //红外控制模式
+ 
+ 【红外定时遥控全部种类集成】
+ 步骤一：
+ 	private String operateName;  //操作名称
+步骤二：
+    operateName="电源开";
+步骤三：
+     if(operateType.equals("SCENE_INFRA_SET")){
+            	intent.setAction("ACTION_SCENE_INFRA_SET");
+            	intent.putExtra("INFRA_TYPE",deviceType);
+            	intent.putExtra("INFRA_MODEL",name+" "+operateName);
+   
+            	System.out.println("===发送红外设置广播消息==");
+    }else{
+    	intent.setAction("send");  
+    	System.out.println("===发送红外控制广播消息==");
+    }
+ 
+ 
+ 
+ 
+ 
+ 

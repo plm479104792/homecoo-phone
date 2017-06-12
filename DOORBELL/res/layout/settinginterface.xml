@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top"
+        style="@style/top_bg_style"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/alerm_cancel"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_back_selector"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/back"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_title_size" />
+
+        <TextView
+            android:id="@+id/tv_camera_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:shadowColor="@color/color_shadow"
+            android:shadowDx="1.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:text="@string/doorbell_setting_interface"
+            android:textColor="@color/color_white"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/alerm_ok"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btnselector"
+            android:text="@string/done"
+            android:textColor="@color/color_black"
+            android:textSize="@dimen/text_title_size" />
+    </RelativeLayout>
+
+    <!-- <ImageView -->
+    <!-- android:id="@+id/line1" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="2.0dip" -->
+    <!-- android:layout_below="@+id/top" -->
+    <!-- android:src="@drawable/background_separate_vertical" /> -->
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/background_whitef10_corner"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:checkedButton="@+id/rad1"
+                        android:text="@string/doorbell_setting_interface_in"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/group1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/rb1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_lock_type_open"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_lock_type_close"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutr_alerm_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/doorbell_setting_interface_in_rele"
+                        android:textColor="@color/color_black" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_alarm_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_interface_in_rele_dooralarm"
+                            android:textColor="@color/color_black" />
+
+                        <ImageButton
+                            android:id="@+id/img_alarm_type_dr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/play_button_selector"
+                            android:src="@drawable/rightdown_selector" />
+
+                        <!-- <TextView -->
+                        <!-- android:id="@+id/tv3" -->
+                        <!-- android:layout_width="wrap_content" -->
+                        <!-- android:layout_height="wrap_content" -->
+                        <!-- android:text="@string/alerm_sensitivity_desc" -->
+                        <!-- android:textColor="@color/color_black" /> -->
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:src="@color/color_grey" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_alarm_view_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/background_whitef10_corner"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:checkedButton="@+id/rad1"
+                        android:text="@string/doorbell_setting_interface_out"
+                        android:textColor="@color/color_black"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:id="@+id/group1_out"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/rb1_out"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_lock_type_open"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+
+                        <RadioButton
+                            android:id="@+id/rb2_out"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_lock_type_close"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutr_alerm_leve"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/doorbell_setting_interface_out_rele"
+                        android:textColor="@color/color_black" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_alarm_leve"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/doorbell_setting_interface_out_rele_talk"
+                            android:textColor="@color/color_black" />
+
+                        <ImageButton
+                            android:id="@+id/image_alarm_leve_dr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/play_button_selector"
+                            android:src="@drawable/rightdown_selector" />
+
+                        <!-- <TextView -->
+                        <!-- android:id="@+id/tv3" -->
+                        <!-- android:layout_width="wrap_content" -->
+                        <!-- android:layout_height="wrap_content" -->
+                        <!-- android:text="@string/alerm_sensitivity_desc" -->
+                        <!-- android:textColor="@color/color_black" /> -->
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/line"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:src="@color/color_grey" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

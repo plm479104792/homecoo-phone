@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_fans_1"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_1"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/text_fans_2"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_2"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/text_fans_3"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_3"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_fans_4"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_4"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/text_fans_5"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_5"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/text_fans_6"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_6"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_fans_7"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_7"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/text_fans_8"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_8"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/text_fans_9"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_num_9"
+            android:textColor="#000000"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+</LinearLayout>

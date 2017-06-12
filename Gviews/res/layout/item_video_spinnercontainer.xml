@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dip"
+    android:background="@drawable/bg_spinner_container"
+    android:orientation="vertical"
+    android:padding="0dp" >
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:background="#ffffff"
+        android:cacheColorHint="#00000000"
+        android:divider="#dddddd"
+        android:dividerHeight="1dp" >
+    </ListView>
+
+</LinearLayout>

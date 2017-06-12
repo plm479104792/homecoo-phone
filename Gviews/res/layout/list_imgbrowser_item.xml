@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+
+    <com.homecoolink.widget.MyImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ib_img_grid_item_height"
+        android:scaleType="fitCenter"
+        android:src="@drawable/back" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="2014"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_size_small" />
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+       <string-array name="strs_fans_type">
+       	
+    </string-array>
+    <string-array name="strs_fans_brand">
+ <item>美的(Midea)</item>
+<item>长城(Changcheng)</item>
+<item>格力(Gree)</item>
+<item>艾美特(Emmett)</item>
+<item>科龙(Kelon)</item>
+<item>澳柯玛(Aucma)</item>
+<item>澳柯玛(Aucma)</item>
+<item>小天鹅(Little Swan)</item>
+<item>骆驼(Camel)</item>
+<item>小行星(Asteroid)</item>
+<item>华生(Hua Sheng)</item>
+<item>先锋(Pioneer)</item>
+<item>桑普(Samp)</item>
+<item>中联(Vanda)</item>
+<item>永生(Eternal life)</item>
+<item>联创(Linkage)</item>
+<item>丝雨(Drizzle)</item>
+<item>时丰(Shifeng)</item>
+<item>灿坤(Tsann)</item>
+<item>荣事达(Rongshida)</item>
+<item>钻石(Diamond)</item>
+<item>新的(Xinde)</item>
+<item>其它(Other)</item>
+    </string-array>
+</resources>

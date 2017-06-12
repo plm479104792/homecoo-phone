@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_item_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/header_padd" 
+    android:layout_gravity="bottom"
+    android:background="@drawable/bg_bottom"
+    android:gravity="center_vertical">
+    <RadioGroup
+        android:id="@+id/rg_tab_navi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+	    <RadioButton
+	        android:id="@+id/rb_navi_space"
+	        style="@style/RadioButtonBottomTab"
+	        android:paddingLeft="25dp"
+	        android:text="@string/bottom_room" 
+	        android:drawableLeft="@drawable/icon_space_sel"
+	        />
+	     <RadioButton
+	        android:id="@+id/rb_navi_scene"
+	         style="@style/RadioButtonBottomTab"
+	        android:paddingLeft="10dp"
+	        android:text="@string/bottom_scene" 
+	          android:drawableLeft="@drawable/icon_scene_sel"
+	        />
+	      <TextView
+	        android:id="@+id/tv_bottom_network"
+	        style="@style/RadioButtonBottomTab"
+	        android:paddingLeft="15dp"
+	        android:paddingRight="15dp"
+	        android:drawableLeft="@drawable/icon_net_sel"
+	        android:drawableRight="@drawable/icon_net_switch"
+	        android:text="@string/bottom_network" 
+	        />
+	     <RadioButton
+	        android:id="@+id/rb_navi_alert"
+	        style="@style/RadioButtonBottomTab"
+	        android:paddingLeft="10dp"
+	        android:drawableLeft="@drawable/icon_alert_sel"
+	        android:text="@string/bottom_alert" 
+	        />
+	    
+	     <RadioButton
+	        android:id="@+id/rb_navi_set"
+	        style="@style/RadioButtonBottomTab"
+	        android:paddingLeft="35dp"
+	        android:drawableLeft="@drawable/icon_set_sel"
+	        android:text="@string/bottom_set" 
+	        />
+     </RadioGroup>
+</RelativeLayout>

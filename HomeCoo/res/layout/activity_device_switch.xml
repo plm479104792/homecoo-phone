@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tuwa.smarthome.activity.DeviceManegeActivity" 
+    android:orientation="vertical"
+    >
+    <include android:id="@+id/lv_item_header"
+             layout="@layout/item_header"/>
+    <LinearLayout
+        style="@style/content_layout"
+        android:background="@drawable/bg_content_base">
+   
+     <GridView
+		    android:id="@+id/gv_switch_list" 
+			style="@style/content_gradview">
+	</GridView>
+
+    </LinearLayout>
+  <include android:id="@+id/lv_item_bottom"
+             layout="@layout/item_bottom"/>
+   
+</LinearLayout>

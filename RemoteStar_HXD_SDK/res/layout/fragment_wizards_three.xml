@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+                android:layout_above="@+id/linear"
+        android:layout_below="@+id/textWizardsInfo"
+        android:cacheColorHint="#FFFFFF"
+        android:scrollbars="none" >
+    </ListView>
+
+    <et.song.remotestar.SideBar
+        android:id="@+id/sideBar"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+                        android:layout_above="@+id/linear"
+        android:layout_below="@+id/textWizardsInfo"
+        android:background="#1A000000" />
+
+    <TextView
+        android:id="@+id/text_az"
+        android:layout_width="70dip"
+        android:layout_height="70dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@color/color_az_bg"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        android:visibility="gone" />
+
+
+
+    <TextView
+        android:id="@+id/textWizardsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/str_wizards_info_3"
+        android:textSize="15sp" />
+
+    
+     <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="1dip" >
+
+        <Button
+            android:id="@+id/button_brand"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:gravity="center"
+                        android:textSize="12sp"
+            android:text="@string/str_wizards_info_2_1"
+             />
+
+        <Button
+            android:id="@+id/button_study"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:gravity="center"
+                        android:textSize="12sp"
+            android:text="@string/str_wizards_info_2_2"
+             />
+
+        <Button
+            android:id="@+id/button_fast"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:gravity="center"
+                        android:textSize="12sp"
+            android:text="@string/str_wizards_info_2_5"
+             />
+
+    </LinearLayout>
+    
+</RelativeLayout>

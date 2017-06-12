@@ -1,0 +1,1946 @@
+Running in: C:\k14\Gviews
+2109 resources found
+
+Not generating usage matrices. If you would like them, create a directory named 'resource-matrices' in the base of your project.
+
+498 unused resources were found:
+array     : spingarr
+    C:\k14\Gviews\res\values-zh-rCN\array.xml
+    C:\k14\Gviews\res\values-zh-rHK\array.xml
+    C:\k14\Gviews\res\values-zh-rTW\array.xml
+    C:\k14\Gviews\res\values\array.xml
+attr      : roundHeight
+    C:\k14\Gviews\res\values\attr.xml
+attr      : roundWidth
+    C:\k14\Gviews\res\values\attr.xml
+color     : add_more_background
+    C:\k14\Gviews\res\values\color.xml
+color     : alpha_blue
+    C:\k14\Gviews\res\values\color.xml
+color     : bg_color
+    C:\k14\Gviews\res\values\color.xml
+color     : bg_infrared
+    C:\k14\Gviews\res\values\color.xml
+color     : bg_infrared_p
+    C:\k14\Gviews\res\values\color.xml
+color     : btn_bottom
+    C:\k14\Gviews\res\values\color.xml
+color     : btn_cen
+    C:\k14\Gviews\res\values\color.xml
+color     : btn_highlight
+    C:\k14\Gviews\res\values\color.xml
+color     : btn_top
+    C:\k14\Gviews\res\values\color.xml
+color     : edit_mask
+    C:\k14\Gviews\res\values\color.xml
+color     : exitcolor
+    C:\k14\Gviews\res\values\color.xml
+color     : font_color
+    C:\k14\Gviews\res\values\color.xml
+color     : green
+    C:\k14\Gviews\res\values\color.xml
+color     : half_alpha
+    C:\k14\Gviews\res\values\color.xml
+color     : home_bg_color
+    C:\k14\Gviews\res\values\color.xml
+color     : keyboard_user_name
+    C:\k14\Gviews\res\values\color.xml
+color     : light_blue
+    C:\k14\Gviews\res\values\color.xml
+color     : listview_foucs
+    C:\k14\Gviews\res\values\color.xml
+color     : match_user
+    C:\k14\Gviews\res\values\color.xml
+color     : menu_checked_color
+    C:\k14\Gviews\res\values\color.xml
+color     : menu_unchecked_color
+    C:\k14\Gviews\res\values\color.xml
+color     : merchant_name_color
+    C:\k14\Gviews\res\values\color.xml
+color     : profile_bg
+    C:\k14\Gviews\res\values\color.xml
+color     : profile_button_color
+    C:\k14\Gviews\res\values\color.xml
+color     : reseda
+    C:\k14\Gviews\res\values\color.xml
+color     : tar_bar
+    C:\k14\Gviews\res\values\color.xml
+color     : text_color_green
+    C:\k14\Gviews\res\values\color.xml
+dimen     : about_bottom_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : about_bottom_img_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : about_pager_margin
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : alarm_dialog_area_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : alarm_dialog_bottom_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : alarm_dialog_bottom_input_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : alarm_dialog_bottom_input_right_btn_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : alarm_dialog_center_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : alarm_dialog_image_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : alarm_dialog_top_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : alarm_dialog_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : bottom_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : bt_add_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : bt_choose_wifi_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : bt_choose_wifi_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : bt_listen_between
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : bt_next_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : bt_next_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : call_topview_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : check_box_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : check_box_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : contact_head_img_width_height
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+dimen     : contact_head_play_icon_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : contact_modify_header_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : controlbar_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : ctl_modify_info_btn_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : cut_img_bottom_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : cut_img_button_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : cut_img_header_img_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : date_size
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : dialog_bottom_button_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : dialog_bottom_button_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : dialog_separator_margin_left_right
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : dialog_size
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : edit_left_label_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : gd_arrow_offset
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : head_logo_size
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : header_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : infrared_set_orientation_btn_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : infrared_set_wifi_btn_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : infrared_set_wifi_btn_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : infrared_set_wifi_dialog_content_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : keyboard_filter_user_column_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : keyboard_number_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : keyboard_number_size
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : keyboard_number_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : keyboard_search_column_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : keyboard_search_list_divider_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : keyboard_search_list_item_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : keyboard_separator_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : loading_dialog_content_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : loading_dialog_title_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : local_device_item_img_add_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : local_device_item_img_type_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : login_register_type_img_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : login_type_layout_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : message_bottom_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : message_header_img_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : message_send_btn_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : normal_button_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : normal_button_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_call_anim_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_call_bottom_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_call_btn_left_right_margin
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_call_btn_top_bottom_margin
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_call_header_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_call_top_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_control_bar_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_monitor_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_monitor_bar_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_video_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_video_bar_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_video_local_surface_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : p2p_video_local_surface_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : pb_list_date_pick_btn_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : pb_list_date_pick_title_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : pb_list_datepick_item_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : pb_list_datepick_year_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : pb_list_item_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : pb_list_search_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : pb_top_info_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : quick_item_bottom_margin
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : quick_item_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : quick_item_icon_padding
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : quick_item_text_size
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : quick_item_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : recent_call_state_img_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : recent_call_state_img_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : recent_item_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : recent_item_user_icon_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : register_result_textsize
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : selector_dialog_content_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : set
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : shake_handle_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : shake_handle_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : smart_key_layout_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : sys_msg_content_min_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : sys_msg_item_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : tab_icon_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : tab_icon_width
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : tell_detail_item_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : tell_detail_user_icon_width_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : three_add_icon_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : three_layout_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : toast_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : top_btn_size
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : top_info_bar_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : wheel_item_height
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+dimen     : windows_title
+    C:\k14\Gviews\res\values-sw360dp\dimen.xml
+    C:\k14\Gviews\res\values-sw600dp\dimen.xml
+    C:\k14\Gviews\res\values\dimen.xml
+id        : account_icon
+    C:\k14\Gviews\res\layout\fragment_security_control.xml
+id        : alarm_type2_text
+    C:\k14\Gviews\res\layout-xlarge\activity_alarmcj.xml
+    C:\k14\Gviews\res\layout\activity_alarmcj.xml
+id        : both
+id        : bounceScrollView
+    C:\k14\Gviews\res\layout\fragment_net_control.xml
+id        : buzzer_text
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+id        : by_register
+    C:\k14\Gviews\res\layout-zh\register_form2.xml
+id        : center_solid
+    C:\k14\Gviews\res\layout\p2p_playback.xml
+id        : contact_list_rightarrow
+    C:\k14\Gviews\res\layout\list_contact_item3.xml
+id        : contact_pro
+    C:\k14\Gviews\res\layout\activity_control_main.xml
+id        : date_pick
+    C:\k14\Gviews\res\layout\gridview_my_album_nodata.xml
+    C:\k14\Gviews\res\layout\gridview_my_videos_nodata.xml
+    C:\k14\Gviews\res\layout\list_alarm_record_nodata.xml
+    C:\k14\Gviews\res\layout\list_contact_nodata.xml
+id        : dialog_content
+    C:\k14\Gviews\res\layout\activity_device_update.xml
+    C:\k14\Gviews\res\layout\dialog_device_info.xml
+    C:\k14\Gviews\res\layout\dialog_input.xml
+    C:\k14\Gviews\res\layout\dialog_loading.xml
+    C:\k14\Gviews\res\layout\dialog_loading2.xml
+    C:\k14\Gviews\res\layout\dialog_normal.xml
+    C:\k14\Gviews\res\layout\dialog_prompt.xml
+    C:\k14\Gviews\res\layout\dialog_renamenormal.xml
+    C:\k14\Gviews\res\layout\dialog_selector.xml
+    C:\k14\Gviews\res\layout\dialog_update.xml
+id        : dialog_title
+    C:\k14\Gviews\res\layout\activity_device_update.xml
+    C:\k14\Gviews\res\layout\dialog_about.xml
+    C:\k14\Gviews\res\layout\dialog_device_info.xml
+    C:\k14\Gviews\res\layout\dialog_input.xml
+    C:\k14\Gviews\res\layout\dialog_loading.xml
+    C:\k14\Gviews\res\layout\dialog_normal.xml
+    C:\k14\Gviews\res\layout\dialog_prompt.xml
+    C:\k14\Gviews\res\layout\dialog_renamenormal.xml
+    C:\k14\Gviews\res\layout\dialog_selector.xml
+    C:\k14\Gviews\res\layout\dialog_update.xml
+id        : disabled
+id        : email_arrow
+    C:\k14\Gviews\res\layout-zh-rHK\activity_account.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_account.xml
+    C:\k14\Gviews\res\layout-zh\activity_account.xml
+    C:\k14\Gviews\res\layout\activity_account.xml
+id        : email_icon
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+id        : email_left_label
+    C:\k14\Gviews\res\layout-zh-rHK\activity_account.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_account.xml
+    C:\k14\Gviews\res\layout-zh\activity_account.xml
+    C:\k14\Gviews\res\layout\activity_account.xml
+id        : email_text_left
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+id        : error_account
+    C:\k14\Gviews\res\layout\activity_modify_contact.xml
+id        : flip
+id        : header_arrow
+    C:\k14\Gviews\res\layout\activity_modify_contact.xml
+id        : icon_about
+id        : icon_ctl_alarm
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : icon_ctl_defence_area
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : icon_ctl_media
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : icon_ctl_net
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : icon_ctl_record
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : icon_ctl_remote
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : icon_ctl_security
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : icon_ctl_time
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : icon_exit
+id        : icon_logout
+id        : icon_sysnotify
+id        : icon_sysset
+id        : icon_update
+id        : imageView1
+    C:\k14\Gviews\res\layout\gridview_my_album_nodata.xml
+    C:\k14\Gviews\res\layout\gridview_my_videos_nodata.xml
+    C:\k14\Gviews\res\layout\list_alarm_record_nodata.xml
+    C:\k14\Gviews\res\layout\list_contact_nodata.xml
+id        : image_reverse_text
+    C:\k14\Gviews\res\layout\fragment_video_control.xml
+id        : img_arrow
+    C:\k14\Gviews\res\layout\net_status_bar.xml
+id        : img_connect_failed
+    C:\k14\Gviews\res\layout\dialog_prompt_box1.xml
+id        : img_help
+    C:\k14\Gviews\res\layout\dialog_help.xml
+id        : img_insert
+    C:\k14\Gviews\res\layout\dialog_listen.xml
+id        : img_insert_infrared
+    C:\k14\Gviews\res\layout\dialog_insert_infrared.xml
+id        : img_remind
+    C:\k14\Gviews\res\layout\dialog_promopt_box2.xml
+id        : img_wait_connection
+    C:\k14\Gviews\res\layout\dialog_wait_connection.xml
+id        : label1
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : label2
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : layout_bottom
+id        : layout_cNumber
+    C:\k14\Gviews\res\layout\activity_add_contact.xml
+    C:\k14\Gviews\res\layout\activity_add_contact_next.xml
+    C:\k14\Gviews\res\layout\activity_modify_account_email.xml
+    C:\k14\Gviews\res\layout\activity_modify_contact.xml
+    C:\k14\Gviews\res\layout\modify_npc_bound_email.xml
+id        : layout_confirm_pwd
+    C:\k14\Gviews\res\layout-en\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout-en\register_form2.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout-zh-rHK\register_form2.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout-zh-rTW\register_form2.xml
+    C:\k14\Gviews\res\layout-zh\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout-zh\register_form2.xml
+    C:\k14\Gviews\res\layout\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout\register_form2.xml
+id        : layout_emailforget
+    C:\k14\Gviews\res\layout-en\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout-zh\activity_forgetpassword.xml
+    C:\k14\Gviews\res\layout\activity_forgetpassword.xml
+id        : layout_form
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : layout_header
+    C:\k14\Gviews\res\layout\list_contact_item2.xml
+id        : layout_p2p
+    C:\k14\Gviews\res\layout\p2p_monitor.xml
+id        : layout_password
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : layout_pwd
+    C:\k14\Gviews\res\layout-en\register_form2.xml
+    C:\k14\Gviews\res\layout-zh-rHK\register_form2.xml
+    C:\k14\Gviews\res\layout-zh-rTW\register_form2.xml
+    C:\k14\Gviews\res\layout-zh\register_form2.xml
+    C:\k14\Gviews\res\layout\activity_qr_code.xml
+    C:\k14\Gviews\res\layout\activity_radar_add.xml
+    C:\k14\Gviews\res\layout\register_form2.xml
+id        : layout_qrcode
+    C:\k14\Gviews\res\layout\activity_creat_qr_code.xml
+id        : layout_ssid
+    C:\k14\Gviews\res\layout\activity_qr_code.xml
+    C:\k14\Gviews\res\layout\activity_radar_add.xml
+id        : layout_top
+id        : layout_username
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_modify_account_phone.xml
+    C:\k14\Gviews\res\layout\activity_modify_account_phone2.xml
+    C:\k14\Gviews\res\layout\dialog_input.xml
+id        : layout_wait_di
+    C:\k14\Gviews\res\layout\activity_radar_add_first.xml
+id        : line1
+    C:\k14\Gviews\res\layout\notify_alarm_bar.xml
+    C:\k14\Gviews\res\layout\notify_status_bar.xml
+id        : line2
+    C:\k14\Gviews\res\layout\notify_alarm_bar.xml
+id        : line3
+    C:\k14\Gviews\res\layout\notify_alarm_bar.xml
+id        : line4
+    C:\k14\Gviews\res\layout\notify_alarm_bar.xml
+id        : list_allarm
+    C:\k14\Gviews\res\layout\fragment_alarm_record.xml
+id        : list_gallery
+    C:\k14\Gviews\res\layout\dialog_gallery.xml
+id        : login_main
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : login_topimg
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : manualOnly
+id        : mm
+    C:\k14\Gviews\res\layout\list_alarm_record_item2.xml
+id        : msgCount
+    C:\k14\Gviews\res\layout\list_contact_item2.xml
+id        : net_status_bar_info_top
+    C:\k14\Gviews\res\layout\net_status_bar.xml
+id        : nn
+    C:\k14\Gviews\res\layout\list_alarm_record_item2.xml
+id        : one
+    C:\k14\Gviews\res\layout\fragment_setting.xml
+id        : one1_parent
+    C:\k14\Gviews\res\layout\sharecf_defencearea_rl.xml
+id        : onew
+    C:\k14\Gviews\res\layout\fragment_setting.xml
+id        : p2p_control
+id        : parent
+    C:\k14\Gviews\res\layout\list_ipc_item.xml
+id        : phone_arrow
+    C:\k14\Gviews\res\layout-zh\activity_account.xml
+id        : pir_text
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+id        : progress
+    C:\k14\Gviews\res\layout\activity_alarm_record1.xml
+    C:\k14\Gviews\res\layout\dialog_toast.xml
+    C:\k14\Gviews\res\layout\fragment_alarm_record.xml
+id        : pullDownFromTop
+id        : pullFromEnd
+id        : pullFromStart
+id        : pullUpFromBottom
+id        : pwd_img
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : radio_group
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+    C:\k14\Gviews\res\layout\fragment_net_control.xml
+    C:\k14\Gviews\res\layout\fragment_record_control.xml
+    C:\k14\Gviews\res\layout\fragment_video_control.xml
+id        : reason2
+    C:\k14\Gviews\res\layout\dialog_prompt_box1.xml
+id        : remember_nameclear_img
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : remember_pwdclear_img
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+id        : rotate
+id        : sar_img
+    C:\k14\Gviews\res\layout\activity_system_set.xml
+id        : scr_img
+    C:\k14\Gviews\res\layout\activity_system_set.xml
+id        : scrollview
+    C:\k14\Gviews\res\values\ids.xml
+id        : selectAllarmRing_left
+    C:\k14\Gviews\res\layout\activity_system_set.xml
+id        : selectAllarminterval
+    C:\k14\Gviews\res\layout\activity_system_set.xml
+id        : selectAllarminterval_left
+    C:\k14\Gviews\res\layout\activity_system_set.xml
+id        : selectBell_left
+    C:\k14\Gviews\res\layout\set_bell_ring.xml
+id        : selectedCommingRing_left
+    C:\k14\Gviews\res\layout\activity_system_set.xml
+id        : separator
+    C:\k14\Gviews\res\layout\activity_device_update.xml
+    C:\k14\Gviews\res\layout\activity_modify_account_phone.xml
+    C:\k14\Gviews\res\layout\dialog_about.xml
+    C:\k14\Gviews\res\layout\dialog_input.xml
+    C:\k14\Gviews\res\layout\dialog_renamenormal.xml
+    C:\k14\Gviews\res\layout\dialog_selector.xml
+    C:\k14\Gviews\res\layout\dialog_update.xml
+id        : setting_time_title
+    C:\k14\Gviews\res\layout\fragment_time_control.xml
+id        : shield_text
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+id        : status_bar_latest_event_content
+    C:\k14\Gviews\res\layout\notify_alarm_bar.xml
+    C:\k14\Gviews\res\layout\notify_down_bar.xml
+    C:\k14\Gviews\res\layout\notify_status_bar.xml
+id        : super_icon
+    C:\k14\Gviews\res\layout\fragment_security_control.xml
+id        : sys_text
+    C:\k14\Gviews\res\layout\fragment_setting.xml
+id        : tab_component
+    C:\k14\Gviews\res\layout\activity_main.xml
+id        : tag1
+    C:\k14\Gviews\res\layout\activity_modify_account_phone2.xml
+id        : textView1
+    C:\k14\Gviews\res\layout\dialog_listen.xml
+id        : textView2
+    C:\k14\Gviews\res\layout\dialog_listen.xml
+id        : textView3
+    C:\k14\Gviews\res\layout\dialog_listen.xml
+id        : three_number_arrow
+    C:\k14\Gviews\res\layout-zh-rHK\activity_account.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_account.xml
+    C:\k14\Gviews\res\layout-zh\activity_account.xml
+    C:\k14\Gviews\res\layout\activity_account.xml
+id        : time_text_label
+    C:\k14\Gviews\res\layout\activity_alarm_set.xml
+id        : top
+    C:\k14\Gviews\res\layout\p2p_playback.xml
+id        : tv_alarm_input
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+id        : tv_alarm_out
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+id        : tv_automatic_upgrade
+    C:\k14\Gviews\res\layout\fragment_security_control.xml
+id        : tv_connect_failed
+    C:\k14\Gviews\res\layout\dialog_prompt_box1.xml
+id        : tv_input_wifi_pwd1
+    C:\k14\Gviews\res\layout\dialog_promopt_box2.xml
+id        : tv_input_wifi_pwd2
+    C:\k14\Gviews\res\layout\dialog_promopt_box2.xml
+id        : tv_insert_infrared
+    C:\k14\Gviews\res\layout\dialog_insert_infrared.xml
+id        : tv_qrcode1
+    C:\k14\Gviews\res\layout\activity_creat_qr_code.xml
+id        : tv_qrcode2
+    C:\k14\Gviews\res\layout\activity_creat_qr_code.xml
+id        : tv_reason
+    C:\k14\Gviews\res\layout\dialog_prompt_box1.xml
+id        : tv_reason1
+    C:\k14\Gviews\res\layout\dialog_prompt_box1.xml
+id        : tv_receive_alarm_text
+    C:\k14\Gviews\res\layout\fragment_alarm_control.xml
+id        : tv_remind
+    C:\k14\Gviews\res\layout\dialog_promopt_box2.xml
+id        : tv_setting_urban
+    C:\k14\Gviews\res\layout\fragment_time_control.xml
+id        : tv_utc
+    C:\k14\Gviews\res\layout\fragment_time_control.xml
+id        : tv_wait
+    C:\k14\Gviews\res\layout\dialog_listen.xml
+id        : tx_shang
+    C:\k14\Gviews\res\layout\activity_add_waite.xml
+id        : up_arrow
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : update_progress_text
+    C:\k14\Gviews\res\layout\fragment_control_main.xml
+id        : user_icon
+    C:\k14\Gviews\res\layout\list_contact_item2.xml
+id        : user_img
+    C:\k14\Gviews\res\layout-en\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rHK\activity_login.xml
+    C:\k14\Gviews\res\layout-zh-rTW\activity_login.xml
+    C:\k14\Gviews\res\layout-zh\activity_login.xml
+    C:\k14\Gviews\res\layout\activity_login.xml
+string    : Allarm_mute
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : CNumber
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : Press_again
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : about_us
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : accept
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : accont_name_hint
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : account_already_exists_in_mask_list
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : account_email
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : account_pwd_hint
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : add
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : add_contact
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : add_contants_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : add_contants_success
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : add_device
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : add_more
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : add_nearly_tell_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : added
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_account
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_channel
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_channel2
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_defence
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_histroy
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_id_must_first_with_zero
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_id_too_long
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_info
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_manager
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_mask_id_too_long
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_number
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_serial_number
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_time
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_time2
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : alarm_type
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : allarm
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : allarm_record
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : arrowhead
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : back
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : basic_Info
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : before
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : button
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : buzzer_off
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : buzzer_on
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : call
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : call_test
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : callyou
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : camera_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : capture
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : chat
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : check
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : choose_wifi
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : comming_mute
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : confirm_clear_chat
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : confirm_pwd
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : connecting
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : contact_id
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : contact_name_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : contact_number_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : contact_number_exist
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : contacts
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : control
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : control_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : ctl
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : customize
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : day_h
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : defence_off
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : defence_on
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : delete_chat_records
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : delete_confirm
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : delete_from_list
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : delete_sys_messages
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : desc
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : detail
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : device_id_format_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : device_list
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : device_pwd_format_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : device_pwd_must_be
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : dialog_tip
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : edit
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : email_3c
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : email_login
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : end_time
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : exception
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : exception_out_of_memory
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : format_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : fragment_tab1
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : fragment_tab2
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : fragment_tab3
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : fragment_tab4
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : friend
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : friend_id_format_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : home_tab
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : hour_24
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : hour_h
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : hungup_local
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : ignore
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : image_size_too_small
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : incalling
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_alarmId
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_alarm_mask_id
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_confirm_pwd
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_device_id
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_device_name
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_device_password
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_device_pwd
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_friend_id
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_friend_name
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_msg
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_new_device_name
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_new_friend_name
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_wifi_password
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : input_wifi_ssid
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : inputdevicepassword
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : inputemail
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : introduce
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : ir_control
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : just_now
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : keyboard_tab
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : lan_search
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : login_pwd
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : login_type_email
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : login_type_mobile
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : logining
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : make
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : manually_add
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : me
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : message
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : minutes_h
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : mobile
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : modify
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : modify_alarmId
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : modify_device
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : modify_friend
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : monitor
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : monitor_error
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : month_h
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : name
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : nearby_wireless_network
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : nearly_tell_tab
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : net_wifi
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : net_wired
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : no_alarm_record
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : no_insert_utils
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : no_open
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : no_wifi_list
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : npc
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : off
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : off_line
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : okay
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : on
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : on_line
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : one_day
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : one_month
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : otherDevice
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : outcalling
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : phone_id_must_first_with_zero
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : phone_login
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : phone_number
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : playback
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : psw_not
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : qr_code
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : qr_code_scanning
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : recent
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : record
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : record_list
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : record_off
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : record_on
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : register2
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : register_title
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : remberpassword
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : rememberPass
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : remote_denfence
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : rev
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : robot_id_not_first_with_zero2
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : search
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : search_error1
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : search_error2
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : search_error3
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : search_ipc
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : searching_ipc
+    C:\k14\Gviews\res\values\strings.xml
+string    : selectAll
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : select_contant
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : send
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : send_fault
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : send_msg_error1
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : sending
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : sending_message
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : set
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : set_language
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : set_wifi
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : sets_tab
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : shake
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : shake_tab
+    C:\k14\Gviews\res\values\strings.xml
+string    : sharecf_alarm_tip3
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : sharecf_input_tip4
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : smart_key
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : start_time
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : storehouse
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : switch_login
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : tell_detail
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : three_day
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : three_number
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : toolbox
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : tv_add_device1
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : tv_add_device2
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : uncaught_exception
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : update_check_true
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : user_info_is_not
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : video_monit
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : view_screenshot
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : wifi
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : year_h
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+string    : yes
+    C:\k14\Gviews\res\values-zh-rCN\strings.xml
+    C:\k14\Gviews\res\values-zh-rHK\strings.xml
+    C:\k14\Gviews\res\values-zh-rTW\strings.xml
+    C:\k14\Gviews\res\values\strings.xml
+style     : chat_content_date_style
+    C:\k14\Gviews\res\values\styles.xml
+style     : chat_text_date_style
+    C:\k14\Gviews\res\values\styles.xml
+style     : chat_text_name_style
+    C:\k14\Gviews\res\values\styles.xml
+style     : dialog
+    C:\k14\Gviews\res\values\styles.xml
+style     : normal_bold_text
+    C:\k14\Gviews\res\values\styles.xml
+style     : popdown_center
+    C:\k14\Gviews\res\values\styles.xml
+style     : popdown_left
+    C:\k14\Gviews\res\values\styles.xml
+style     : popdown_right
+    C:\k14\Gviews\res\values\styles.xml
+style     : popup_center
+    C:\k14\Gviews\res\values\styles.xml
+style     : popup_left
+    C:\k14\Gviews\res\values\styles.xml
+style     : popup_right
+    C:\k14\Gviews\res\values\styles.xml
+style     : quickaction_bar_item
+    C:\k14\Gviews\res\values\styles.xml
+styleable : RoundAngleImageView
+    C:\k14\Gviews\res\values\attr.xml
+styleable : RoundAngleImageView_roundHeight
+    C:\k14\Gviews\res\values\attr.xml
+styleable : RoundAngleImageView_roundWidth
+    C:\k14\Gviews\res\values\attr.xml
+
+If any of the above resources are used, please submit your project as a test case so this application can be improved.
+
+This application does not maintain a dependency graph, so you should run it again after removing the above resources.

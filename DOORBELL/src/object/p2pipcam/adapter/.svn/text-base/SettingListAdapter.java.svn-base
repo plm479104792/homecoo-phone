@@ -1,0 +1,80 @@
+package object.p2pipcam.adapter;
+
+import java.util.ArrayList;
+import java.util.List;
+import object.p2pipcam.client.R;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+public class SettingListAdapter extends BaseAdapter {
+	
+	@SuppressWarnings("unused")
+	private static final String LOG_TAG = "SettingListAdapter" ;	
+	
+	private LayoutInflater listContainer = null;
+	@SuppressWarnings("unused")
+	private Context context = null;
+	private List<String> listItems = new ArrayList<String>();
+	
+	public final class SettingListItem{    
+	    public TextView SettingName;            
+	}    
+	
+	public SettingListAdapter(Context ct){
+		
+		listItems.add("test");
+		listItems.add("test");
+		listItems.add("test");
+		listItems.add("test");
+		listItems.add("test");
+		
+		context = ct;
+		listContainer = LayoutInflater.from(ct);   
+	}
+
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return listItems.size();
+	}
+
+	@Override
+	public Object getItem(int position) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long getItemId(int position) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+		
+		SettingListItem  settingListItem = null; 		
+		if(convertView == null){
+			settingListItem = new SettingListItem();  
+			convertView = listContainer.inflate(R.layout.setting_list_item, null);    
+			settingListItem.SettingName = (TextView)convertView.findViewById(R.id.SettingName) ;
+			convertView.setTag(settingListItem);
+		}else{
+			settingListItem = (SettingListItem)convertView.getTag();
+		}			
+		
+		settingListItem.SettingName.setText((String)listItems.get(position));
+        
+		return convertView;
+	}
+	
+	public void ClearAll(){
+		listItems.clear();
+	}
+	
+}

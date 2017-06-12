@@ -1,0 +1,267 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+                android:background="#eee"
+    android:scrollbarStyle="outsideOverlay" >
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="1dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_dvd_power"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/text_dvd_oc"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_oc"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_dvd_pause"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_media_pause"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_play"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_media_play"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_stop"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_media_stop"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_mute"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_mute"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_dvd_up_song"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_media_front"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_down_song"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_media_next"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_fast_forward"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_media_ff"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_fast_back"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_media_fb"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_dvd_title"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_title"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_standard"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_standard"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_menu"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_menu"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_dvd_back"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_back"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/text_dvd_up"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/text_dvd_left"
+                android:layout_width="50dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="20dip"
+                android:clickable="true"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/text_dvd_ok"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/text_dvd_right"
+                android:layout_width="50dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="20dip"
+                android:clickable="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/text_dvd_down"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

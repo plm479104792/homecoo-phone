@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/ib_img_grid_item_width"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/ib_img_grid_item_width"
+        android:layout_height="@dimen/ib_img_grid_item_height" >
+
+        <ImageView
+            android:id="@+id/video_list_defaultpic"
+            android:layout_width="@dimen/ib_img_grid_item_width"
+            android:layout_height="@dimen/ib_img_grid_item_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitXY"
+            android:src="@drawable/video_list_defaultpic" />
+
+        <ImageView
+            android:id="@+id/layout_play_btn"
+            android:layout_width="@dimen/Video_Play_Size"
+            android:layout_height="@dimen/Video_Play_Size"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/video_list_play" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="2014"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_size_small" />
+
+</LinearLayout>

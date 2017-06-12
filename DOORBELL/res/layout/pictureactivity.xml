@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/newbg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/top"
+        style="@style/top_bg_style"
+        android:layout_width="match_parent"
+        android:layout_height="50.0dip"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_phonepic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:shadowColor="@color/color_shadow"
+            android:shadowDx="1.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:text="@string/local_picture"
+            android:textColor="@color/color_white"
+            android:textSize="18.0sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/main_phone"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/picture_phone"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/main_phone"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/picture_remote"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/main_remote"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/main_phone"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/piclistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="#50000000"
+        android:dividerHeight="0.1dp"
+        android:fadeScrollbars="true"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:listSelector="@drawable/listitem_pressed_selector" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="#bcbab9" />
+
+</LinearLayout>

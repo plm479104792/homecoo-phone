@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="strs_dvd_type">
+ 
+
+    </string-array>
+    <string-array name="strs_dvd_brand">
+    <item> 步步高(BBK)</item>
+<item> 金正(Kim)</item>
+<item>TCL(TCL)</item>
+<item> 长虹(Changhong)</item>
+<item> 创维(Skyworth)</item>
+<item>大宇(Da Yu)</item>
+<item> 东芝(T0SHIBA)</item>
+<item> 飞利浦(Philips)</item>
+<item> 海尔(Haier)</item>
+<item> 海信(Hisense)</item>
+<item> 杰科(Deko)</item>
+<item> 康佳(Konka)</item>
+<item> 奇声(Qisheng)</item>
+<item> 日立(Hitachi)</item>
+<item> 三星(Samsung)</item>
+<item> 三洋(Sanyo)</item>
+<item> 松下(Panasonic)</item>
+<item> 索尼(Sony)</item>
+<item> 万利达(Malata)</item>
+<item> 夏普(Sharp)</item>
+<item> 夏新(Amoi)</item>
+<item> 先科(Yushchenko)</item>
+<item> 新科(Shinco)</item>
+<item> 其它品牌(Other brands)</item>
+<item> 爱华(Aiwa)</item>
+<item> 宝立创(Polytron)</item>
+<item> 三垦(sanken)</item>
+<item>LG(LG)</item>
+<item> 有用(ADVANTE)</item>
+<item> 先行(ADVANCE)</item>
+<item> 东盟(AICO)</item>
+<item> 爱子(AIKO)</item>
+<item> 阿基拉(AKIRA)</item>
+<item>ALLSONIC(ALLSONIC)</item>
+<item> 亚马逊(AMAZONE)</item>
+<item> 岚(ARASHI)</item>
+<item> 晨曦(ASAKI)</item>
+<item>ASATRON(ASATRON)</item>
+<item>AZAYAKA(AZAYAKA)</item>
+<item> 古巴(BCA)</item>
+<item>BDXBB(BDXBB)</item>
+<item> 蓝天(BLUESKY)</item>
+<item> 意大利(BOMBA)</item>
+<item>BRATRON/BRAVIA(BRATRON/BRAVIA)</item>
+<item> 系统(CAESAR)</item>
+<item> 加州(CALIFORNIA)</item>
+<item> 科比(COBY)</item>
+<item> 加利福(CMC)</item>
+<item> 水晶(CRYSTAL)</item>
+<item>CYBERGREEN(CYBERGREEN)</item>
+<item> 赛博(CYBERTRON)</item>
+<item>DAEWO(DAEWO)</item>
+<item> 大建(DAIKEN)</item>
+<item> 泰达(DAITA)</item>
+<item>DELTRONIC(DELTRONIC)</item>
+<item> 卫星(DIGISAT)</item>
+<item> 视频(DVD VIDEO)</item>
+<item> 直投式(DVS)</item>
+<item> 发电(ELECTRIC)</item>
+<item> 精英(ELITE)</item>
+<item> 存储器(EPROM)</item>
+<item> 专家(EXPERT)</item>
+<item> 延长(EXTEND)</item>
+<item> 一线(FIRSTLINE)</item>
+<item> 前(FRONT)</item>
+<item>FUJIELECTRIC(FUJIELECTRIC)</item>
+<item> 富士山(FUJIYAMA)</item>
+<item> 伽玛(GAMMA)</item>
+<item> 富瑞驰(FURICHI)</item>
+<item> 车(GEM)</item>
+<item> 综合(GMC)</item>
+<item> 高斯(GNG)</item>
+<item>HANNOCHS(HANNOCHS)</item>
+<item>HATEH(HATEH)</item>
+<item> 秘密(HIMITSU)</item>
+<item>HITARO(HITARO)</item>
+<item> 霍伊(HOYE)</item>
+<item> 现代(HYUNDAI)</item>
+<item> 一番(ICHIBAN)</item>
+<item>ICHICO(ICHICO)</item>
+<item>ICHITECH(ICHITECH)</item>
+<item>Iluv(Iluv)</item>
+<item> 振新(INNOVO)</item>
+<item> 日本(JAPAN)</item>
+<item> 胜利(JVC)</item>
+<item> 胜利VCD(JVC VCD )</item>
+<item> 金子(KANEKO)</item>
+<item> 河内(KAWACHI )</item>
+<item> 圆锥形(KCL)</item>
+<item>KENDWAY(KENDWAY)</item>
+<item> 坑(KENG)</item>
+<item> 建伍(KENWOOD)</item>
+<item> 小泉(KOIZUMI)</item>
+<item> 键传模(KTM)</item>
+<item> 枪骑兵(LANCER)</item>
+<item> 集成(LSI)</item>
+<item> 福星(LUCKY STAR)</item>
+<item> 马司尼(MARUNI)</item>
+<item>MARUSHIN(MARUSHIN)</item>
+<item> 矩阵(MATRIX)</item>
+<item> 松井(MATSUI)</item>
+<item> 松日(MATSUNICHI)</item>
+<item> 万朗(MAXTRON)</item>
+<item> 马亚卡(MAYAKA)</item>
+<item> 宏大(MEGA)</item>
+<item> 水户(MITO)</item>
+<item>MITOCHIBA(MITOCHIBA)</item>
+<item> 三越(MITSUKOSHI)</item>
+<item> 群(MULTIFACE)</item>
+<item> 中井(NAKAI)</item>
+<item>NANAOTECH(NANAOTECH)</item>
+<item> 御台场(ODAIBA)</item>
+<item>OKAIDO(OKAIDO)</item>
+<item> 装甲(PANZER)</item>
+<item>PARDIO(PARDIO)</item>
+<item> 铂矿(PLATINUM)</item>
+<item> 先锋(PIONEER)</item>
+<item> 接线器(PLUS)</item>
+<item> 护眼(POLYVISION)</item>
+<item> 昆腾(QUANTUM)</item>
+<item> 皇家(ROYAL)</item>
+<item> 燐子(RINRE)</item>
+<item> 代号(ROVER)</item>
+<item>SASUKI(SASUKI)</item>
+<item>SHASUGI(SHASUGI)</item>
+<item>SIEKO(SIEKO)</item>
+<item>SGK(SGK)</item>
+<item> 白银(SILVER/SKYDRIVE)</item>
+<item>SINYOKU(SINYOKU)</item>
+<item>SOUGAU(SOUGAU)</item>
+<item> 美裕(STARPLUS)</item>
+<item> 斯特尔(STELLE)</item>
+<item>SUNSONIC(SUNSONIC)</item>
+<item> 饱和(SUPERSAT)</item>
+<item> 大正(TAISHO)</item>
+<item> 海人草(TANAKA)</item>
+<item>TEKYO(TEKYO)</item>
+<item>TICSONIC(TICSONIC)</item>
+<item> 花床(TORI)</item>
+<item> 联合(UNIFY)</item>
+<item>UNISAT(UNISAT)</item>
+<item>VEGATRON(VEGATRON)</item>
+<item> 毒(VENON)</item>
+<item> 沃尔(VIAR)</item>
+<item> 维玛(VIMA)</item>
+<item> 维尔康姆(VIOCOM)</item>
+<item>VIOTEC(VIOTEC)</item>
+<item>VISHIBA(VISHIBA)</item>
+<item> 维特纶(VITRON)</item>
+<item> 世界之星(WORLDSTAR)</item>
+<item>X-PERT(X-PERT)</item>
+<item>YAMASTAR(YAMASTAR)</item>
+<item> 吉川(YOSHIKAWA)</item>
+<item> 荣代(YUNDAI)</item>
+<item>ZYREX(ZYREX)</item>
+<item> 流动(DVD MOBIL)</item>
+<item>PORTABLE(PORTABLE)</item>
+<item> 华录(Hua Lu)</item>
+<item>Marantz(Marantz)</item>
+<item> 0PP0(0PP0)</item>
+<item> 山水(Landscape)</item>
+        
+        
+    </string-array>
+
+</resources>

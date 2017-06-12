@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/fragContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tab_component"
+        android:background="@color/activity_color" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/tab_component"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/icon_my"
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/main_bgbottom" >
+
+            <ImageView
+                android:id="@+id/icon_my_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:focusable="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/main_my" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/icon_mess"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/main_bgbottom" >
+
+            <ImageView
+                android:id="@+id/icon_mess_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:focusable="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/main_mess" />
+
+            <ImageView
+                android:id="@+id/icon_new_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:layout_toRightOf="@+id/icon_mess_img"
+                android:focusable="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/share_newmes"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/icon_video"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/main_bgbottom" >
+
+            <ImageView
+                android:id="@+id/icon_video_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:focusable="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/main_video" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/icon_setting"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/main_bgbottom" >
+
+            <ImageView
+                android:id="@+id/icon_setting_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:focusable="false"
+                android:scaleType="centerCrop"
+                android:src="@drawable/main_setting" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

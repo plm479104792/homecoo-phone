@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="strs_air_type">
+ 
+ 
+    </string-array>
+    <string-array name="strs_air_brand">
+ <item>美的(Midea)</item>
+<item>东芝(Toshiba)</item>
+<item>海尔(Haier)</item>
+<item>格力(Gree)</item>
+<item>志高(Chigo)</item>
+<item>奥克斯(Oaks)</item>
+<item>春兰(Chunlan)</item>
+<item>LG(LG)</item>
+<item>TCL(TCL)</item>
+<item>三星(Samsung)</item>
+<item>小三星(Small Samsung)</item>
+<item>三洋(Sanyo)</item>
+<item>三凌重工(Sanling Heavy Industries)</item>
+<item>三凌机电(Sanling Electrical)</item>
+<item>长虹(Changhong)</item>
+<item>松下(Panasonic)</item>
+<item>乐声(Sound of music)</item>
+<item>内田(Uchida)</item>
+<item>海信(Hisense)</item>
+<item>新科(Shinco)</item>
+<item>日立(Hitachi)</item>
+<item>华凌(Hualing)</item>
+<item>科龙(Kelon)</item>
+<item>华宝(Warburg)</item>
+<item>威力(Might)</item>
+<item>长岭(Changling)</item>
+<item>迎燕(Ying Yan)</item>
+<item>蓝波(Blue Wave)</item>
+<item>玉兔(Rabbit)</item>
+<item>开利(Carrier)</item>
+<item>东宝(Toho)</item>
+<item>高路华(Gaoluhua)</item>
+<item>澳柯玛(Aucma)</item>
+<item>胜风1(Shengfeng)</item>
+<item>扬子(Yangzi)</item>
+<item>惠而浦(Whirlpool)</item>
+<item>大金(Daikin)</item>
+<item> 汇丰(HSBC)</item>
+<item>东芝2(Toshiba)</item>
+<item> 伊莱克斯(Electrolux)</item>
+<item>熊猫(Panda)</item>
+<item>上凌(Ling on)</item>
+<item>天元(Tianyuan)</item>
+<item>其它品牌(Other brands)</item>
+<item>百合(Lily)</item>
+<item>SimpLlcrty(SimpLlcrty)</item>
+<item>大宇(Daewoo)</item>
+<item>冠远(Clarent)</item>
+<item>科朗(Colones)</item>
+<item>南风(Southwind)</item>
+<item>群达(Kunda)</item>
+<item>先科(Yushchenko)</item>
+<item>新飞(Freenet)</item>
+<item>胜风2(Shengfeng)</item>
+<item>泰国(Thailand)</item>
+<item>格兰仕(Glanz)</item>
+<item>乐华(Leroy)</item>
+<item>富士通(Fujitsu)</item>
+<item>约克(York)</item>
+<item>麦克维尔(McQuay)</item>
+<item>三垦(sanken)</item>
+<item> 宝立创(polytron)</item>
+<item> 夏普(SHARP)</item>
+<item> 镇堡(ZHEN BAO)</item>
+<item> 万宝(WANBAO)</item>
+<item> 樱花(YINGHUA)</item>
+<item>全部品牌(ALL brands)</item>
+        
+        
+    </string-array>
+
+</resources>

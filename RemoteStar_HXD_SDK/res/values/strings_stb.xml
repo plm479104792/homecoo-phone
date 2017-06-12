@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="strs_stb_type">
+        
+    </string-array>
+    <string-array name="strs_stb_brand">
+       <item> 北京(Beijing)</item>
+<item> 广东(Guangdong)</item>
+<item> 广西(Guangxi)</item>
+<item> 上海/东方有线(Shanghai / Oriental Cable)</item>
+<item> 天津(Tianjin)</item>
+<item> 重庆(Chongqing)</item>
+<item> 辽宁(LIAONING)</item>
+<item> 江苏(JIANGSU)</item>
+<item> 湖北(Hubei)</item>
+<item> 四川(Sichuan)</item>
+<item> 陕西(Shaanxi)</item>
+<item> 浙江(Zhejiang)</item>
+<item> 湖南(Hunan)</item>
+<item> 山东(Shandong)</item>
+<item> 安徽(Anhui)</item>
+<item> 贵州(Guizhou)</item>
+<item> 黑龙江(Heilongjiang)</item>
+<item> 山西(Shanxi)</item>
+<item> 内蒙(Inner Mongolia)</item>
+<item> 云南(Yunnan)</item>
+<item> 河南(Henan)</item>
+<item> 海南(Hainan)</item>
+<item> 吉林(Jilin)</item>
+<item> 河北(Hebei)</item>
+<item> 福建(Fujian)</item>
+<item> 新疆(Xinjiang)</item>
+<item> 江西(Jiangxi)</item>
+<item> 东太(East Pacific)</item>
+<item>  其它城市(Other regions)</item>
+<item> 中星九号(Star on the 9th)</item>
+<item> 甘肃(Gansu)</item>
+<item> 香港(Hong Kong)</item>
+<item> 台湾(Taiwan)</item>
+<item> 华为机顶盒(Huawei STB)</item>
+<item>长虹机顶盒(Changhong STB)</item>
+<item>  康佳机顶盒(Konka STB)</item>
+<item> 中兴机顶盒(ZTE STB)</item>
+<item> 九洲机顶盒(Jiuzhou STB)</item>
+<item> 摩托罗拉机顶盒(Motorola STB)</item>
+<item> 创维机顶盒(Skyworth STB)</item>
+<item>  海信机顶盒(Hisense STB)</item>
+<item> 海尔机顶盒(Haier STB)</item>
+<item> 高斯贝尔机顶盒(GOSPELL STB)</item>
+<item> 海美迪机顶盒(Hoi Mei Di STB)</item>
+<item> 开博尔机顶盒(Open Bor STB)</item>
+<item> 天柏机顶盒(DVN STB)</item>
+<item> 大显机顶盒(Daxian STB)</item>
+<item> 乐视机顶盒(Music as STB)</item>
+<item> 斯达康机顶盒(Starcom STB)</item>
+<item> 银河机顶盒(Galaxy STB)</item>
+<item> 九联(Nine joint)</item>
+<item> 歌华高清机顶盒(Gehua STB)</item>
+<item> 天威机顶盒(Tianwei STB)</item>
+<item> 夏华机顶盒(Hua Xia STB)</item>
+<item> 佳创机顶盒(Jia Chong STB)</item>
+<item> 佳彩机顶盒(Jia Cai STB)</item>
+<item> 金网通机顶盒(Gold Netcom STB)</item>
+<item> 聚友网络(Juyou Network)</item>
+<item> 美如画机顶盒(U.S. picturesque STB)</item>
+<item> 东方广视(East WideSight)</item>
+<item> 松下机顶盒(Panasonic STB)</item>
+<item> 上广电机顶盒(SVA STB)</item>
+<item> 北广机顶盒(BBEF STB)</item>
+<item> 全景机顶盒(Panoramic STB)</item>
+<item> 航科机顶盒(Air Division STB)</item>
+<item> 力合机顶盒(Leaguer STB)</item>
+<item> 百胜机顶盒(Yum STB)/MATRIX</item>
+<item>MATRIX(MATRIX)</item>
+<item>  浪潮机顶盒(Wave)</item>
+<item> 深圳天威视讯(TOPWAY)</item>
+<item>  北京歌华有线(Gehua)</item>
+<item>  户户通(Huhutong)</item>
+<item>  小米盒子(Millet box)</item>
+        
+    </string-array>
+
+</resources>

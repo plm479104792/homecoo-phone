@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#01000000</color>
+
+    <color name="color_splash_text">#33b5e5</color>
+       <color name="grid_item_pressed">#20000000</color>
+    <color name="grid_line">#20FFFFFF</color>
+    <color name="color_result_view">#b0000000</color>
+    <color name="color_viewfinder_mask">#60000000</color>
+    <color name="color_possible_result_points">#c0ffff00</color>
+      <color name="color_viewfinder_frame">#ff000000</color>
+  <color name="color_viewfinder_laser">#ffff0000</color>
+   <color name="color_az_bg">#0099cc</color>
+</resources>

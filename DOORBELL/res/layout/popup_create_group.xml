@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#60000000" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/biz_popup_bg"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/biz_add_poup_title"
+            android:textColor="@color/color_black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/title_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/biz_add_poup_show"
+            android:textColor="@color/color_black"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/popup_create_group_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/biz_edittext_border"
+            android:digits="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm-0123456789"
+            android:hint="@string/biz_add_edit_show"
+            android:inputType="textPersonName"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:textSize="16dp" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/popup_create_group_edittext_pass"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/biz_edittext_border"
+            android:digits="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm-0123456789"
+            android:hint="@string/biz_add_edit_show1"
+            android:inputType="textPersonName"
+            android:maxLength="12"
+            android:singleLine="true"
+            android:textSize="16dp" >
+        </EditText>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#bbbbbb" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/popup_create_group_cancel"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/biz_popup_btn_left_selector"
+                android:text="@string/biz_add_cancel"
+                android:textColor="@color/color_biz_blue"
+                android:textSize="18dp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#bbbbbb" />
+
+            <Button
+                android:id="@+id/popup_create_group_create"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/biz_popup_btn_left_selector"
+                android:text="@string/biz_add_creat"
+                android:textColor="@color/color_biz_blue"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

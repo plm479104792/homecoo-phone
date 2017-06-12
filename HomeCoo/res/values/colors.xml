@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_white">#ffffffff</color>
+    <color name="color_shadow">#ff333333</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_divider">#ffdddddd</color>
+    <color name="color_black">#ff000000</color>
+    <color name="color_less_black">#ee000000</color>
+    <color name="color_info">#ff7F7F7F</color>
+    <color name="more_subtitle">#ff0044ff</color>
+    <color name="color_blue">#ff0000ff</color>
+    <color name="color_bg_less_shadow">#ff888888</color>
+    <color name="color_green">#ff00dd11</color>
+    <color name="color_light_blue">#00cccc</color>
+    <color name="color_grey">#88888888</color>
+     <color name="color_gray">#F0F0F0</color>
+    <color name="color_line">#ff444444</color>
+    <color name="color_top_bg">#ff333333</color>
+    <color name="color_grid_pressed">#FF0EAAE4</color>
+    <color name="color_grid_bg">#ff0caae4</color>
+    <color name="color_setting_title_bg">#ff888888</color>
+    <color name="color_less_blue">#ff32aff6</color>
+    <color name="color_orange">#FFA500</color>
+    <color name="dialog_divider">#ffbfcbd3</color>
+    <color name="listSelector">#BCEFEF</color>
+    <color name="text_color_main">#ff434343</color>
+    <color name="color_red1">#D3123F</color>
+    <color name="txt_gray">#565656</color>
+    <color name="bg_headerbar_spinner_normal">@color/transparent</color>
+    <color name="bg_headerbar_spinner_selected">#5f000000</color>
+    <color name="bg_headerbar_spinner_press">#7f000000</color>
+    
+    
+      <color name="notes_color">#ff777777</color>
+      <color name="font_value">#ff888271</color>
+      <color name="text_selected_color">#ffff9f08</color>  
+      <color name="text_press_color">#ffff4b08</color>
+      <color name="dialog_listitem_press">#ffd0dce4</color>
+
+      
+         <color name="grgray">#565656</color>
+      
+</resources>

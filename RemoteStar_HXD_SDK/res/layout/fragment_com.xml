@@ -1,0 +1,125 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbarStyle="outsideOverlay" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="1dip" >
+
+        
+         <TextView
+        android:id="@+id/textWizardsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:autoLink="web"
+        android:text="@string/str_study_connect_err_info" />
+        <LinearLayout
+        
+        
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="1dip" >
+
+            <Button
+                android:id="@+id/buttonBT"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_button_cast_selector"
+                android:text="@string/str_bt"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/buttonBle"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_button_cast_selector"
+                android:text="@string/str_ble"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="1dip" >
+
+            <Button
+                android:id="@+id/buttonIO"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_button_cast_selector"
+                android:text="@string/str_io"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/buttonUSB"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_button_cast_selector"
+                android:text="@string/str_usb"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="1dip" >
+
+            <Button
+                android:id="@+id/buttonWifi"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_button_cast_selector"
+                android:text="@string/str_wifi"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/buttonWifiLan"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_button_cast_selector"
+                android:text="@string/str_wifi_ex"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="1dip" >
+
+            <Button
+                android:id="@+id/buttonSound"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_button_cast_selector"
+                android:text="@string/str_sound"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="strs_pjt_type">
+       
+        
+        
+    </string-array>
+    <string-array name="strs_pjt_brand">
+      <item><![CDATA[爱普生(Epson)]]></item>
+ <item><![CDATA[东芝(Toshiba)]]></item>
+ <item><![CDATA[夏普(Sharp)]]></item>
+ <item><![CDATA[松下(Panasonic)]]></item>
+ <item><![CDATA[方正(Fangzheng)]]></item>
+ <item><![CDATA[富士通(Fujitsu)]]></item>
+ <item><![CDATA[日立(Hitachi)]]></item>
+ <item><![CDATA[索尼(Sony)]]></item>
+ <item><![CDATA[三洋(Sanyo)]]></item>
+ <item><![CDATA[奥图码(Optoma)]]></item>
+ <item><![CDATA[NEC(NEC)]]></item>
+ <item><![CDATA[三菱(Mitsubishi)]]></item>
+ <item><![CDATA[富可视(InFocus)]]></item>
+ <item><![CDATA[中宝(Zhongbao)]]></item>
+ <item><![CDATA[瑞诚(Rui Cheng)]]></item>
+ <item><![CDATA[some(some)]]></item>
+ <item><![CDATA[惠普(HP)]]></item>
+ <item><![CDATA[戴尔(Dell)]]></item>
+ <item><![CDATA[佳能(Canon)]]></item>
+ <item><![CDATA[宏基(Acer)]]></item>
+ <item><![CDATA[明基(BenQ)]]></item>
+ <item><![CDATA[先峰(Pioneer)]]></item>
+ <item><![CDATA[晨星(Morningstar)]]></item>
+ <item><![CDATA[宝丽莱(The Polaroid)]]></item>
+ <item><![CDATA[爱其(Aiqi)]]></item>
+ <item><![CDATA[LG(LG)]]></item>
+ <item><![CDATA[拍得丽(PREMIER)]]></item>
+ <item><![CDATA[飞利浦(Philips)]]></item>
+ <item><![CDATA[优派(ViewSonic)]]></item>
+ <item><![CDATA[其它品牌]]></item>
+    </string-array>
+
+
+</resources>

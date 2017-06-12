@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+        android:background="#eee"
+    android:scrollbarStyle="outsideOverlay" >
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+
+    android:paddingTop="1dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_tv_power"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/text_tv_home"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_tv_123"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+           
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_123"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_tv_menu"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+           
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_menu"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_tv_back"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+           
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_back"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_tv_mute"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+           
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_mute"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="70dp"
+                      android:layout_height="match_parent"
+            android:background="@drawable/bg_double"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_tv_vol_add"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentTop="true"
+                
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_voladd"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_tv_vol_sub"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:clickable="true"
+                android:gravity="center" 
+                android:text="@string/str_other_volsub"
+                android:textColor="#000000"
+                android:textSize="12sp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/text_tv_up"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/text_tv_left"
+                    android:layout_width="50dp"
+                    android:layout_height="120dp"
+                    android:layout_marginRight="20dip"
+                   
+                    android:clickable="true"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/text_tv_ok"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+              
+                    android:clickable="true"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/text_tv_right"
+                    android:layout_width="50dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dip"
+                    
+                    android:clickable="true"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/text_tv_down"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    
+                    android:clickable="true"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout 
+        
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_double"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+
+            <TextView
+                android:id="@+id/text_tv_ch_sub"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_chsub"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_tv_ch_add"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_chadd"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+       </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

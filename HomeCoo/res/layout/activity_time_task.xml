@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tuwa.smarthome.activity.TimeTaskActivity" >
+
+    <include
+        android:id="@+id/lv_item_header"
+        layout="@layout/item_header" />
+      <LinearLayout 
+        style="@style/content_layout"
+        android:background="@drawable/bg_content_base">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_white_corner"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_addtimetask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_add_sel"
+            android:drawablePadding="3dp"
+            android:padding="5dp"
+            android:text="请按此处添加定时任务" />
+
+        <TimePicker
+            android:id="@+id/timepicker_single3"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+          
+           />
+
+        <GridView
+            android:id="@+id/gv_timetask_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:horizontalSpacing="5dp"
+            android:numColumns="1"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="0dp" >
+        </GridView>
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

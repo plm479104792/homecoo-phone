@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/top"
+        style="@style/top_bg_style"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/ftp_cancel"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1.0"
+            android:background="@drawable/btn_back_selector"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:text="@string/back"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_title_size" />
+
+        <TextView
+            android:id="@+id/tv_camera_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:shadowColor="@color/color_shadow"
+            android:shadowDx="1.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:text="@string/setting_ftp"
+            android:textColor="@color/color_white"
+            android:textSize="18.0sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/ftp_ok"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1.0"
+            android:background="@drawable/btnselector"
+            android:text="@string/done"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_title_size" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/list_bg"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/ftp_tv_server"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:gravity="left"
+                        android:text="@string/ftp_server"
+                        android:textColor="@color/color_black" />
+
+                    <EditText
+                        android:id="@+id/ftp_edit_server"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_bg"
+                        android:maxLength="64"
+                        android:singleLine="true" >
+                    </EditText>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:src="@color/color_grey" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/ftp_tv_port"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:gravity="left"
+                        android:text="@string/ftp_port"
+                        android:textColor="@color/color_black" />
+
+                    <EditText
+                        android:id="@+id/ftp_edit_port"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_bg"
+                        android:hint="21"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:singleLine="true" >
+                    </EditText>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:src="@color/color_grey" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/ftp_tv_user"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:gravity="left"
+                        android:text="@string/ftp_user"
+                        android:textColor="@color/color_black" />
+
+                    <EditText
+                        android:id="@+id/ftp_edit_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_bg"
+                        android:maxLength="64"
+                        android:singleLine="true" >
+                    </EditText>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:src="@color/color_grey" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/ftp_tv_pwd"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:gravity="left"
+                        android:text="@string/ftp_pwd"
+                        android:textColor="@color/color_black" />
+
+                    <EditText
+                        android:id="@+id/ftp_edit_pwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_bg"
+                        android:inputType="textPassword"
+                        android:maxLength="64"
+                        android:singleLine="true" >
+                    </EditText>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="5dp"
+                    android:src="@color/color_grey" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:id="@+id/ftp_tv_upload_interval_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="left"
+                        android:text="@string/ftp_upload_interval_time"
+                        android:textColor="@color/color_black" />
+
+                    <EditText
+                        android:id="@+id/ftp_edit_upload_interval_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/edit_bg"
+                        android:hint="0-3600"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true" >
+                    </EditText>
+                </LinearLayout>
+
+                <!-- <ImageView -->
+                <!-- android:id="@+id/imageView1" -->
+                <!-- android:layout_width="match_parent" -->
+                <!-- android:layout_height="1dp" -->
+                <!-- android:layout_marginLeft="5dp" -->
+                <!-- android:layout_marginRight="5dp" -->
+                <!-- android:src="@color/color_grey" /> -->
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

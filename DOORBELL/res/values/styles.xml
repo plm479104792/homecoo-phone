@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="SwipeBackLayout">
+        <item name="EdgeSize">20dip</item>
+        <item name="ShadowLeft">@drawable/shadow_left</item>
+        <item name="ShadowRight">@drawable/shadow_right</item>
+        <item name="ShadowBottom">@drawable/shadow_bottom</item>
+    </style>
+   <style name="MainAnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/poup_main_more_show</item>
+        <item name="android:windowExitAnimation">@anim/poup_main_more_dismiss</item>
+    </style>
+    <style name="about_title_style">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/more_subtitle</item>
+        <item name="android:layout_marginBottom">5.0dip</item>
+    </style>
+
+    <style name="about_content_style">
+        <item name="android:textSize">@dimen/text_normal_size</item>
+        <item name="android:background">@drawable/detailpanel_bg</item>
+        <item name="android:padding">15.0dip</item>
+    </style>
+
+    <style name="button_style">
+        <item name="android:background">@drawable/new_user_selector</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/text_color_d</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="top_bg_style">
+        <item name="android:background">@drawable/top_bg_blue</item>
+    </style>
+
+    <style name="bg_style">
+        <item name="android:background">@drawable/newbg</item>
+    </style>
+
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/zoomin</item>
+        <item name="android:windowExitAnimation">@anim/zoomout</item>
+    </style>
+
+    <style name="Theme.Start" parent="android:Theme">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="MyCheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_aler_selector</item>
+        <item name="android:paddingRight">20.0dip</item>
+        <item name="android:maxHeight">20.0dip</item>
+    </style>
+
+</resources>

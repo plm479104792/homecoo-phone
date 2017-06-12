@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tuwa.smarthome.activity.SpaceManegeActivity" >
+
+    <include
+        android:id="@+id/lv_item_header"
+        layout="@layout/item_header" />
+     <LinearLayout 
+        style="@style/content_layout"
+        android:background="@drawable/bg_content_base">
+
+    <LinearLayout
+        style="@style/first_linearlayout"
+        android:weightSum="4" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:orientation="vertical"
+            android:paddingRight="10dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/abs__bright_foreground_holo_dark"
+                android:visibility="gone" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_spacetoserver"
+                style="@style/left_meniu_textview"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/leftmenu_toserver_sel"
+                android:drawablePadding="5dp"
+                android:text="同步空间到服务器" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/abs__bright_foreground_holo_dark"
+                android:visibility="gone" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_spacetolocal"
+                style="@style/left_meniu_textview"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/leftmenu_downlocal_sel"
+                android:drawablePadding="5dp"
+                android:text="同步空间到本地" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/abs__bright_foreground_holo_dark"
+                android:visibility="gone" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_white_corner"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_addspace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_add_sel"
+                android:drawablePadding="3dp"
+                android:padding="5dp"
+                android:text="添加新空间" />
+
+            <GridView
+                android:id="@+id/gv_spacelist"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:horizontalSpacing="5dp"
+                android:numColumns="2"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="0dp" >
+            </GridView>
+        </LinearLayout>
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

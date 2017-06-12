@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content" 
+	android:layout_width="wrap_content"
+	android:background="#ffffffff" 
+	android:orientation="horizontal"
+	android:id="@+id/dialog">
+	  <TableLayout 
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content">
+	      <TableRow 
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"   >
+	         <TextView 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tv_phone" 
+			   android:text="手机号" />
+	         <EditText 
+	           android:id="@+id/et_phoneno" 
+		       android:layout_height="wrap_content"
+			   android:layout_width="match_parent"
+			   android:hint="请输入注册的手机号"
+			   android:textSize="@dimen/rigst_text_size"
+		      /> 
+		      <TextView
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tv_getMsg" 
+			   android:textSize="10dp"
+			   android:textColor="@color/color_light_blue"
+			   android:text="获取验证码" />
+	      </TableRow>
+	      <TableRow
+	          android:id="@+id/tr_identify_code"
+	          
+	          >
+	         <TextView 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tv_identify_code" 
+			   android:text="验证码" 
+			   />
+	         <EditText 
+		       android:layout_height="wrap_content"
+			   android:layout_width="match_parent"
+			   android:id="@+id/et_identify_code" 
+			   android:textSize="@dimen/rigst_text_size"
+			   android:hint="请输入验证码"
+		    />
+	      </TableRow>
+	      
+	  </TableLayout>
+
+</LinearLayout>

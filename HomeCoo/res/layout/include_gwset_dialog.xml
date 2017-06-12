@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content" 
+	android:layout_width="wrap_content"
+	android:background="#ffffffff" 
+	android:orientation="horizontal"
+	android:id="@+id/dialog">
+	 <TableLayout 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:stretchColumns="1"
+          >
+          <TableRow >
+		   <TextView 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tvdevname" 
+			   android:text="网关ID:" />
+		   <EditText 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			    android:id="@+id/tv_gwno" 
+			    android:hint="请输入网关ID"
+			    android:textSize="@dimen/rigst_text_size"
+			    />
+		   </TableRow>
+        <TableRow >
+		  <TextView 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tvdevsite" 
+			   android:text="网关IP:" />
+	        <EditText
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/et_gwip" 
+			    android:hint="请输入网关IP"
+			    android:textSize="@dimen/rigst_text_size"
+			   android:minWidth="80dip"/>
+		  </TableRow>
+		 <TableRow 
+		     android:id="@+id/tr_wgpwd">
+		  <TextView 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tv_wg_passwd" 
+			   android:text="网关密码:" />
+	        <EditText
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/et_wg_passwd" 
+			    android:hint="网关密码由8位字母或数字组成"
+			    android:textSize="@dimen/rigst_text_size"
+			   android:minWidth="80dip"/>
+		  </TableRow>
+        
+	 </TableLayout>
+
+	
+	
+</LinearLayout>

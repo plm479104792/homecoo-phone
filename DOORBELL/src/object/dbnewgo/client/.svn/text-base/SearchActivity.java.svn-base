@@ -1,0 +1,223 @@
+package object.p2pipcam.client;
+
+
+import java.util.Map;
+
+import object.p2pipcam.adapter.SearchListAdapter;
+import object.p2pipcam.content.ContentCommon;
+import object.p2pipcam.nativecaller.NativeCaller;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnKeyListener;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
+import android.widget.ListView;
+
+public class SearchActivity extends Activity {
+	
+	private static final String LOG_TAG = "SearchActivity" ;
+	private static final int MENU_ID_REFRESH = 1;
+	private ListView searchList = null;
+	
+	private static final int SEARCH_TIME = 3000 ;
+	
+	private SearchListAdapter listAdapter = null;
+	private ImageView imgRefresh = null;
+	private ProgressDialog progressdlg = null;
+	
+		
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d(LOG_TAG, "SearchActivity onCreate") ;
+        requestWindowFeature(Window.FEATURE_NO_TITLE);        
+        setContentView(R.layout.search);
+        
+        progressdlg = new ProgressDialog(this);
+        progressdlg.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressdlg.setMessage(getString(R.string.searching_tip));
+                
+        findView();        
+        setControlListener();    
+       
+        listAdapter = new SearchListAdapter(this);        
+        searchList.setAdapter(listAdapter) ;      
+        
+        //开始搜索局域网摄像机        
+        startSearch();
+        
+    }
+    
+    //创建Handler对象 
+    Handler handler = new Handler(); 
+
+    //新建一个线程对象 
+    Runnable updateThread = new Runnable(){ 
+
+	    //将要执行的操作写在线程对象的run方法当中 
+	    public void run(){ 
+	    	NativeCaller.StopSearch() ;	
+	    	progressdlg.dismiss();
+	    	//添加成功，通知列表更新
+	    	Message msg = updateListHandler.obtainMessage() ;
+	    	msg.what = 1;
+	    	
+	    	//将Message对象加入到消息队列当中 
+	    	updateListHandler.sendMessage(msg); 
+	    } 
+    };
+    
+    //使用匿名内部类来复写Handler当中的handlerMessage()方法 
+    Handler updateListHandler = new Handler(){ 
+		@Override 
+		public void handleMessage(Message msg) { 
+		
+			if(msg.what == 1){
+				listAdapter.notifyDataSetChanged();
+			}		
+		} 
+    };    
+    
+    
+    @Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+    	MenuItem item = menu.add(0, MENU_ID_REFRESH, 0, R.string.refresh);  
+		item.setIcon(R.drawable.refresh);
+		
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		// TODO Auto-generated method stub
+		if(item.getItemId() == MENU_ID_REFRESH){
+			RefreshSearchList();
+			return true;
+		}
+		return super.onMenuItemSelected(featureId, item);
+	}
+
+	private void startSearch(){
+    	progressdlg.show();
+    	new Thread(new SearchThread()).start() ;
+    }
+    
+    @Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+    	NativeCaller.StopSearch() ;
+		super.onStop();
+	}
+    
+    class SearchThread implements Runnable{
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub			
+			NativeCaller.StartSearch(SearchActivity.this) ;		
+		    handler.postDelayed(updateThread, SEARCH_TIME);
+		}    	
+    }    
+    
+    public void SearchResult(int cameraType, String strMac, String strName, String strDeviceID, String strIpAddr, int port){
+    	Log.d(LOG_TAG, "SearchResult: " + strIpAddr + " " + port);
+    	
+    	if (strDeviceID.length() == 0) {
+			return;
+		}
+    	if(!listAdapter.AddCamera(strMac, strName, strDeviceID)){
+    		return ;
+    	}   	
+    	
+    }    
+
+	private void setControlListener() {
+		// TODO Auto-generated method stub
+		searchList.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				
+				Map<String, Object> mapItem = (Map<String, Object>)listAdapter.getItemContent(arg2);
+				if(mapItem == null){
+					return;
+				}
+				
+				String strName = (String)mapItem.get(ContentCommon.STR_CAMERA_NAME);	
+				String strDID = (String)mapItem.get(ContentCommon.STR_CAMERA_ID);
+							
+				Intent in = new Intent(SearchActivity.this, AddCameraActivity.class);
+				in.putExtra(ContentCommon.CAMERA_OPTION, ContentCommon.ADD_CAMERA);
+				in.putExtra(ContentCommon.STR_CAMERA_NAME, strName);
+				in.putExtra(ContentCommon.STR_CAMERA_USER, ContentCommon.DEFAULT_USER_NAME);
+				in.putExtra(ContentCommon.STR_CAMERA_PWD, ContentCommon.DEFAULT_USER_PWD);
+				in.putExtra(ContentCommon.STR_CAMERA_ID, strDID);
+				startActivity(in) ;
+			}
+			
+		});
+		
+		
+		imgRefresh.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub				
+				RefreshSearchList() ;				
+			}
+			
+		});
+		
+		progressdlg.setOnKeyListener(new OnKeyListener(){
+
+			@Override
+			public boolean onKey(DialogInterface dialog, int keyCode,
+					KeyEvent event) {
+				
+				if(keyCode == KeyEvent.KEYCODE_BACK){
+					return true;
+				}
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+		});
+	}
+
+	private void RefreshSearchList() {
+		// TODO Auto-generated method stub
+		NativeCaller.StopSearch();
+		
+		//清空列表				
+		listAdapter.ClearAll();
+		listAdapter.notifyDataSetChanged();
+		
+		startSearch();
+	}
+	
+	private void findView() {
+		// TODO Auto-generated method stub
+		searchList = (ListView)findViewById(R.id.cameralist) ;
+		imgRefresh = (ImageView)findViewById(R.id.imgRefresh) ;
+		
+	}
+
+	
+}

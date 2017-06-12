@@ -1,0 +1,580 @@
+package object.p2pipcam.client;
+
+import java.util.Map;
+
+import object.p2pipcam.adapter.CameraListAdapter;
+import object.p2pipcam.content.ContentCommon;
+import object.p2pipcam.nativecaller.NativeCaller;
+import object.p2pipcam.utils.DatabaseUtil;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnCreateContextMenuListener;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
+import android.widget.ImageView;
+
+public class IpcamClientActivity extends Activity{
+    /** Called when the activity is first created. */
+	
+	private static final String LOG_TAG = "IpcamClientActivity" ;
+	private static final int CONTEXTMENU_DELET_CAMERA = 0;
+	private static final int CONTEXTMENU_EDIT_CAMERA = 1;
+	private static final int CONTEXTMENU_SETTING_CAMERA = 2;
+	
+	private static final String STR_DID = "did";
+	private static final String STR_MSG_PARAM = "msgparam";
+	
+	private static final int MENU_ID_ADD = 100;
+	private static final int MENU_ID_SEARCH = 101;
+	private static final int MENU_ID_ABOUT = 102;
+
+	private CameraInfoReceiver receiver = null;
+	private GridView cameraListView = null;
+	private ImageView imgAddCamera = null;
+	private ImageView imgSearchCamera = null;	
+	private CameraListAdapter listAdapter = null;
+	private DatabaseUtil dbUtil = null;		
+	private boolean bManualExit = false;	
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);        
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,  WindowManager.LayoutParams.FLAG_FULLSCREEN); 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.main);        
+        findView();        
+        setControlListener();        
+        listAdapter = new CameraListAdapter(this) ;     
+        cameraListView.setAdapter(listAdapter);         
+        dbUtil = new DatabaseUtil(this);          
+        getCameraList(); 
+        NativeCaller.Init(this);
+        new Thread(new StartPPPPThread()).start();
+        
+    }   
+    
+    private Handler PPPPMsgHandler = new Handler(){  	   	
+        public void handleMessage(Message msg) {
+        	Bundle bd = msg.getData();
+        	int msgParam = bd.getInt(STR_MSG_PARAM);
+        	int msgType = msg.what;
+        	String did = bd.getString(STR_DID);
+        	switch(msgType){
+        	case ContentCommon.PPPP_MSG_TYPE_PPPP_STATUS:        		
+        		if(listAdapter.UpdataCameraStatus(did, msgParam)){
+        			listAdapter.notifyDataSetChanged();
+        			if(msgParam == ContentCommon.PPPP_STATUS_INVALID_ID 
+        					|| msgParam == ContentCommon.PPPP_STATUS_CONNECT_FAILED
+        					|| msgParam == ContentCommon.PPPP_STATUS_DEVICE_NOT_ON_LINE
+        					|| msgParam == ContentCommon.PPPP_STATUS_CONNECT_TIMEOUT){
+        				NativeCaller.StopPPPP(did);
+        			}
+        		}
+        		break;
+        	case ContentCommon.PPPP_MSG_TYPE_PPPP_MODE:
+        		if(listAdapter.UpdataCameraType(did, msgParam)){
+        			listAdapter.notifyDataSetChanged();
+        		}
+        		break;
+        	}
+        }
+	};
+    
+    /**
+     * p2p状态通知
+     * @param msgtype
+     * @param param
+     */
+    @SuppressWarnings("unused")
+	private void PPPPMsgNotify(String did, int type, int param){
+    	//Log.d(LOG_TAG, "PPPPMsgNofity.. did: " + did + " msgtype:" + type + " param: " + param); 
+    	
+    	if(bManualExit){
+    		return ;
+    	}
+    	
+    	Bundle bd = new Bundle();    	
+    	Message msg = PPPPMsgHandler.obtainMessage();
+		msg.what = type;
+		bd.putInt(STR_MSG_PARAM, param);
+		bd.putString(STR_DID, did);
+		msg.setData(bd);
+		
+		PPPPMsgHandler.sendMessage(msg) ;
+    }
+    
+    private Handler updateListHandler = new Handler(){
+    	public void handleMessage(Message msg) {    		
+    			listAdapter.notifyDataSetChanged();        	
+    	}    	
+    };
+    
+    /**
+     * snapshot result
+     * @param did
+     * @param bImage
+     * @param len
+     */
+    @SuppressWarnings("unused")
+	private void PPPPSnapshotNotify(String did, byte[] bImage, int len){
+    	//Log.d(LOG_TAG, "PPPPSnapshotNotify....did: " + did + " len: " + len) ;
+    	Bitmap bmp = BitmapFactory.decodeByteArray(bImage, 0,
+    			len);
+		if (bmp == null) {
+			Log.d(LOG_TAG, "bmp can't be decode...");
+			return;
+		}
+		Drawable drawable = new BitmapDrawable(bmp);
+		if(listAdapter.UpdateCameraImage(did, drawable)){
+			Message msg = new Message();
+			updateListHandler.sendMessage(msg);
+		}		
+		
+    }
+    
+    class StartPPPPThread implements Runnable{
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			try{
+				Thread.sleep(100);
+				StartCameraPPPP();
+			}catch(Exception e){
+				
+			}			
+		}    	
+    }
+    
+    private void StartCameraPPPP() {
+		// TODO Auto-generated method stub
+		int count = listAdapter.getCount();
+		int i;
+		for(i = 0; i < count; i++){
+			Map<String, Object> mapItem = (Map<String, Object>)listAdapter.getItemContent(i);
+			if(mapItem == null){
+				return ;
+			}
+			
+			String did = (String)mapItem.get(ContentCommon.STR_CAMERA_ID);
+			String user = (String)mapItem.get(ContentCommon.STR_CAMERA_USER);
+			String pwd = (String)mapItem.get(ContentCommon.STR_CAMERA_PWD);
+			
+			try {
+				Thread.sleep(100);
+			} catch (Exception e) {
+				// TODO: handle exception
+				finish();
+			}			
+			
+			NativeCaller.StartPPPP(did, user, pwd);
+		}
+	}
+
+	private void showDelSureDialog(Context context, final String did) {  
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);          
+        builder.setMessage(R.string.del_alert);  
+        builder.setPositiveButton(R.string.str_ok,  
+                new DialogInterface.OnClickListener() {  
+                    public void onClick(DialogInterface dialog, int whichButton) {  
+                    	if(delCameraFromdb(did)){
+        					listAdapter.delCamera(did) ;
+        					NativeCaller.StopPPPP(did);
+        					listAdapter.notifyDataSetChanged();
+        				} 
+                    }  
+                });   
+        builder.setNegativeButton(R.string.str_cancel,  
+                new DialogInterface.OnClickListener() {  
+                    public void onClick(DialogInterface dialog, int whichButton) {  
+                         
+                    }  
+                });  
+        builder.show();  
+    }
+    
+    private void showSureDialog(Context context) {  
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);  
+        builder.setIcon(R.drawable.app); 
+        builder.setMessage(R.string.exit_alert);  
+        builder.setPositiveButton(R.string.str_ok,  
+                new DialogInterface.OnClickListener() {  
+                    public void onClick(DialogInterface dialog, int whichButton) {  
+                        finish();                          
+                    }  
+                });   
+        builder.setNegativeButton(R.string.str_cancel,  
+                new DialogInterface.OnClickListener() {  
+                    public void onClick(DialogInterface dialog, int whichButton) {  
+                         
+                    }  
+                });  
+        builder.show();  
+    }
+  
+	private boolean delCameraFromdb(String did){    	
+    	boolean bRes = false;    	
+    	dbUtil.open();
+    	if(dbUtil.deleteCamera(did)){
+    		bRes = true;
+    	}
+    	    	
+    	dbUtil.close();    	
+    	return bRes;
+    }
+    
+    private boolean UpdataCamera2db(String oldDID, 
+    		String name, String did, String user, String pwd){
+    	boolean bRes = false;    	
+    	dbUtil.open();
+    	if(dbUtil.updateCamera(oldDID, name, did, user, pwd)){
+    		bRes = true;
+    	}
+    	dbUtil.close();    	
+    	return bRes;
+    }
+    
+    private void addCamera2db(String name, String did, String user, String pwd){
+    	dbUtil.open();
+    	dbUtil.createCamera(name, did, user, pwd) ;
+    	dbUtil.close();
+    }
+    
+    private void getCameraList(){
+    	dbUtil.open();  
+        Cursor cursor = dbUtil.fetchAllCameras();  
+        if(cursor != null){  
+        	while(cursor.moveToNext()){
+        		String name = cursor.getString(1);
+        		String did = cursor.getString(2);
+        		String user = cursor.getString(3);
+        		String pwd = cursor.getString(4);
+        		listAdapter.AddCamera(name, did, user, pwd);         	       		
+            }  
+        	listAdapter.notifyDataSetChanged();
+        }  
+        dbUtil.close(); 
+    }    
+    
+    class CameraInfoReceiver extends BroadcastReceiver {
+
+        @Override 
+        public void onReceive(Context context, Intent intent) { 
+                // get data from SMS intent 
+             //Log.d(LOG_TAG, "CameraInfoReceiver onReceive") ;
+             int option = intent.getIntExtra(ContentCommon.CAMERA_OPTION, ContentCommon.INVALID_OPTION);
+             if(option == ContentCommon.INVALID_OPTION)
+            	 return;
+             
+             String strOldDID = "";           
+             String name = intent.getStringExtra(ContentCommon.STR_CAMERA_NAME);
+             String did = intent.getStringExtra(ContentCommon.STR_CAMERA_ID) ;
+             String user = intent.getStringExtra(ContentCommon.STR_CAMERA_USER);
+             String pwd = intent.getStringExtra(ContentCommon.STR_CAMERA_PWD);
+             
+             if(option == ContentCommon.EDIT_CAMERA){ //修改
+            	 //Log.d(LOG_TAG, "edit....");
+            	 strOldDID = intent.getStringExtra(ContentCommon.STR_CAMERA_OLD_ID);
+                 if(UpdataCamera2db(strOldDID, name, did, user, pwd)){
+                	 if(listAdapter.UpdateCamera(strOldDID, name, did, user, pwd)){
+                		 listAdapter.notifyDataSetChanged();
+                		 NativeCaller.StopPPPP(did);
+                		 NativeCaller.StartPPPP(did, user, pwd);
+                	 }
+                 }                 
+             }else {//添加
+            	 //Log.d(LOG_TAG, "add....");
+            	 if(listAdapter.AddCamera(name, did, user, pwd)){            	 
+                	 listAdapter.notifyDataSetChanged();
+                	 addCamera2db(name, did, user, pwd) ;
+                	 NativeCaller.StartPPPP(did, user, pwd);
+                 }  
+             }                          
+        } 
+    }
+ 
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		
+		//Log.d(LOG_TAG, "onStart") ;
+		if(receiver == null){
+			receiver = new CameraInfoReceiver(); 
+	        registerReceiver(receiver, new IntentFilter(ContentCommon.STR_CAMERA_INFO_RECEIVER));
+		}	
+	}
+ 
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub		
+		//Log.d(LOG_TAG, "onStop") ;		
+		super.onStop();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub			
+		//Log.d(LOG_TAG, "onDestroy") ;	
+		bManualExit = true;
+		unregisterReceiver(receiver); 	
+		NativeCaller.Free();
+		super.onDestroy();
+	}
+
+	private void setControlListener() {
+		// TODO Auto-generated method stub
+		imgAddCamera.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				showAddActivity();				
+			}        	
+        });
+		
+		imgSearchCamera.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub		;
+				showSearchActivity();				
+			}        	
+        });
+		
+		//play
+		cameraListView.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Map<String, Object> mapItem = (Map<String, Object>)listAdapter.getItemContent(arg2);
+				if(mapItem == null){
+					return ;
+				}
+				
+				int status = (Integer)mapItem.get(ContentCommon.STR_PPPP_STATUS);
+				if (status == ContentCommon.PPPP_STATUS_INVALID_ID) {
+					return;
+				}
+				
+				if(status != ContentCommon.PPPP_STATUS_ON_LINE){
+					//Toast.makeText(getApplicationContext(), R.string.device_not_on_line,
+		       		//	     Toast.LENGTH_SHORT).show();
+					
+					String did = (String)mapItem.get(ContentCommon.STR_CAMERA_ID);
+					String user = (String)mapItem.get(ContentCommon.STR_CAMERA_USER);
+					String pwd = (String)mapItem.get(ContentCommon.STR_CAMERA_PWD);
+					NativeCaller.StartPPPP(did, user, pwd);					
+					return;
+				}
+				
+				/////////////////////////////////////////////////////////////////////////////
+				
+				String name = (String)mapItem.get(ContentCommon.STR_CAMERA_NAME);
+				String did = (String)mapItem.get(ContentCommon.STR_CAMERA_ID);
+				String user = (String)mapItem.get(ContentCommon.STR_CAMERA_USER);
+				String pwd = (String)mapItem.get(ContentCommon.STR_CAMERA_PWD);
+				int p2pMode = (Integer)mapItem.get(ContentCommon.STR_CAMERA_TYPE);
+			
+				Intent in = new Intent(IpcamClientActivity.this, PlayActivity.class) ;
+				in.putExtra(ContentCommon.STR_CAMERA_TYPE, ContentCommon.CAMERA_TYPE_MJPEG);
+				in.putExtra(ContentCommon.STR_STREAM_TYPE, ContentCommon.MJPEG_SUB_STREAM);
+				in.putExtra(ContentCommon.STR_CAMERA_NAME, name);
+				in.putExtra(ContentCommon.STR_CAMERA_ID, did);
+				in.putExtra(ContentCommon.STR_CAMERA_USER, user);
+				in.putExtra(ContentCommon.STR_CAMERA_PWD, pwd);
+				in.putExtra(ContentCommon.STR_CAMERA_TYPE, p2pMode);
+				
+				startActivity(in);
+				///////////////////////////////////////////////////////////////////////
+				
+			}			
+		});
+		
+		//长按设备列表时，弹出上下文菜单
+		cameraListView.setOnCreateContextMenuListener(new OnCreateContextMenuListener(){
+			@Override
+			public void onCreateContextMenu(ContextMenu menu, View v,
+					ContextMenuInfo menuInfo) {
+				// TODO Auto-generated method stub
+				menu.setHeaderTitle(R.string.list_option);    
+				//menu.add(0, CONTEXTMENU_SETTING_CAMERA, 0, R.string.setting); 
+				menu.add(0, CONTEXTMENU_EDIT_CAMERA, 0, R.string.edit); 
+				menu.add(0, CONTEXTMENU_DELET_CAMERA, 0, R.string.delete_camera); 				
+			}			
+		});		
+	}	
+
+	protected void startPlayActivity(int cameraType, int streamType,
+			Map<String, Object> mapItem) {
+		// TODO Auto-generated method stub
+		String name = (String)mapItem.get(ContentCommon.STR_CAMERA_NAME);
+		String did = (String)mapItem.get(ContentCommon.STR_CAMERA_ID);
+		String user = (String)mapItem.get(ContentCommon.STR_CAMERA_USER);
+		String pwd = (String)mapItem.get(ContentCommon.STR_CAMERA_PWD);		
+	
+		Intent in = new Intent(IpcamClientActivity.this, PlayActivity.class) ;
+		in.putExtra(ContentCommon.STR_CAMERA_TYPE, cameraType);
+		in.putExtra(ContentCommon.STR_STREAM_TYPE, streamType);
+		in.putExtra(ContentCommon.STR_CAMERA_NAME, name);
+		in.putExtra(ContentCommon.STR_CAMERA_ID, did);
+		in.putExtra(ContentCommon.STR_CAMERA_USER, user);
+		in.putExtra(ContentCommon.STR_CAMERA_PWD, pwd);
+		
+		startActivity(in);
+		
+	}
+
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		MenuItem item = menu.add(0, MENU_ID_ADD, 0, R.string.str_add);  
+		item.setIcon(R.drawable.add);
+		item = menu.add(0, MENU_ID_SEARCH, 0, R.string.str_search);
+		item.setIcon(R.drawable.search);
+		item = menu.add(0, MENU_ID_ABOUT, 0, R.string.str_about);
+		item.setIcon(R.drawable.info);		
+		return super.onCreateOptionsMenu(menu);
+	}	
+
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		// TODO Auto-generated method stub
+		switch(item.getItemId()){
+			case MENU_ID_ADD:{
+				showAddActivity();
+				return true;
+			}
+			case MENU_ID_SEARCH:{
+				showSearchActivity() ;
+				return true;
+			}
+			case MENU_ID_ABOUT:{
+				showAbout() ;
+				return true;
+			}
+		}
+		return super.onMenuItemSelected(featureId, item);
+	}
+
+	private void showSearchActivity() {
+		// TODO Auto-generated method stub
+		Intent in = new Intent(IpcamClientActivity.this, SearchActivity.class);
+		startActivity(in) ;
+	}
+
+	private void showAbout() {
+		// TODO Auto-generated method stub
+		//Intent in = new Intent(this, AboutActivity.class);
+		//startActivity(in);
+		Dialog alertDialog  ;
+		alertDialog = new AlertDialog.Builder(this).
+			    setTitle(R.string.str_version).
+			    setMessage(R.string.softversion).
+			    setPositiveButton(R.string.str_ok, new DialogInterface.OnClickListener() {
+			        
+			        @Override
+			        public void onClick(DialogInterface dialog, int which) {
+			         // TODO Auto-generated method stub
+			        	
+			        }
+			       }).
+			    create();
+		
+			  alertDialog.show();
+
+		
+	}
+
+	private void showAddActivity() {
+		// TODO Auto-generated method stub
+		Intent in = new Intent(IpcamClientActivity.this, AddCameraActivity.class);//				
+		startActivity(in);
+	}
+
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		/* Switch on the ID of the item, to get what the user selected. */  
+		AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+		int pos = menuInfo.position ;
+		Map<String, Object> mapItem = (Map<String, Object>)listAdapter.getItemContent(pos);
+		if(mapItem == null){
+			return false;
+		}
+		switch (item.getItemId()) {        
+			case CONTEXTMENU_DELET_CAMERA:  { //删除				
+				String did = (String)mapItem.get(ContentCommon.STR_CAMERA_ID);
+				showDelSureDialog(this, did) ;				
+			}		
+			return true;
+			case CONTEXTMENU_EDIT_CAMERA: {//编辑
+				String name = (String)mapItem.get(ContentCommon.STR_CAMERA_NAME) ;
+				String did = (String)mapItem.get(ContentCommon.STR_CAMERA_ID);
+				String user = (String)mapItem.get(ContentCommon.STR_CAMERA_USER) ;
+				String pwd = (String)mapItem.get(ContentCommon.STR_CAMERA_PWD) ;
+				Intent in = new Intent(IpcamClientActivity.this, AddCameraActivity.class) ;
+				in.putExtra(ContentCommon.CAMERA_OPTION, ContentCommon.EDIT_CAMERA);
+				in.putExtra(ContentCommon.STR_CAMERA_NAME, name);
+				in.putExtra(ContentCommon.STR_CAMERA_ID, did);
+				in.putExtra(ContentCommon.STR_CAMERA_USER, user);
+				in.putExtra(ContentCommon.STR_CAMERA_PWD, pwd);
+				startActivity(in) ;
+			}
+			return true;
+			case CONTEXTMENU_SETTING_CAMERA: {//设置;
+				Intent intent = new Intent(IpcamClientActivity.this, SettingActivity.class);
+				startActivity(intent);
+			}
+			return true;
+		}
+		
+		return super.onContextItemSelected(item);		
+	}
+
+	private void findView() {
+		// TODO Auto-generated method stub
+		imgAddCamera = (ImageView)findViewById(R.id.imgAddDevice) ;
+		imgSearchCamera = (ImageView)findViewById(R.id.imgSearchDevice);
+		cameraListView = (GridView)findViewById(R.id.listviewCamera) ;		
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// TODO Auto-generated method stub
+		if(keyCode == KeyEvent.KEYCODE_BACK){ 
+			showSureDialog(this) ;
+			return true;
+		}
+
+		return super.onKeyDown(keyCode, event);
+	}
+
+
+	
+}

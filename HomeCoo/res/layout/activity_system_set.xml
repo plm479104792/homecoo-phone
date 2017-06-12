@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tuwa.smarthome.activity.SystemSetActivity" >
+
+    <include
+        android:id="@+id/lv_item_header"
+        layout="@layout/item_header" />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="5"
+        android:background="@drawable/bg_content_base"
+        android:orientation="horizontal">
+        <ListView 
+            android:id="@+id/lv_lf_menu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_margin="10dp"
+            android:background="@drawable/background_white_corner">
+            
+        </ListView>
+        <FrameLayout 
+	        android:id="@+id/fl_set_content"
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent" 
+	        android:layout_weight="3"
+	        android:layout_margin="10dp"
+	        android:padding="20dp"
+	        android:background="@drawable/background_white_corner">
+        </FrameLayout>
+    </LinearLayout>
+    
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/newbg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/top"
+        style="@style/top_bg_style"
+        android:layout_width="match_parent"
+        android:layout_height="50.0dip"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/text_v"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:shadowColor="@color/color_shadow"
+            android:shadowDx="1.0"
+            android:shadowDy="1.0"
+            android:shadowRadius="1.0"
+            android:text="@string/main_vid1"
+            android:textColor="@color/color_white"
+            android:textSize="18.0sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="50.0dip"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/picture_phone"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="center"
+                android:text="@string/main_phone"
+                android:textColor="@color/color_white" />
+
+            <Button
+                android:id="@+id/picture_remote"
+                android:layout_width="75dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:text="@string/main_remote"
+                android:textColor="@color/color_white" />
+        </LinearLayout>
+    </LinearLayout>
+
+   <ListView
+        android:id="@+id/piclistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="#00000000"
+        android:divider="#50000000"
+        android:dividerHeight="0.1dp"
+        android:fadeScrollbars="true"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
+        android:listSelector="@drawable/listitem_pressed_selector" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="#bcbab9" />
+
+</LinearLayout>

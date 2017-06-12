@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <item
+        android:id="@+id/menu_group_rename"
+        android:title="@string/str_menu_group_rename"/>
+    <item
+        android:id="@+id/menu_group_del"
+        android:title="@string/str_menu_group_del"/>
+
+</menu>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PullToRefresh">
+        <attr name="adapterViewBackground" format="reference|color" />
+        <attr name="headerBackground1" format="reference|color" />
+        <attr name="headerTextColor" format="color" />
+        <attr name="mode1">
+            <flag name="pullDownFromTop" value="0x1" />
+            <flag name="pullUpFromBottom" value="0x2" />
+            <flag name="both" value="0x3" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="EdgeSize" format="dimension" />
+        <attr name="EdgeFlag" format="enum" />
+        <attr name="ShadowLeft" format="reference" />
+        <attr name="ShadowRight" format="reference" />
+        <attr name="ShadowBottom" format="reference" />
+    </declare-styleable>
+
+    <attr name="SwipeBackLayoutStyle" format="reference" />
+    
+    <!-- library project在主工程中引用自定义view -->
+    <declare-styleable name="PullToRefreshGridView"></declare-styleable>
+</resources>

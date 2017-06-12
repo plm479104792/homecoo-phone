@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tuwa.smarthome.activity.TimeTaskActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_white_corner"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_add_infratask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_add_sel"
+            android:drawablePadding="3dp"
+            android:padding="5dp"
+            android:text="请按此处添加遥控" />
+
+
+        <GridView
+            android:id="@+id/gv_infratask_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:horizontalSpacing="5dp"
+            android:numColumns="2"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="0dp" >
+        </GridView>
+    </LinearLayout>
+
+</LinearLayout>

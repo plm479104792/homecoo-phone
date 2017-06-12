@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/android/!svn/ver/37/src/object/p2pipcam/client
+END
+PlayActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/android/!svn/ver/40/src/object/p2pipcam/client/PlayActivity.java
+END
+SearchActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/android/!svn/ver/42/src/object/p2pipcam/client/SearchActivity.java
+END
+IpcamClientActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/android/!svn/ver/41/src/object/p2pipcam/client/IpcamClientActivity.java
+END
+AboutActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/android/!svn/ver/26/src/object/p2pipcam/client/AboutActivity.java
+END
+StartActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/android/!svn/ver/41/src/object/p2pipcam/client/StartActivity.java
+END
+SettingActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/android/!svn/ver/39/src/object/p2pipcam/client/SettingActivity.java
+END
+AddCameraActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/android/!svn/ver/26/src/object/p2pipcam/client/AddCameraActivity.java
+END

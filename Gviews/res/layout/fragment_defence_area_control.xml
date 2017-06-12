@@ -1,0 +1,667 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/item_group_margin_top"
+    android:background="@drawable/main_bg"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <!-- ************one************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <include layout="@layout/sharecf_fenge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/remote"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area1"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />
+
+        <!-- ************two************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/hall"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area2"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />
+        <!-- ************three************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/window"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area3"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />
+        <!-- ************four************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/balcony"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area4"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn4"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />
+        <!-- ************five************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/bedroom"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area5"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn5"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />
+        <!-- ************six************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area6"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/kitchen"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area6"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn6"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />
+        <!-- ************seven************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area7"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/courtyard"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area7"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn7"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />
+        <!-- ************eight************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area8"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/door_lock"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area8"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn8"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />
+        <!-- ************nine************* -->
+
+        <RelativeLayout
+            android:id="@+id/change_defence_area9"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ctl_setting_bar_height" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/inner_margin_left"
+                android:text="@string/other"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_normal"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_defence_area9"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="@dimen/inner_item_progress_width_height"
+                android:layout_height="@dimen/inner_item_progress_width_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/inner_margin_right"
+                android:indeterminateDrawable="@anim/progress_white"
+                android:indeterminateDuration="560000" />
+
+            <ImageView
+                android:id="@+id/change_defence_area_arrow9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:scaleType="center"
+                android:src="@drawable/alarm_area_arrow_right"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <include layout="@layout/sharecf_fenge" />
+
+        <LinearLayout
+            android:id="@+id/defence_area_content9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/inner_margin_left"
+            android:paddingRight="@dimen/inner_margin_right"
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/add_btn9"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sharecf_addbeijing_btn_selector"
+            android:scaleType="center"
+            android:src="@drawable/sharecf_add_btn_selector"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/fenge9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:visibility="gone" />        
+    </LinearLayout>
+
+</ScrollView>

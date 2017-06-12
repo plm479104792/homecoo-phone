@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/Contact_Menu_Width_En"
+    android:layout_height="@dimen/Contact_Menu_Height"
+    android:background="@drawable/contact_bgmenu"
+    android:orientation="vertical"
+    android:padding="6dp" >
+
+    <TextView
+        android:id="@+id/btnAutoAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@drawable/selector_contact_menu"
+        android:drawableLeft="@drawable/contact_autoadddevice"
+        android:drawablePadding="13dip"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dip"
+        android:paddingLeft="10dip"
+        android:paddingTop="5dip"
+        android:text="@string/contact_autoadddevice"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/contact_menuspliter" />
+
+    <TextView
+        android:id="@+id/btnAddByHand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@drawable/selector_contact_menu"
+        android:drawableLeft="@drawable/contact_adddevicebyhand"
+        android:drawablePadding="7dip"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dip"
+        android:paddingLeft="10dip"
+        android:paddingTop="5dip"
+        android:text="@string/contact_adddevicebyhand"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/contact_menuspliter" />
+
+    <TextView
+        android:id="@+id/btnAddByScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="@drawable/selector_contact_menu"
+        android:drawableLeft="@drawable/contact_adddevicebyscan"
+        android:drawablePadding="7dip"
+        android:gravity="center_vertical"
+        android:paddingBottom="5dip"
+        android:paddingLeft="10dip"
+        android:paddingTop="5dip"
+        android:text="@string/contact_adddevicebyscan"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/IAMENGLISH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>

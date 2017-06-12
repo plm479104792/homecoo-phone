@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+       <string-array name="strs_tv_type">
+
+    </string-array>
+    <string-array name="strs_tv_brand">
+<item> 长虹(Changhong)</item>
+<item> 康佳(Konka)</item>
+<item>TCL(TCL)</item>
+<item> 厦华(Prima)</item>
+<item>创维(SKYWORTH)</item>
+<item> 海信(Hisense)</item>
+<item> 海尔(Haier)</item>
+<item> 金星(JINXING)</item>
+<item> 熊猫(PANDA)</item>
+<item> 索尼(sony)</item>
+<item> 松下(Panasonic)</item>
+<item>乐声(Panasonic)</item>
+<item> 东芝(TOSHIBA)</item>
+<item> 日立(HITACHI)</item>
+<item>夏普(SHARP)</item>
+<item> 声宝(Sampo)</item>
+<item> 飞利浦(Philips)</item>
+<item> 三星(SAMSUNG)</item>
+<item> 三洋(SANYO)</item>
+<item> 日电(Xinhua)</item>
+<item> 西湖(XIHU)</item>
+<item> 北京(BEIJING)</item>
+<item> 高路华(CONROWA)</item>
+<item>  乐华(ROWA)</item>
+<item> 东宝TCBO_东凌TOS</item>
+<item> 福日(Furi)</item>
+<item>LG(LG)</item>
+<item> 百乐(Tupper)</item>
+<item> 长城(CHANGCHENG)</item>
+<item> 黄河(Yellow River)</item>
+<item> 黄山(Huangshan)</item>
+<item>其它(Other)</item>
+<item> 三垦(sanken)</item>
+<item> 宝立创(Polytron)</item>
+<item> 爱华(Aiwa)</item>
+<item> 清华同方(Tongfang)</item>
+        
+        
+    </string-array>
+
+</resources>

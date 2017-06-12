@@ -1,0 +1,205 @@
+# view res/layout/fragment_setting.xml #generated:86
+-keep class com.cj.utils.AlwaysMarqueeTextView { <init>(...); }
+
+# view AndroidManifest.xml #generated:55
+-keep class com.homecoolink.CallActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:78
+-keep class com.homecoolink.MonitorActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:226
+-keep class com.homecoolink.PlayBackActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:88
+-keep class com.homecoolink.VideoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:108
+-keep class com.homecoolink.activity.AccountInfoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:273
+-keep class com.homecoolink.activity.AddContactActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:286
+-keep class com.homecoolink.activity.AddContactNextActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:458
+-keep class com.homecoolink.activity.AddWaitActicity { <init>(...); }
+
+# view AndroidManifest.xml #generated:160
+-keep class com.homecoolink.activity.AlarmActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:414
+-keep class com.homecoolink.activity.AlarmPushAccountActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:425
+-keep class com.homecoolink.activity.AlarmRecordFromDeviceActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:484
+-keep class com.homecoolink.activity.AlarmReordDetailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:493
+-keep class com.homecoolink.activity.AlarmReordVideo { <init>(...); }
+
+# view AndroidManifest.xml #generated:215
+-keep class com.homecoolink.activity.AlarmSetActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:403
+-keep class com.homecoolink.activity.CreateQRcodeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:171
+-keep class com.homecoolink.activity.DeviceUpdateActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:370
+-keep class com.homecoolink.activity.ForgetPassword { <init>(...); }
+
+# view AndroidManifest.xml #generated:488
+-keep class com.homecoolink.activity.ForgetPasswordEdit { <init>(...); }
+
+# view AndroidManifest.xml #generated:193
+-keep class com.homecoolink.activity.ForwardActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:204
+-keep class com.homecoolink.activity.ForwardDownActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:118
+-keep class com.homecoolink.activity.LocalDeviceListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:45
+-keep class com.homecoolink.activity.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:20
+-keep class com.homecoolink.activity.LogoActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class com.homecoolink.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:149
+-keep class com.homecoolink.activity.MainControlActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:336
+-keep class com.homecoolink.activity.ModifyAccountEmailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:348
+-keep class com.homecoolink.activity.ModifyAccountPhoneActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:359
+-keep class com.homecoolink.activity.ModifyAccountPhoneActivity2 { <init>(...); }
+
+# view AndroidManifest.xml #generated:247
+-keep class com.homecoolink.activity.ModifyBoundEmailActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:299
+-keep class com.homecoolink.activity.ModifyContactActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:312
+-keep class com.homecoolink.activity.ModifyLoginPasswordActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:260
+-keep class com.homecoolink.activity.ModifyNpcPasswordActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:381
+-keep class com.homecoolink.activity.ModifyNpcVisitorPasswordActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:182
+-keep class com.homecoolink.activity.QRCodeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:392
+-keep class com.homecoolink.activity.QRcodeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:447
+-keep class com.homecoolink.activity.RadarAddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:436
+-keep class com.homecoolink.activity.RadarAddFirstActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:66
+-keep class com.homecoolink.activity.RegisterActivity2 { <init>(...); }
+
+# view AndroidManifest.xml #generated:236
+-keep class com.homecoolink.activity.SearchListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:129
+-keep class com.homecoolink.activity.SettingBellRingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:139
+-keep class com.homecoolink.activity.SettingSdBellActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:98
+-keep class com.homecoolink.activity.SettingSystemActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:325
+-keep class com.homecoolink.activity.UnbindPhoneActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:476
+-keep class com.homecoolink.global.AutoStartReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:470
+-keep class com.homecoolink.global.MainService { <init>(...); }
+
+# view AndroidManifest.xml #generated:15
+-keep class com.homecoolink.global.MyApp { <init>(...); }
+
+# view res/layout/activity_alarm_set.xml #generated:112
+# view res/layout/fragment_record_control.xml #generated:410
+# view res/layout/fragment_record_control.xml #generated:416
+# view res/layout/fragment_record_control.xml #generated:433
+# view res/layout/fragment_record_control.xml #generated:439
+# view res/layout/fragment_time_control.xml #generated:218
+# view res/layout/fragment_time_control.xml #generated:223
+# view res/layout/fragment_time_control.xml #generated:229
+# view res/layout/fragment_time_control.xml #generated:235
+# view res/layout/fragment_time_control.xml #generated:241
+# view res/layout/fragment_time_control.xml #generated:84
+-keep class com.homecoolink.wheel.widget.WheelView { <init>(...); }
+
+# view res/layout/list_alarm_record_item2.xml #generated:16
+-keep class com.homecoolink.widget.AlarmHeaderView { <init>(...); }
+
+# view res/layout/activity_system_set.xml #generated:37
+# view res/layout/fragment_control_main.xml #generated:1
+# view res/layout/fragment_setting.xml #generated:103
+# view res/layout/homecoolink_system_set.xml #generated:37
+-keep class com.homecoolink.widget.BounceScrollView { <init>(...); }
+
+# view res/layout/activity_add_contact_next.xml #generated:59
+# view res/layout/activity_call.xml #generated:24
+# view res/layout/activity_control_main.xml #generated:61
+# view res/layout/activity_modify_contact.xml #generated:62
+# view res/layout/list_contact_item2.xml #generated:18
+# view res/layout/list_ipc_item.xml #generated:23
+-keep class com.homecoolink.widget.HeaderView { <init>(...); }
+
+# view res/layout/list_imgbrowser_item.xml #generated:6
+-keep class com.homecoolink.widget.MyImageView { <init>(...); }
+
+# view res/layout/fragment_net_control.xml #generated:142
+-keep class com.homecoolink.widget.MyListView { <init>(...); }
+
+# view res/layout/search_list.xml #generated:20
+-keep class com.homecoolink.widget.SortBar { <init>(...); }
+
+# view res/layout/activity_alarmcj.xml #generated:18
+# view res/layout/activity_device_update.xml #generated:55
+# view res/layout/activity_radar_add_first.xml #generated:52
+# view res/layout/activity_radar_add_first.xml #generated:62
+# view res/layout/dialog_about.xml #generated:48
+# view res/layout/dialog_normal.xml #generated:36
+# view res/layout/dialog_prompt.xml #generated:37
+# view xlarge\res/layout-xlarge/activity_alarmcj.xml #generated:18
+-keep class com.homecoolink.widget.XRTextView { <init>(...); }
+
+# view res/layout/activity_alarm_push_msg.xml #generated:84
+# view res/layout/activity_alarm_set.xml #generated:207
+# view res/layout/fragment_alarm_control.xml #generated:471
+-keep class com.lib.addBar.AddBar { <init>(...); }
+
+# view res/layout/activity_alarm_record1.xml #generated:57
+# view res/layout/activity_local_device_list.xml #generated:36
+# view res/layout/fragment_alarm_record.xml #generated:66
+# view res/layout/fragment_contact.xml #generated:42
+-keep class com.lib.pullToRefresh.PullToRefreshListViewK14 { <init>(...); }
+
+# view res/layout/p2p_monitor.xml #generated:12
+# view res/layout/p2p_playback.xml #generated:9
+-keep class com.p2p.core.P2PView { <init>(...); }
+

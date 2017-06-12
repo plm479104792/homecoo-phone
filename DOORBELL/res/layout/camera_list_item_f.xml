@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="2dp"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:paddingBottom="2dp"
+    android:paddingTop="2dp" >
+
+    <ImageView
+        android:id="@+id/imgSnapshot"
+        android:layout_width="50dip"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dip" />
+
+    <!-- <TextView -->
+    <!-- android:id="@+id/cameraDevName" -->
+    <!-- android:layout_toRightOf="@+id/imgSnapshot" -->
+    <!-- android:layout_alignTop="@+id/imgSnapshot" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:textColor="@color/color_white" -->
+    <!-- android:layout_marginLeft="3dp" -->
+    <!-- android:gravity="top" -->
+    <!-- android:text="hh" -->
+    <!-- android:textSize="18sp" /> -->
+
+
+    <!-- <TextView -->
+    <!-- android:layout_toRightOf="@+id/imgSnapshot" -->
+
+
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:text="@string/device_status_name" -->
+    <!-- android:textColor="@color/color_black" -->
+    <!-- android:textSize="12sp" /> -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/imgSnapshot"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingBottom="3dip"
+        android:paddingLeft="3dip" >
+
+        <TextView
+            android:id="@+id/cameraDevName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_black"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_status_name"
+                android:textColor="@color/color_black"
+                android:textSize="8sp" />
+
+            <TextView
+                android:id="@+id/textPPPPStatus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3px"
+                android:text="initialing"
+                android:textColor="@color/color_blue"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/cameraDevID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3px"
+            android:textColor="@color/color_less_black"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_for"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#50000000" />
+
+        <ImageButton
+            android:id="@+id/imgBtnPPPPSetting"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:background="@drawable/listitem_pressed_selector"
+            android:focusable="false"
+            android:scaleType="center"
+            android:src="@drawable/setting_btn_no" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/alerm_check_box"
+        style="@style/MyCheckBox"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/linear_for"
+        android:visibility="gone" />
+
+</RelativeLayout>

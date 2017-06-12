@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content" 
+	android:layout_width="wrap_content"
+	android:background="#ffffffff" 
+	android:orientation="horizontal"
+	android:id="@+id/dialog">
+	  <TableLayout 
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content">
+	      <TableRow 
+	       android:layout_width="wrap_content"
+	       android:layout_height="wrap_content"   >
+	         <TextView 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tv_logincode" 
+			   android:text="用户名" />
+	         <EditText 
+		       android:layout_height="wrap_content"
+			   android:layout_width="match_parent"
+			   android:id="@+id/et_logincode" 
+			   android:textSize="@dimen/rigst_text_size"
+		      /> 
+	      </TableRow>
+	      <TableRow
+	          android:id="@+id/tr_identify_code"
+	          >
+	         <TextView 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tv_passwd" 
+			   android:text="密码" 
+			   />
+	         <EditText 
+		       android:layout_height="wrap_content"
+			   android:layout_width="match_parent"
+			   android:id="@+id/et_passwd" 
+			   android:hint="密码为6-18个字母或数字"
+			   android:textSize="@dimen/rigst_text_size"
+			   
+		    />
+	      </TableRow>
+	       <TableRow
+	   
+	          >
+	         <TextView 
+		       android:layout_height="wrap_content"
+			   android:layout_width="wrap_content"
+			   android:id="@+id/tv_repasswd" 
+			   android:text="确认密码" 
+			   />
+	         <EditText 
+		       android:layout_height="wrap_content"
+			   android:layout_width="match_parent"
+			   android:id="@+id/et_repasswd" 
+			   android:hint="请再次输入密码"
+			   android:textSize="@dimen/rigst_text_size"
+			   
+		    />
+	      </TableRow>
+	      
+	  </TableLayout>
+
+</LinearLayout>

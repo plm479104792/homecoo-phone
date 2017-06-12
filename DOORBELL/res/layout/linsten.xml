@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/listen_bg" >
+
+    <LinearLayout
+        android:id="@+id/start_root"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#50000000"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_doorbell_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="TEST"
+                android:textColor="#ffffff"
+                android:textSize="28dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom|right"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_doorbell_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="door"
+                    android:textColor="#fe3a00"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tv_doorbell_call_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="right"
+                    android:text="00:00"
+                    android:textColor="#ffffff"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="30dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/vidicon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#98000000"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:gravity="center"
+                android:visibility="gone" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageButton
+            android:id="@+id/btn_doorbell_ok"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="bottom|left"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/doorbell_ok" />
+
+        <ImageView
+            android:id="@+id/getup_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/btn_doorbell_ok"
+            android:background="@anim/doorbell_btn_anim" />
+
+        <ImageView
+            android:id="@+id/getup_arrow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/getup_arrow"
+            android:background="@anim/doorbell_btn_no_anim" />
+
+        <ImageButton
+            android:id="@+id/btn_doorbell_no"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_toRightOf="@+id/getup_arrow1"
+            android:background="@drawable/doorbell_no" />
+    </RelativeLayout>
+
+</FrameLayout>

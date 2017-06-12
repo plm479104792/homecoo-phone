@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/color_bg_less_shadow">
+    
+    <LinearLayout 
+        android:background="@drawable/background_grayblack" 
+        android:layout_width="fill_parent" 
+        android:layout_height="40.0dip">
+        <TextView 
+            android:id="@+id/textview_setting"
+            android:textSize="18.0sp" 
+            android:textStyle="bold" 
+            android:textColor="@color/color_white" 
+            android:layout_gravity="center_vertical" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginLeft="5.0dip" 
+            android:shadowColor="@color/color_shadow" 
+            android:shadowDx="1.0" 
+            android:shadowDy="1.0" 
+            android:shadowRadius="1.0"
+            android:text="@string/setting_camera" />
+    </LinearLayout>
+    
+    <ImageView 
+     android:layout_width="fill_parent" 
+     android:layout_height="2.0dip" 
+     android:src="@drawable/background_separate_vertical" />
+    
+    <LinearLayout 
+        android:orientation="vertical" 
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_margin="10dip"
+        android:background="@color/color_white" >
+        <ListView 
+            android:id="@+id/settinglist" 
+            android:layout_width="fill_parent" 
+            android:layout_height="wrap_content" 
+            android:cacheColorHint="@color/cache_color_hint" 
+            android:divider="@color/color_divider" 
+            android:dividerHeight="0.5dip"/>
+    </LinearLayout>
+        
+    
+
+</LinearLayout>

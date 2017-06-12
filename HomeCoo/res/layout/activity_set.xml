@@ -1,0 +1,94 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tuwa.smarthome.activity.SetActivity" >
+
+    <include
+        android:id="@+id/lv_item_header"
+        layout="@layout/item_header" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:background="@drawable/bg_content_base"
+        android:gravity="center" 
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/set_tb_marginbottom"
+            android:gravity="center_horizontal" >
+
+            <Button
+                android:id="@+id/bt_productManager"
+                android:text="产 品 管 理"
+                style="@style/style_set_btn" />
+
+            <Button
+                android:id="@+id/bt_timerSet"
+                android:text="定 时 设 置"
+                style="@style/style_set_btn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/set_tb_marginbottom"
+            android:gravity="center_horizontal" >
+
+            <Button
+                android:id="@+id/bt_roomManager"
+                android:text="空 间 管 理"
+                style="@style/style_set_btn" />
+
+            <Button
+                android:id="@+id/bt_gatewaySet"
+                android:text="主 机 设 置"
+                style="@style/style_set_btn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/set_tb_marginbottom"
+            android:gravity="center_horizontal" >
+
+            <Button
+                android:id="@+id/bt_linkageSet"
+                android:text="联 动 设 置"
+                style="@style/style_set_btn" />
+
+            <Button
+                android:id="@+id/bt_systemSet"
+                android:text="系 统 设 置"
+                style="@style/style_set_btn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/set_tb_marginbottom"
+            android:gravity="center_horizontal" >
+
+            <Button
+                android:id="@+id/bt_sceneManager"
+                android:text="情 景 管 理"
+                style="@style/style_set_btn" />
+
+            <Button
+                android:id="@+id/bt_alertSet"
+                android:text="防 区 设 置"
+                style="@style/style_set_btn"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/lv_item_bottom"
+        layout="@layout/item_bottom" />
+
+</LinearLayout>

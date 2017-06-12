@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/one1_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/one1_num"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/defen_area_item_width_height"
+        android:gravity="left|center_vertical"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:id="@+id/one1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/defen_area_item_width_height"
+        android:layout_alignLeft="@id/one1_num"
+        android:layout_marginLeft="20dp"
+        android:gravity="left|center_vertical"
+        android:textColor="@color/text_color_black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/one1"
+        
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/one1_rename_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/sharecfbluebtn"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/sharecf_defence_area_btn_text1"
+            android:textColor="@color/image_button_color_blue"
+            android:textSize="@dimen/text_size_normal"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/one1_code_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sharecfbluebtn"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/sharecf_defence_area_btn_text2"
+            android:textColor="@color/image_button_color_blue"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <ImageView       
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_gray"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+
+</RelativeLayout>

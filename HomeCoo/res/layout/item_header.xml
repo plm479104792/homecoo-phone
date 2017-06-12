@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_item_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingTop="@dimen/header_padd"
+    android:paddingLeft="@dimen/header_padd"
+    android:paddingRight="@dimen/header_padd"
+    android:background="@drawable/bg_title"
+     >
+     <TextView
+        android:id="@+id/tv_head_back"
+        android:layout_width="@dimen/header_width_back"
+        android:layout_height="wrap_content"
+        android:text="@string/header_back" 
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="15dp"/>
+     <ImageView 
+         android:id="@+id/iv_logo"
+         android:layout_width="149dp"
+         android:layout_height="25dp"
+         android:layout_alignParentLeft="true"
+         android:visibility="gone"
+         />
+     <TextView
+        android:id="@+id/tv_head_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/header_title" 
+        android:layout_centerHorizontal="true"/>
+      <TextView
+        android:id="@+id/tv_head_submit"
+        android:layout_width="@dimen/header_width_back"
+        android:layout_height="wrap_content"
+        android:text="@string/header_submit"
+        android:gravity="right"
+        android:paddingRight="15dp"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

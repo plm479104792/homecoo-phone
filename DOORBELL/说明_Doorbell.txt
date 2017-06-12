@@ -1,0 +1,24 @@
+2015.12.12
+1、集成引用自定义view
+   【string】<string name="NS">http://schemas.android.com/apk/res/object.dbnewgo.client</string>
+   【attrs】<declare-styleable name="PullToRefreshGridView"></declare-styleable>
+   【sdcard_picter.xml】 <object.p2pipcam.gridview.PullToRefreshGridView
+                           xmlns:ptr="@string/NS" 
+
+2、ListeningPlayActivity  
+   横屏视频展示
+
+2015.12.23   
+1、修复对讲和监听
+   talk();     对讲
+   audio();    监听
+   
+2016.01.07
+【修复doorbell找不到.so文件退出】
+   	System.loadLibrary("ffmpeg");
+		System.loadLibrary("avi_utils");
+		System.loadLibrary("object_jni");
+		
+		
+2016.01.20
+【ip_video_activity】 xmlns:umadsdk="http://schemas.android.com/apk/res/com.LoveBus"

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/activity_color"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_gray" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/contact_list_bgtitle"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/contact_list_bgtitle"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/editcontact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/inner_margin_left"
+                    android:layout_marginRight="0dip"
+                    android:scaleType="center"
+                    android:src="@drawable/selector_personaluser"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dip"
+                    android:layout_marginRight="15dp"
+                    android:gravity="center_vertical"                    
+                    android:singleLine="true"
+                    android:layout_weight="4"
+                    android:text="我的客厅我的客厅我的客厅我的客厅我的客厅我的客厅我的客厅"                    
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/online_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical|right"                    
+                    android:gravity="center_vertical"                                      
+                    android:text="在线"
+                    android:textColor="@color/dialog_title"
+                    android:textSize="@dimen/text_size_normal"
+                    android:layout_marginRight="2dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/mess_new"
+                    android:layout_width="8dip"
+                    android:layout_height="8dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="4dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/contact_list_newmess"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/contact_list_rightarrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/inner_margin_left"
+                    android:scaleType="center"
+                    android:src="@drawable/contact_list_rightarrow" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/Contact_Pic_Height"
+                android:layout_below="@+id/title" >
+
+                <ImageView
+                    android:id="@+id/contact_list_defaultpic"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/Contact_Pic_Height"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/contact_list_defaultpic" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/contact_list_bgtoolbar"
+                    android:gravity="bottom"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <RelativeLayout
+                            android:id="@+id/layout_setting_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:visibility="gone" >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/inner_margin_left"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/contact_list_setting" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="right" >
+
+                        <RelativeLayout
+                            android:id="@+id/layout_defence_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="right" >
+
+                            <ImageView
+                                android:id="@+id/image_defence_state"
+                                android:layout_width="@dimen/inner_item_progress_width_height"
+                                android:layout_height="@dimen/inner_item_progress_width_height"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="@dimen/inner_margin_right"
+                                android:scaleType="center"
+                                android:padding="0dp"
+                                android:src="@drawable/contact_list_lock"
+                                android:visibility="visible" />
+
+                            <ProgressBar
+                                android:id="@+id/progress_defence"
+                                style="?android:attr/progressBarStyleSmall"
+                                android:layout_width="@dimen/inner_item_progress_width_height"
+                                android:layout_height="@dimen/inner_item_progress_width_height"
+                                android:layout_centerInParent="true"                                
+                                android:layout_marginRight="@dimen/inner_margin_right"
+                                android:indeterminateDrawable="@anim/progress_white"
+                                android:indeterminateDuration="560000"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/listmask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/contact_list_mask"            
+            android:visibility="gone" >
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/layout_play_btn"
+            android:layout_width="@dimen/Contact_Play_Size"
+            android:layout_height="@dimen/Contact_Play_Size"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/contact_list_play" />
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sharecf_shadow" />
+
+</LinearLayout>

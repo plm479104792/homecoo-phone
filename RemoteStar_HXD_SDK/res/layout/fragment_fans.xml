@@ -1,0 +1,229 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+                android:background="#eee"
+    android:scrollbarStyle="outsideOverlay" >
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="1dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_fans_power"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_fans_123"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_123"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_fans_light"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_light"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_fans_timer"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+           
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_timer"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_fans_wind_speed"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+           
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_wind_speed"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_fans_wind_rate"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_wind_rate"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_fans_wind_rate_low"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_wind_rate_low"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_fans_wind_rate_mid"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_wind_rate_mid"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/text_fans_wind_rate_high"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/str_other_wind_rate_high"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="75dp"
+                                  android:layout_height="match_parent"
+            android:background="@drawable/bg_double"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_fans_cool"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="100dip"
+                
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_cool"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_fans_li"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_li"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_fans_mode"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_mode"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="75dp"
+                                  android:layout_height="match_parent"
+            android:background="@drawable/bg_double"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_fans_shake_head"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="100dip"
+                
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_shake_head"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/text_fans_sleep"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/str_other_sleep"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

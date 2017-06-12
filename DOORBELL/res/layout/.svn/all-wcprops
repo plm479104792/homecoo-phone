@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/android/!svn/ver/35/res/layout
+END
+add_camera.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/android/!svn/ver/39/res/layout/add_camera.xml
+END
+camera_list_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/android/!svn/ver/26/res/layout/camera_list_item.xml
+END
+main.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/android/!svn/ver/39/res/layout/main.xml
+END
+play.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/android/!svn/ver/40/res/layout/play.xml
+END
+search.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/android/!svn/ver/39/res/layout/search.xml
+END
+setting_list_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/android/!svn/ver/39/res/layout/setting_list_item.xml
+END
+about.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/android/!svn/ver/23/res/layout/about.xml
+END
+no_title.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/android/!svn/ver/7/res/layout/no_title.xml
+END
+start.xml
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/android/!svn/ver/38/res/layout/start.xml
+END
+setting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/android/!svn/ver/39/res/layout/setting.xml
+END
+search_list_item.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/android/!svn/ver/21/res/layout/search_list_item.xml
+END

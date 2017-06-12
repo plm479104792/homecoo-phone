@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#0F000000"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_image"
+            android:textColor="#6699FF"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:id="@+id/radio_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/str_text"
+            android:textColor="#6699FF"
+            android:textSize="25sp" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:ems="10"
+        android:gravity="fill_horizontal"
+        android:hint="@string/str_name"
+        android:inputType=""
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textSize="25sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <Spinner
+        android:id="@+id/spinner_image"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+    </Spinner>
+
+</LinearLayout>

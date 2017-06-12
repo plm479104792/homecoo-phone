@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_item_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_title"
+    android:padding="@dimen/header_padd" 
+    android:layout_gravity="bottom">
+    <RadioGroup
+        android:id="@+id/rg_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="58dp"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+   
+	    <RadioButton
+	        android:id="@+id/rb_scene_qingjing"
+	        style="@style/RadioButtonBottomTab"
+	        android:checked="true"
+	        android:text="@string/btm_scene_qingjing"
+	        android:visibility="gone"
+	        />
+	     <RadioButton
+	        android:id="@+id/rb_scene_yaokong"
+	          style="@style/RadioButtonBottomTab"
+	        android:text="@string/btm_scene_yaokong" 
+	        />
+	     <RadioButton
+	        android:id="@+id/rb_scene_zhaoming"
+	          style="@style/RadioButtonBottomTab"
+	        android:text="@string/btm_scene_zhaoming"
+	        />
+	     <RadioButton
+	        android:id="@+id/rb_scene_chazuo"
+	         style="@style/RadioButtonBottomTab"
+	        android:text="@string/btm_scene_chazuo" 
+	        />
+	     <RadioButton
+	        android:id="@+id/rb_scene_menchuang"
+	         style="@style/RadioButtonBottomTab"
+	        android:text="@string/btm_scene_menchuang" 
+	        />
+	   
+	     <RadioButton
+	        android:id="@+id/rb_scene_weikong"
+	          style="@style/RadioButtonBottomTab"
+	        android:text="@string/btm_scene_weikong" 
+	        />
+	    
+	     <RadioButton
+	        android:id="@+id/rb_scene_anfang"
+	         style="@style/RadioButtonBottomTab"
+	        android:text="@string/btm_scene_anfang" 
+	         android:visibility="gone"
+	        />
+	        <RadioButton
+	        android:id="@+id/rb_scene_yinyue"
+	         style="@style/RadioButtonBottomTab"
+	        android:text="@string/btm_scene_yinyue" 
+	        />
+     </RadioGroup>
+</RelativeLayout>

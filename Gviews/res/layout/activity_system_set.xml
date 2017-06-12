@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/change_ui_hc"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            style="@style/top_left_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/system_set"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/sharecfline_color_gray" />
+    </RelativeLayout>
+
+    <com.homecoolink.widget.BounceScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_group_margin_top"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/c_vibrate_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:text="@string/comming_vibrate"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/c_vibrate_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/setting_status_on" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/c_mute_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:text="@string/bell_ring"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/c_mute_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/setting_status_on" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/a_vibrate_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:text="@string/Allarm_vibrate"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/a_vibrate_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/setting_status_on" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/a_mute_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:text="@string/allarm_ring"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/a_mute_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/setting_status_off" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/set_commingRing"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <TextView
+                        android:id="@+id/selectedCommingRing_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="@string/bell_ring"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/scr_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:background="@drawable/setting_list_rightarrow" />
+
+                    <TextView
+                        android:id="@+id/selectedCommingRing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/scr_img"
+                        android:layout_toRightOf="@+id/selectedCommingRing_left"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="asdasds"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/set_allarmRing"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <TextView
+                        android:id="@+id/selectAllarmRing_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="@string/allarm_ring"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/sar_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:background="@drawable/setting_list_rightarrow" />
+
+                    <TextView
+                        android:id="@+id/selectAllarmRing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/sar_img"
+                        android:layout_toRightOf="@+id/selectAllarmRing_left"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text="asdasds"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="@dimen/text_size_small" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/set_allarminterval"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <TextView
+                        android:id="@+id/selectAllarminterval_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:text="@string/alarm_time_interval_title"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/sar_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:background="@drawable/setting_list_rightarrow" />
+
+                    <TextView
+                        android:id="@+id/selectAllarminterval"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/sar_img"
+                        android:layout_toRightOf="@+id/selectAllarmRing_left"
+                        android:ellipsize="end"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_group_margin_top"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <RelativeLayout
+                    android:id="@+id/alarm_set_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:text="@string/alarm_control"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:background="@drawable/arrow" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_group_margin_top"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/notify_icon_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:text="@string/notification_bar_icon"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/notify_icon_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/setting_status_on" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/item_group_margin_top"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/auto_start_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/setting_item_height"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/sharecfline_color_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/inner_margin_left"
+                        android:text="@string/auto_start"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/auto_start_icon_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/inner_margin_right"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/setting_status_on" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/sharecfline_color_gray" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.homecoolink.widget.BounceScrollView>
+
+</LinearLayout>

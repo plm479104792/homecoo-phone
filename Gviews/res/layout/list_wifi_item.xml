@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/selector_list_item"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/list_wifi_item_top1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/wifi_title1"
+            android:textSize="@dimen/text_size_small" />
+
+       <include layout="@layout/sharecf_xixian_bottom"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/net_ctl_wifi_item_height"
+        android:layout_gravity="center" >
+		<include layout="@layout/sharecf_xixian_top"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/net_ctl_wifi_item_height"
+            android:layout_marginLeft="@dimen/inner_margin_left"
+            android:gravity="center_vertical"
+            android:text="afdsfsd"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/text_size_normal" />
+
+        <ImageView
+            android:id="@+id/choose_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/name"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_wifi_selected"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/wifi_strength"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/inner_margin_right"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_strength5" />
+
+        <ImageView
+            android:id="@+id/wifi_type"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/wifi_strength"
+            android:scaleType="center"
+            android:src="@drawable/defence_off" />
+        <include layout="@layout/sharecf_xixian_bottom"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/list_wifi_item_top2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <include layout="@layout/sharecf_xixian_top"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/wifi_title2"
+            android:textSize="@dimen/text_size_small" />
+    
+    </LinearLayout>
+
+</LinearLayout>

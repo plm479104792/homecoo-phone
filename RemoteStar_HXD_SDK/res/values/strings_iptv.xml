@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="strs_iptv_type"></string-array>
+    <string-array name="strs_iptv_brand">
+        <item> 烽火(beacon)</item>
+        <item> 华为(Huawei)</item>
+        <item> 斯达康(UTS)</item>
+        <item> 同洲(states)</item>
+        <item> 中兴(ZTE)</item>
+        <item> 大亚(Daya)</item>
+        <item> 长虹(Changhong)</item>
+    </string-array>
+
+</resources>

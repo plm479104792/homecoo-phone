@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/android/!svn/ver/32/src/object/p2pipcam/adapter
+END
+SearchListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/android/!svn/ver/26/src/object/p2pipcam/adapter/SearchListAdapter.java
+END
+CameraListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/android/!svn/ver/32/src/object/p2pipcam/adapter/CameraListAdapter.java
+END
+SettingListAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/android/!svn/ver/39/src/object/p2pipcam/adapter/SettingListAdapter.java
+END

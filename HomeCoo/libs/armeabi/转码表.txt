@@ -1,0 +1,126 @@
+    /**
+     * 网关Hex数据转换到本地数据库
+     * @param devtype
+     * @param b
+     * @return
+     */
+	public static String wgDataToSqlString(short devtype, byte[] b) {
+		String strhex = "";
+		if (devtype ==SystemValue.DEV_TEMP_HUMI) {   //温湿度data转码
+			byte[] bytetemp = new byte[2];
+			byte[] bytehumi = new byte[2];
+			System.arraycopy(b, 0, bytetemp, 0, 2);
+			System.arraycopy(b, 2, bytehumi, 0, 2);
+			int temp = DataConvertUtil.byte2int(bytetemp);
+			int humi = DataConvertUtil.byte2int2(bytehumi);
+			String strtemp = Integer.toString(temp);
+			String strhumi = Integer.toString(humi);
+			strhex = strtemp + "p" + strhumi;
+		}else if(devtype ==SystemValue.DEV_PM25){
+			byte[] bpm25=new byte[2];
+			System.arraycopy(b, 0, bpm25, 0, 2);
+			
+			byte bpm25H=bpm25[0];
+			byte bpm25L=bpm25[1];
+			
+			int ipm25h=bpm25H;
+			int ipm25l=bpm25L;
+			int pm25=ipm25h*10+ipm25l/10;
+			
+			String strtemp = Integer.toString(pm25);
+			strhex = strtemp;
+			System.out.println("底层反馈的pm25值为："+strtemp+"高:"+ipm25h+"低:"+ipm25l);
+		} else {
+			for (int i = 0; i < b.length; i++) {
+				String hex = Integer.toHexString(b[i] & 0xFF);
+				if (hex.equals("64")) {
+					hex = "1";
+				} else if (hex.equals("00")) {
+					hex = "0";
+				} else if (hex.equals("32")) { // 情景学习
+					hex = "2";
+				}
+				strhex += hex; // 除了0和64其它的原字节返回,调光灯原字节返回
+			}
+		}
+		return strhex;
+	}
+
+
+
+/**
+	 * 数据库中数据转网关数据
+	 * @param devType
+	 * @param devstate
+	 * @return
+	 */
+	public static String SqlStr2WgData(int devType,String devstate){
+		   	// 添加转码后的Data
+			byte[] dataByte = devstate.getBytes();
+			int stateLen=dataByte.length;
+			int index=0;
+			byte[] soc=new byte[stateLen];
+		   if (devType == NetValue.DEV_LAMP_LIGHT) { // 调光灯
+				  soc[index++] = convertLampStringtoByte(devstate);
+			} else { // 普通的开关插座设备
+				for (int i = 0; i < dataByte.length; i++) {
+					if (dataByte[i] == 0x31) { // 1的字节码为0x31转换为0x64
+						soc[index++] = 0x64;
+					} else if (dataByte[i] == 0x30) { // 0的字节码为0x30转换为0x00
+						soc[index++] = 0x00;
+					} else if (dataByte[i] == 0x32) {
+						soc[index++] = 0x16; // 情景学习下发确认报文
+					} else if (dataByte[i] == 0x38) { // 双控开关 themestate开为8，关为0
+						soc[index++] = 0x64;
+					} else {
+						soc[index++] = dataByte[i]; // 特殊的字节码按原码转换
+					}
+				}
+			}
+			String strHex=DataConvertUtil.toHexUpString(soc);
+			return strHex;
+	 }
+
+
+	//===============普通设备控制data填充==============
+		else {
+			// 添加转码后的Data
+			byte[] dataByte = ((String) sentPackage.getData()).getBytes();
+
+			short devType = sentPackage.getDevType();
+			if (devType == NetValue.DEV_LOCAL_PHONE) { // 手机端认证
+				for (int i = 0; i < dataByte.length; i++) {
+					soc[index++] = dataByte[i];
+				}
+			} else if (devType == NetValue.DEV_LAMP_LIGHT) { // 调光灯
+				System.out.println("调光灯data" + sentPackage.getData());
+				String data = (String) sentPackage.getData();
+				soc[index++] = convertLampStringtoByte(data);
+			} else if (devType == NetValue.DEV_INFRARE) { // 红外遥控
+				String data = (String) sentPackage.getData();
+				byte[] infrareBytes = DataConvertUtil.toByteArray(data);
+				int length = sentPackage.getDataLen();
+				for (int i = 0; i < length; i++) {
+					soc[index++] = infrareBytes[i];
+				}
+			} else { // 普通的开关插座设备
+				for (int i = 0; i < dataByte.length; i++) {
+					if (dataByte[i] == 0x31) { // 1的字节码为0x31转换为0x64
+						soc[index++] = 0x64;
+					} else if (dataByte[i] == 0x30) { // 0的字节码为0x30转换为0x00
+						soc[index++] = 0x00;
+					} else if (dataByte[i] == 0x32) {
+						soc[index++] = 0x16; // 情景学习下发确认报文
+					} else if (dataByte[i] == 0x38) { // 双控开关 themestate开为8，关为0
+						soc[index++] = 0x64;
+					} else {
+						soc[index++] = dataByte[i]; // 特殊的字节码按原码转换
+					}
+				}
+			}
+		}
+
+
+
+
+

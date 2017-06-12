@@ -1,0 +1,2141 @@
+2015.11.22
+1、LoginActivity 
+   用户名和密码合法性校验   VerifyUtils.matchAccount(username)
+   内网用户连接登录    intranetUserLogin(String gatewayId,String mpassword)
+   外网用户连接登录    outernetUserLogin(String name,String pwd)
+   网络连接失败回调前台显示
+
+2015.11.24
+1、RegisterActivity
+    public boolean isUseableLogincode(String username)    验证账号是否已注册
+
+    public User getUser(String username,String password)  根据用户名和密码返回对应user对象
+
+2、BaseActivity
+   
+    protected void initExitDialog()      /**退出对话框**/
+
+2015.11.25aaa
+
+网关设置
+房间管理
+
+2015.11.26
+
+用户房间关联表
+UserSpaceDao
+
+     public List<SpaceType> lookupSpacesForUser(User user)       //根据用户查找该用户拥有的房间
+     private PreparedQuery<SpaceType> makePostsForUserQuery() 
+
+2015.11.27
+
+DevdtoDao    //设备的查删改
+      public List<DevDTO> devListBygwId(String  gatewayId)      根据网关号查找对应的设备
+HomeActivity
+     showSpaceInfo(SystemValue.userid);    //本地初始化用户房间列表
+     gateWay=new GateWayDao(HomeActivity.this).getGateWay(SystemValue.userid);    //初始化用户的第一个网关
+
+UserSpaceDao
+    public boolean isUseableSpace(SpaceType space,int userid)     //判断用户的id是否在某空间名称对应的用户关联表中
+
+2015.11.28
+DevdtoDao
+   public List<DevDTO> switchListBygwId(String  gatewayId,int wideType)   //根据网关号,大类号加载设备列表
+DeviceSwitchActivity    //开关页面
+DeviceSockActivity      //插座页面
+
+
+2015.11.29
+SpaceDevicesActivity
+      /*************初始化SpaceDeviceViewPages*********************/
+      private void initSpaceDeviceView(LayoutInflater inflater,int viewsnum) {
+        pageViews = new ArrayList<View>();  
+        spaceViews = new View[viewsNum]; 
+        mgvDevices=new GridView[viewsNum];
+        
+      for (int i = 0; i < viewsnum; i++) {
+           spaceViews[i]=inflater.inflate(R.layout.item_space_devices, null);
+           mgvDevices[i]=(GridView)spaceViews[i].findViewById(R.id.gv_space_devices);
+           pageViews.add(spaceViews[i]);
+	   	}
+        //初始化第一个房间的设备信息
+        showSiteInfo(SystemValue.userid,1);
+        deviceAdpter=new SwitchsAdapter1();
+        mgvDevices[1].setAdapter(deviceAdpter);
+	   }
+	   
+	   /*************刷新当前房间设备列表*********************/
+	   	 case 0x129:
+	   		    deviceAdpter=new SwitchsAdapter1();
+	   	    	mgvDevices[selectIndex].setAdapter( deviceAdpter);
+	   		 }
+	   
+
+        //初始化指引小圆点图片数组
+        initGuidImageView(viewsNum);
+     
+2015.11.30
+DeviceSwitchActivity
+1、显示
+   外网：直接从服务器读取数据经过码表转换（on-1,off-0,pk-00）存入本地数据库
+   内网：从本地数据库读取数据
+2、控制
+   外网：控制命令经过码表转换（1-on,00-pk）发送到服务器
+   内网：控制命令经过码表转换（1-64,0-00）发送网关
+   
+GatewayDao
+   新添加网关和IP
+   更新网关和IP
+   
+2015.12.1
+SpaceDevicesActivity   DeviceSockActivity  DeviceSwitchActivity  DeviceWindowActivity
+1、加载
+   判断网络状态为内网：从本地数据库加载空间列表；根据空间Id从本地加载设备
+   判断网络状态为外网：从外网服务器加载空间列表，将空间列表同步到本地数据库；根据空间Id从外网服务器加载设备，将设备列表同步到本地数据库。
+2、控制
+   判断网络状态为内网：将控制命令转换为报文发送到网关，并将设备的状态更新到本地数据库
+   判断网络状态为外网：将控制命令发送到外网服务器，并将设备的状态更新到本地数据库   
+   
+2015.12.03
+SceneModelActivity
+
+		private void themeExecuteLoop()      // 循环发送情景表中的关联设备状态      
+		
+2015.12.05
+GatewayManegeActivity
+网关添加    addGatewayDialog()
+网关修改IP  updateGatewayIPDialog()
+网关删除    showDeleteDialog()
+
+修复弹出对话框，在点击确定按钮后先对输入的内容进行校验。
+
+/%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+SpaceManegeActivity
+修改房间名称（服务器端是根据主键来修改的吗【一个用户改房间则所有用户的房间名称都修改了】，如果返回新主键则以前设置的房间无效）
+
+2015.12.06
+SocketService
+【后台】内网网关添加或者更新本地数据库devdto的状态
+WebPacketUtil.addOrUpdateDeviceToLocalSql(recivePacket);
+
+【情景模式】
+DeviceSockActivity   
+				getThemeId(position); //根据外网服务器返回的themeid,然后添加情景到本地数据库中;情景的devid为2222
+SceneManegeActivity
+       addTheme(scenename);   在本地数据中添加情景，themeid自动生成；情景的devid为8888
+       
+2015.12.07
+【网络切换】
+BaseActivity
+       netWorkSwitch();     //判断是否已绑定网关id,然后启动SocketService  
+       
+【修复toggleButton初始化setchecked触发事件】
+	holder.tgBtn4.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						if(holder.tgBtn4.isChecked()){
+							cmdControl(holder,position,4,ON);
+						}
+						else{
+							cmdControl(holder,position,4,OFF);
+						}
+					}
+				});
+	}
+【SeekBar滑动停止发送状态】
+setOnSeekBarChangeListener()
+
+2015-12-08
+集成摄像头开发包前
+
+2015.12.12
+1、集成可视对讲
+2、防区设置 DefenceAreaSet
+   防区管理 DefenceArea
+   
+2015.12.15
+1、适配登录，主页导航，设置等图片
+2、网关设置：添加，获取网关到服务器。
+
+2015.12.16
+DevDTO 添加devname 属性
+themestate 修改 id为devid
+SpaceType bz属性填充gatewayId
+
+2015.12.17
+摄像头和可视对讲同时集成在HomeCoo
+1、修复IpCameraDemo和DoorBell 库文件冲突(libffmpeg.so和libavi_utils.so功能相同)
+DoorBell 删除libffmpeg.so库引用
+IpCameraDemo 删除libavi_utils.so库引用
+2、修复library project关联到主工程后找不到id
+在library project工程中将此id所在xml文件重命名
+
+2015.12.18
+GatewayManegeActivity  
+外网：从服务器加载userid，gatewayid,在本地数据库查找存在后填充IP,新网关填充默认IP,不存在该网关则IP为null
+      如果本地设备已存在，
+内网：根据userid加载
+【添加网关】先添加到本地再同步到服务器
+【更新网关IP】在本地数据库更新
+
+SpaceManegeActivity
+同网关操作
+
+DeviceManegeActivity
+外网：initDev更新设备
+内网：更新，删除设备
+
+SceneManegeActivity
+【添加或更新theme】根据userid和themename从服务器更新本地themeid或者添加新情景（parseAndSaveThemelist）
+【情景设置内网】
+
+2015.12.20
+HomeActivity
+1、登录系统后，默认填充userid对应的第一个网关id为SystemValue.gatewayid
+
+SpaceManegeActivity , SpaceDevicesActivity
+1、外网情况下，需从外网直接获取空间列表。
+2、内网情况下，需从本地数据库获取空间列表
+
+
+2015.12.21
+DeviceSensorActivity
+【联动情景id生成】
+   if (NetValue.netFlag==NetValue.INTRANET) {
+	    	getThemeIdFromServer(alertTheme,devname);    //insertOrUpdateAlertTheme默认alettype为1
+		}else if (NetValue.netFlag==NetValue.OUTERNET) {
+			addAThemeToLocalSql(alertTheme);
+			Intent sceneSetIntent=new Intent(DeviceSensorActivity.this,SceneSetActivity.class);
+			sceneSetIntent.putExtra("themeid",aleThemeid);
+			sceneSetIntent.putExtra("themename",devname);
+			startActivity(sceneSetIntent);
+		}
+						
+【判断并处理紧急情景】 
+ 	 judgeAndExcuteAlerTheme(recivePacket);
+ 	 
+2015.12.22
+DefenceAreaSetActivity
+1、根据radiobutton更新theme表中的themestate 1：室内 2：室外
+      insertOrUpdateAletTheme(1,position);   //alerttype 1室内   
+      
+2015.12.23
+1、手机验证
+
+2015.12.25
+DeviceWeikongActivity
+1、风扇的开关状态
+
+LoginActivity
+1、本地登录成功后获取所有设备的状态
+2、外网登录成功，本地有name,pwd更新userid;本地无则添加user;
+
+【切换网络】 netWorkSwitch(TextView textview)
+1、socketService.sentPacket(authPacket);   //发送请求认证报文到网关
+2、socketService.sentPacket(devAllPacket);   //发送请求所有设备状态
+
+2015.12.26
+DefenceAreaActivity 
+    外网撤布防执行：
+      excuteAlertTheme
+    
+    内外撤布防执行：
+【室内的撤布防异步】
+      
+      
+SceneModelActivity
+   //初始化默认的四个情景
+ 		SystemValue.setInitThemeList();
+ 		
+ 		
+2015.12.27
+socketservice 情景学习
+用户选择多个房间    
+        timerhandler.post(addscenestaterunnable);
+将房间内的设备状态添加到对应的themeid     
+
+2015.12.28
+SocketService
+【修复read阻塞】  
+   Thread inputThrea=new Thread(new Runnable()
+    inputThrea.start();
+LoginActivity
+【修复验证通过对话框不消失】
+  点击确定对话框消失，如果验证不通过，对话框再显示
+  
+2015.12.30
+1、onCreate()
+   创建socketService,
+   开启hander，  mHandler = new Handler(thread.getLooper());
+   
+2、socketConnect()
+     NetValue.isocketConnet= true;  //socket已经连接
+     NetValue.inputflag=true;       //打开输入流
+     inputThrea.start();       //启动接收线程
+   
+2、发送时，将发送线程扔进hander
+     mHandler.post(sentPacketRunnable);//将线程post到Handler中
+     开启输入流（inputflag=true）
+     
+3、在输入流中接收数据
+    Thread inputThrea=new Thread(new Runnable() 
+    
+【备注】入网流程31号再理
+
+2015.12.31
+LoginActivity
+【记住用户名和密码】   remenberNameAndPassword(); 
+
+【android业务处理逻辑】
+UserRegisterActivity  服务器端注册成功后添加到本地数据库
+
+LoginActivity   
+【本地连接】  先进行本地连接，填充userid
+             1、查找logincode和pwd对应的网关，若存在填充内网连接要素为系统全局变量(gatewayid,wgpwd,IP)，
+             2、判断是否通过内网认证（!NetValue.socketauthen），未通过认证，则建立socket连接并启动认证（socketService.socketConnect()）
+
+【远程连接】  
+             1、  查找logincode和pwd对应的网关为null,切换到外网登录
+             2、本地连接抛出异常（ip错误等）切换到外网服务器连接(logincode,password),验证成功，存储logincode,password,userid到本地；
+                                                          如果本地存在logincode，password则更新userid；
+                                                          填充服务器返回的userid为SystemValue.userid；
+               
+
+2016.01.01
+GatewayManegeActivity 
+【激活网关】   [添加按钮，手动同步本地网关到数据库]
+     提示用户：必须在连内网的情况下，才能激活（添加）网关；
+     1、添加网关输入wgid,wgpwd,ip,本地认证成功返回0，添加网关信息到服务器（目前userid和wgid）
+     2、socketservice中认证成功会请求所有设备状态  getDevAllStatePacket
+【更改网关IP】
+     1、更改本地数据库网关IP
+     2、填充新网关IP为   NetValue.LOCAL_IP=gatewayIP;  //更新IP时立即启用
+【删除网关】
+     1、删除本地网关对象
+     2、删除服务器端的（userid和wgid）
+【修改网关密码】    
+     1、用户点击修改网关密码，检查是否通过内网认证（NetValue.socketauthen），提示用户切换本地连接进行内网认证。
+     2、内网认证通过，发送修改密码报文（updatePasswordPacket）
+
+/***************************************************************/     
+SocketService 网络连接、认证、发送、接收流程
+【建立socket连接】socketConnect()
+     1、new socket对象；
+     2、判断接收线程是否启动，启动接收线程inputThread.start();
+     3、发送认证报文，判断认证结果（datatype==NetValue.DATA_ACK_AUTH）
+        认证通过，	NetValue.socketauthen=true;  启动心跳包线程；
+        认证未通过，NetValue.socketauthen=false;  关闭socket，socketClose();
+        
+【网络切换】   netWorkSwitch(socketService,textview)
+/***************************************************************/ 
+
+SpaceManegeActivity
+【添加空间】  addNewSpaceToServer
+     1、先添加到本地
+     2、然后添加到服务器
+     
+2016.01.04
+SceneManageActivity
+【添加情景】  addTheme()
+     1、先添加到外网，成功后返回对应的themeid,
+     2、同步服务器成功返回的theme到本地
+
+【防暴力点击】   BaseActivity
+    public abstract class ClickEvent implements OnClickListener
+    
+2016.01.06
+【修复理listview点击错乱】  DeviceSwitchActivity ,DeviceSockActivity ,DeviceWindowActivity
+    1、  showViewByDevtype(holder,devdto,position); 
+    2、  switchViewOnClick(holder,position);
+           holder.tgBtn1.setOnCheckedChangeListener(new CheckClickEvent()
+           
+【外网定时刷新】DeviceSwitchActivity ,DeviceSockActivity ,DeviceWindowActivity
+     timerhandler.postDelayed(timerrunnable, 5000); 
+     
+     
+2016.01.07
+【网关同步】  GatewayManegeActivity
+    1、  gatewayRefresh()
+【同步空间】  SpaceManegeActivity
+    1、  sysSpaceToServer()
+    
+【请求所有设备】  
+    1、 外网 ：showDevdtoFromServer(SystemValue.userid);
+    2、 内网： SocketPacket devAllPacket=WebPacketUtil.getDevAllStatePacket(SystemValue.gatewayid);
+			         devService.sentPacket(devAllPacket);   //发送请求所有设备状态
+			         
+2016.01.07   9:40
+【情景管理】
+   1、必须添加情景成功了，返回服务器返回的themeid.然后添加情景到本地服务器。
+【情景联动设置】
+   1、themestate ，（themeid,id,devid,devstate）
+注意：在进入设备管理时,根据devid填充themestate中的id
+    
+		new ThemeStateDao(null).updateIdByDevid(devdto);  //根据devid更新themestate表中的id
+    
+【修复doorbell找不到.so文件退出】
+   	System.loadLibrary("ffmpeg");
+		System.loadLibrary("avi_utils");
+		System.loadLibrary("object_jni");
+		
+2016.01.08
+【温湿度】
+    1、外网       
+      String strdata=devTempHumi.getDevState();            
+      String[] strTempHumi=strdata.split("p");        
+      double dTemp=Double.valueOf(strTempHumi[0])/100;
+      tvtemprature.setText("温度："+dTemp+"℃");      
+      tvhumidity.setText("湿度："+strTempHumi[1]+"%");
+    2、内网
+       int temp=DataConvertUtil.byte2int2(bytetemp);        
+       int humi=DataConvertUtil.byte2int2(bytehumi);
+       String strtemp=Integer.toString(temp);       
+       String strhumi=Integer.toString(humi);       
+       strhex=strtemp+"p"+strhumi;      
+       
+2016.01.09
+【数据库更新注意】  
+     onCreate  里面的表格不能屏蔽   
+【传感器类报警】   
+     if (NetValue.isAcceptAlert)  //屏蔽短时间类连续上报报警状态
+     
+2016.01.12   10.55  初版
+devsiwtch   sensorset的listview 缓存加载，点击定位
+
+2016.01.12   14.01
+devicespace  listview 缓存加载，点击定位
+
+2016.01.12   20.41
+devsiwtch    listview  缓存加载，每页加载10项，点击定位准确
+
+2016.01.13
+【修改七寸屏版本】
+
+2016.01.13  22.54
+1、外网情况下，
+    else if (NetValue.netFlag==NetValue.OUTERNET) {
+			tvbttomNetwork.setText("远程");    //任务栏显示网络状态
+			//访问服务器线程  //【定时线程步骤2】
+			timerhandler.post(timerrunnable); 
+		} 
+		
+2016.01.14
+1、添加双控开关
+    getNameByThemeDevstate
+    
+    
+2015.01.15
+同步七寸屏
+  1、联动设置
+  2、防区管理   weikong2
+  
+3、listview 缓存机制，屏蔽重复显示   【spacedevices】
+     if (NetValue.netFlag==NetValue.INTRANET) {
+        		//从本地数据库加载房间列表
+            	 devlist.clear();
+       		     gvlistAll.clear();
+            	List<DevDTO> allDevList=new ArrayList<DevDTO>();
+     		      allDevList=new DevdtoDao(SpaceDevicesActivity.this)
+                        .deviceListBySpaceId(SystemValue.gatewayid,spaceid);
+     		         gvlistAll=WebPacketUtil.findSpaceDevicesFromDevicesAll(allDevList);  
+     		         
+     		        //异步进程更新界面
+     		   	      Message msg=new Message();
+     		   	      msg.what=0x129;
+     		   	      handler.sendMessage(msg);           
+    		}else if (NetValue.netFlag==NetValue.OUTERNET) {		
+    			//根据用户名从外网初始化房间 列表	 
+    			  findDevBySpaceFromOuternet(SystemValue.userid,spaceid);
+    		}
+   
+///////////////////////////////////////////////////////////
+         	 LIST_COUNT=gvlistAll.size();   //实例化所有设备的总数
+	   			 loadState=LOAD_STATE_IDLE;     //记录加载状态
+	   		   deviceAdpter.onListener(SpaceDevicesActivity.this);
+	   	     mgvDevices[selectIndex].setAdapter( deviceAdpter);
+	   	     
+4、情景点击位置，填充为全局变量
+【获取当前启动情景位置】    
+       vPsotion = preferences.getInt("scenepoint", -1);       //获取已经启动的scenepoint
+				//刷新情景当前点亮图标
+				if (vPsotion==position) {
+					holder.tgSceneSwitch.setChecked(true);
+				}else {
+					holder.tgSceneSwitch.setChecked(false);
+				}
+				
+【填充当前启动情景位置】
+       //填充当前点击位置填充全局变量
+				  vPsotion=position;  
+				  editor.putInt("scenepoint", position);
+				  editor.commit(); 
+				  
+2016.01.18
+【环形接收byte数组】   putBytes(recivebuf,len);   //将接收的字节报文放回bytebuffer
+【定时解析报文】       decodePacketFromByteBuffer()
+【开启新发送报文线程】
+          //socket连接，定时解析报文线程
+	        HandlerThread thread = new HandlerThread("MyHandlerThread");
+	        thread.start();//创建一个HandlerThread并启动它
+	        mHandler = new Handler(thread.getLooper());
+	        //发送报文线程
+	        HandlerThread sentThread = new HandlerThread("SentHandlerThread");
+	        sentThread.start();//创建一个HandlerThread并启动它
+	        sentHandler=new Handler(sentThread.getLooper());  //发送数据线程
+
+1、scenesetActivity  
+【修复设备状态设置后，checkbox状态显示】
+     themeStateList.add(themeState); //添加到缓存themestate
+【实时更新缓存themestate中设备状态】
+     addOrUpdateThemestateToServer(themeId,device);
+     
+2、SpaceDevicesActivity
+【devlist局部刷新】
+  refreshDevlistByGvlistAll(); //根据外网返回的gvlistAll刷新devlist
+【切换房间时清空devlist】
+  public void onPageSelected(int arg0)
+  //从本地数据库加载房间列表
+      devlist.clear();
+  		gvlistAll.clear();
+  		
+3、DefenceAreaSetActivity
+   防区设置时，手机必须连到外网，根据外网返回的紧急情景themeid，添加到本地theme表中
+     
+2016.01.19
+DefenceAreaActivity
+  1、室内，室外布防撤防
+  
+【DevDTO】pdevid （本地主键），id（服务器返回并填充）
+
+SpaceManegeActivity
+ 【SpaceType】添加空间时，服务器返回spacetypeid ,然后添加到本地
+              更新/删除空间先从服务器删除后，从本地删除
+              
+SceneManegeActivity
+ 【添加情景】 addSceneDialog();   //添加新情景，先添加到服务器，然后添加到本地
+ 【删除情景】 deleteThemeToOuternet(theme,position);   //删除情景，先从服务器删除，然后删除本地情景
+  //取消更改情景名称功能，容易乱掉
+ 【底层上报四路情景】 四路情景（202）上报后，在SceneManegeActivity的缓存themeList添加四个默认的情景，
+                     用户点击情景设置后，由服务器生成themeid，插入到theme表中
+ 【底层上报双控开关】 双控开关（204）上报后，在SceneManegeActivity的缓存themeList添加（位置+双控开关）情景（多个）
+                     用户点击情景设置后，由服务器生成themeid，插入到theme表中
+  
+DefenceAreaSetActivity
+  【防区设置】先从服务器themeid,然后添加到本地theme表中
+  
+SocketService1
+  【报警对话框消失】其它客户端对设备进行撤防后，内网情况下手机端收到设备返回的撤防成功消息后将报警对话框消失
+ 
+   
+2016.01.20
+SceneSetActivity
+ 【修复chechbox取消后显示】chebox取消选中后，从themeStateList删除对应设备
+	 deleteThemestateBythemeStateCache(device,themeState);    //从本地缓存中themestate删除设备状态（2）
+	 
+ /*****每次修改ipcamdemo后先cleanipcamdemo然后clean主工程HomeCOO*********/
+AddCameraActivity
+【更改摄像机名称】   	new CameraDao(AddCameraActivity.this).updateCameranameByCamerano(mCamera);
+【删除摄像机】        new CameraDao(AddCameraActivity.this).deleteCameraByCamerano(myCamera);
+
+2016.01.21
+SceneModelActivity
+   addDefaultSceneByThemename(theme);  //默认情景关联所有硬件情景开关
+   
+    if (theme.getThemetype()==1) {  //硬件情景开关
+    else if (theme.getThemetype()==2) {    //双控开关
+   
+2016.01.22    14:26     同步7寸屏版本
+SocketService1
+  1、 new ThemeStateDao(null).deleteAllByThemeid(stuThemeid);    //删除当前情景id下已经设置的themestate
+  2、addDefaultSceneByThemename    // 添加硬件情景开关themestate到默认的情景
+   
+  3、getNameAndExecuteByThemeDevstate     //底层触发双控开关，执行双控情节；情景学习根据devstate获取情景名称和themeid
+      if (devtype==204) {   //双控开关  
+      
+  4、情景模式加载情景
+     findCustomThemeFromThemesAll(List<Theme> allLists)   //查找情景类型为 
+           if ((themetype==1)||(themetype==2)||(themetype==4))   //实体四路情景，2路情景，自定义情景
+           
+2016.01.23
+WebPacketUtil
+   themestate=convertThemestateFromServer(themestate);//转换服务器的themestate到本地
+   
+SceneModelActivity
+    //更新本地数据库的设备状态，不等底层返回
+	  new DevdtoDao(null).updateDevByDevIdAndGwId(devdto);
+	
+SceneSetActivity	  
+      spaceViews[5]=inflater.inflate(R.layout.item_space_devices, null);  //微控
+             mgvDevices[3]=(GridView)spaceViews[5].findViewById(R.id.gv_space_devices);
+      spaceViews[6]=inflater.inflate(R.layout.item_space_devices, null);     //音乐
+  	         mgvDevices[4]=(GridView) spaceViews[6].findViewById(R.id.gv_space_devices);
+  
+【摄像头】
+NewCameraActivity
+     		Intent intent = new Intent();  //Itent就是我们要发送的内容
+        intent.putExtra("data","refreshCamera");  
+        intent.setAction("finish");   //设置你这个广播的action，只有和这个action一样的接受者才能接受者才能接收广播
+        sendBroadcast(intent);   //发送广播
+        
+        
+2016.01.24
+【修复手机返回键记不住密码】
+       public boolean onKeyDown(int keyCode, KeyEvent event)
+       
+【DeviceSwitchActivity】【DeviceWeiKongActivity】   外网返回本地数据库加载   
+     WebPacketUtil.parseSoaptoDevicelist(rstJsonArray);
+			  gvlistAll=new DevdtoDao(DeviceSwitchActivity.this)
+              .switchListBygwId(SystemValue.gatewayid,SystemValue.zhaoming); 
+
+【SpaceManegeActivity】【SceneSetActivity】
+    屏蔽同步
+    
+【SocketService1】
+   报警震动和提示音
+   
+2016.01.27
+【WebPacketUtil】
+     convertThemestateFromServer()     //安防类情景themestate原码返回
+     
+2016.02.20
+【SocketService】
+      //扫描局域网内的网关ip
+			NetTool ntNetTool=new NetTool(null);
+			ntNetTool.scan();
+			
+【GatewayManegeActivity】
+    //适配网关ip线程
+      HandlerThread searchIpThread = new HandlerThread("SearchIpThread");
+      searchIpThread.start();//创建一个HandlerThread并启动它
+      searchIpHandler=new Handler(searchIpThread.getLooper());  //发送数据线程
+      searchIpHandler.post(searchIpRunnable);
+
+2016.02.21
+      timmertask 定时
+      
+
+2016.02.23
+【SpaceDevicesActivity 】
+ //底层数据局部刷新
+ case DEVMSG:
+	    				
+			SocketPacket socketPacket=(SocketPacket) tranObject.getObject();
+			String devid=socketPacket.getDevId();
+			String devstate=socketPacket.getData();
+			
+			DevDTO devDTO=null;
+			  int vposition=-1;
+		        // 进行数据对比获取对应数据在list中的位置
+		      for(int j=0;j<devlist.size();j++)
+		        { 
+		    	    String strdevid=devlist.get(j).getDevId();
+		            if (devid.equalsIgnoreCase(strdevid))
+		            {   System.out.println("底层设备状态更新===="+strdevid);
+		                devDTO=devlist.get(j);
+		                devDTO.setDevState(devstate);
+		                vposition=j;
+		                //  异步进程更新界面
+    		 		    Message msg=new Message();
+    		            msg.what=0x009;
+    		            msg.arg1=vposition;
+    		            msg.obj=devDTO;
+    		            handler.sendMessage(msg);
+		                break;
+		            }
+		          }
+        break;
+        
+ 
+     
+     
+ 【SocketService1】
+  //修复socket接收不稳定
+  //socket连接后，启动接收线程
+		   Thread inputThread=new Thread(new Runnable() {
+				public void run() {
+			    while(true)
+				{
+			    	if(NetValue.sIsConneted){
+	 				    try {
+							input=socket.getInputStream();
+							  //判断并验证报文
+			 				  readAndconvertInputStream(input);
+						} catch (IOException e) {
+							NetValue.sIsConneted=false;
+							System.out.println("捕获到socket已经关闭");
+							e.printStackTrace();
+						}
+				   }
+				 }
+				}
+			 });
+			 
+			 
+2016.02.24
+【SocketService1】
+ 1、扫描局域网ip和适配网关ip
+    //扫描局域网内的网关ip
+			NetTool ntNetTool=new NetTool(null);
+			ntNetTool.scan();
+			
+			 //适配网关ip线程
+      HandlerThread searchIpThread = new HandlerThread("SearchIpThread");
+      searchIpThread.start();//创建一个HandlerThread并启动它
+      searchIpHandler=new Handler(searchIpThread.getLooper());  //发送数据线程
+      searchIpHandler.post(searchIpRunnable);
+	        
+	 2、适配成功后，将对应网关的ip地址更新到数据库
+	 //更新数据库中局域网内对应网关的ip
+		        	   GateWay mgateWay=new GateWayDao(SocketService1.this).getFirstGateWay(SystemValue.userid);
+		        	   if (mgateWay!=null) {
+		        		   //更新设备信息到数据库
+		        		   mgateWay.setIp(ip);
+		        		   System.out.println("==userid=="+SystemValue.userid+"======="+mgateWay.getIp());
+			             new GateWayDao(SocketService1.this).updateGateWayByWgid(mgateWay);
+					   }       
+	  
+	  
+【GatewayManegeActivity】
+ 1、刷新并更新网关的ip
+ public void gatewayRefresh()
+ 
+ 2、 屏蔽本地网络连接失败提示
+ NetValue.callbackflag=false;  
+ 
+ 3、本地网络连接失败提示
+ NetValue.callbackflag=true;   
+ 
+ 
+ 【SpaceDevicesActivity】
+ 1、本地网络，局部数据刷新
+  case 0x009:
+	   			 int index = msg.arg1;  
+		            DevDTO devdto = (DevDTO) msg.obj; 
+		            int firstVisible =  mgvDevices[selectIndex].getFirstVisiblePosition();  
+		            int lastVisible =  mgvDevices[selectIndex].getLastVisiblePosition();  
+		            if (index >= firstVisible && index <= lastVisible) {
+		            	//获取到index对应的holder
+		            	Holder holder = (Holder) ( mgvDevices[selectIndex] 
+		                        .getChildAt(index - firstVisible).getTag());  
+		            	  showViewByDevtype(holder,devdto);
+		            }  
+	   			  break;
+  
+  
+2016.02.25
+【SocketService1】
+ 1、获取手机本地的ip地址
+  //获取IP前缀
+	  public String getLocAddrIndex(){
+	     
+		String str = getLocAddress();
+	     
+	    if(!str.equals("")){
+	      return str.substring(0,str.lastIndexOf(".")+1);
+	    }
+	     
+	    return null;
+	  }
+	  
+【NetTool】
+ 1、搜索手机所在网段的本地手机IP地址
+   //获取本地ip地址
+	  public String getLocAddress(){
+	    String ipaddress = " ";
+	    try {
+	      Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces();
+	      // 遍历所用的网络接口
+	      while (en.hasMoreElements()) {
+	        NetworkInterface networks = en.nextElement();
+	        // 得到每一个网络接口绑定的所有ip
+	        Enumeration<InetAddress> address = networks.getInetAddresses();
+	        // 遍历每一个接口绑定的所有ip
+	        while (address.hasMoreElements()) {
+	          InetAddress ip = address.nextElement();
+	          if (!ip.isLoopbackAddress()
+	              && InetAddressUtils.isIPv4Address(ip.getHostAddress())) {
+	            ipaddress = ip.getHostAddress();
+	          }
+	        }
+	      }
+	    } catch (SocketException e) {
+	      Log.e("", "获取本地ip地址失败");
+	      e.printStackTrace();
+	    }
+	    System.out.println("本地手机IP:" + ipaddress);
+	     
+	    return ipaddress;
+	  }
+
+【GatewayActivity】
+ Toast
+ 
+ 【WebPacketUtil】
+ 1、parseSoaptoWgList/  
+  GateWay  mgateway=new GateWayDao(null).getGatewayByUseridAndWgid(userid, wgid);
+						    if (mgateway==null) {
+						    	gateway.setIp(NetValue.LOCAL_IP);   //新网关插入默认的IP
+						    	gateway.setWgpwd(NetValue.authdata);
+								new GateWayDao(null).add(gateway);//新网关添加时，id是由本地生成
+							}else {
+								//以后服务器返回的网关属性有Ip,需更新本地对应网关的Ip地址
+								System.out.println("====从服务器更新填充本地IP====="+mgateway.getIp());
+								gateway.setWgpwd(mgateway.getWgpwd());
+//								gateway.setIp(mgateway.getIp());  //临时填充本地数据库的IP【服务器待修改】
+								gateway.setIp(NetValue.LOCAL_IP);
+							}
+
+
+2016.03.01
+【SocketService】
+1、添加接收红外devid的广播
+@Override
+	public void onReceive(Context arg0, Intent arg1) {
+		    String action=arg1.getAction();
+		    if (action.equals("INFRA_DEVID")) {  //接收红外设备id
+				String devid=arg1.getStringExtra("devid");
+				NetValue.DEVID_INFRA=devid;
+				System.out.println("===接收到的红外设备id是=="+NetValue.DEVID_INFRA);
+			}else if (action.equals("send")) {  //接收红外码
+				byte[] infraredbuf=arg1.getByteArrayExtra("infrared");
+				String str=DataConvertUtil.hexToString(infraredbuf);
+				System.out.println("接收到的红外码==="+str);
+				DataConvertUtil.rprintHexString(infraredbuf);
+				
+				if (NetValue.sIsConneted) {  //socket已建立连接通过认证，重新认证网关合法性
+					//封装并发送红外报文
+					SocketPacket infrarePacket=WebPacketUtil.infraredConverToPacket(str);
+				    sentPacket(infrarePacket);   //通过内网验证网关的合法性
+			       }else { 
+			    	   socketConnect(NetValue.LOCAL_IP);  //重新建立连接，认证
+			   }
+			}
+	}
+	
+【DeviceManegeActivity】
+1、添加红外设备到红外的SDK数据库中
+ETGroup mgroup=group.findGroupByName(ETDB.getInstance(DeviceManegeActivity.this));
+		if (mgroup==null) { //本地数据库中查找到的mgroup
+			group.Inster(ETDB.getInstance(DeviceManegeActivity.this));
+			System.out.println("新添一条数据到红外码库数据库中！");
+		}else {
+			int mid=mgroup.GetID();
+			group.SetID(mid);
+			group.Update(ETDB.getInstance(DeviceManegeActivity.this));
+			System.out.println("更新数据到红外码库数据库中！");
+		}
+		
+2016.03.29
+一、LoginActivity
+  登录界面添加登录名下拉选择功能
+  showDropDown()
+  
+  
+  
+2016.04.08
+情景逻辑放到网关执行，版本修改前。
+
+      
+2016.04.20
+1、DeviceManegeActivity
+  sysnDeviceToServer();     //同步设备到服务器
+  getDeviceFromServer();	//从服务器同步设备信息到本地
+  
+2、SpaceManegeActivity
+  sysnSpaceToServer();
+  sysnSpaceFromServer();
+  
+3、SceneManegeActivity
+  sysnThemeToServer();
+  getThemeDeviceFromServer();		
+  
+ 2016.04.21
+1、添加版本信息表version
+1、DeviceManegeActivity
+  checkVersionFromServer();  //从服务器对比版本信息
+  //根据版本同步
+  sysnDeviceToServer();     //同步设备到服务器
+  getDeviceFromServer();	//从服务器同步设备信息到本地
+  
+2、SpaceManegeActivity
+   //根据版本同步
+  sysnSpaceToServer();
+  sysnSpaceFromServer();
+  
+3、SceneManegeActivity
+   //根据版本同步
+  sysnThemeToServer();
+  getThemeDeviceFromServer();	 
+	
+2016.04.22
+【UserSpaceDevDao】
+1、 addorUpdate(UserSpaceDevice userSpaceDev)
+	//===更新version_device 时间戳===
+	Version version=SystemValue.getVersion(SystemValue.VERSION_DEVICE);
+	new VersionDao(null).addorUpdateVerson(version);
+	
+2、DeviceSwitchActivity
+   //发送字符串命令到服务器
+   sendCmdToServer(String strCmd)
+   
+   
+2016.04.23  
+ 关于外网情况下的定时刷新说明
+【LoginActivity】
+内/外网登录成功的情况下，启动SocketService
+【SocketService】
+socketservice启动时判断
+   NetValue.INTRANET    启动与网关交互的线程   gatewayRunnable  
+   NetValue.OUTTERNET   定时访问服务器获取所有设备并更新数据库      visitServerRunnable
+   
+【BaseActivity】
+//切换网络时访问服务器和网关的呼吸线程也进行切换
+netWorkSwitch(SocketService socketService,TextView textview)
+
+2016.04.24
+关于情景的说明
+1、硬件情景
+【DeviceManegeActivity】
+   底层上报实体硬件情景开关后，在设置的设备管理页面中，
+   选择对应实体情景开关，点击设置提示用户输入四个对应的情景名称，
+   生成对应的四个情景到theme表中
+【SceneManegeActivity】
+   加载theme表中已有的情景
+   选择某个情景，并进行联动设置，并插入到themeDevice表中
+【SceneModelActivity】
+   当用户选择启动某个情景，具体的情景联动的执行由APP逐个下发
+   
+2、安防类情景
+【DeviceManegeActivity】
+   （1）底层上报实体硬件安防产品后，在设置的设备管理页面中，
+   选择对应实体安防产品，
+   （2）对安防产品选择相应的防区
+【DeviceSensorActivity】  
+   加载theme表中已有的安防设备,点击设置对应的情景联动，生成对应的安防情景到theme表中
+   选择某个情景，并进行联动设置，并插入到themeDevice表中
+【DefenceAreaSetActivity】
+   对安防类产品进行防区划归(在deviceManagerActivity页面中设置)
+【DefenceAreaActivity】
+   对安防类产品进行室内外撤布防
+   
+
+2016.04.25
+【DeviceWindowActivity】
+1、外网情况下定时刷新数据库获取最新状态
+
+2016.04.26
+【SceneManegeActivity】
+   封装情景设置报文到网关，测试通过
+   
+2016.04.27
+情景设备同步给网关，触发设备在前，被触发的设备在后
+测试通过
+
+2016.04.28
+【SpaceManegeActivity】
+  1、添加房间  addNewSpaceToServer(space);  //添加房间信息到服务器，返回success后将space插入到本地数据库
+  2、删除房间  deleteSpaceToServer(deleteSpace,position);  //先从服务器删除，返回success,删除本地数据库
+  3、手机与服务器的space信息始终一致，无需检查更新。
+  
+2016.04.30
+【DeviceSensorActivity】 
+ 1、安防情景ThemeNo
+         安防类情景只根据GatewayId+deviceNo生成themeNo，这样安防情景名称可以随便改
+         
+ 2、同步安防情景到网关
+ 
+【WebPacketUtil】
+ byteToSocketPacket();   //解析网关返回的情景
+
+3、字母汉字情景名称混合编码及解析
+
+2016.05.03
+【HomeActivity】
+ editor.putString("OPERATION_TYPE","SCENE_INFRA_SEND"); //主界面进入，操作类型为直接发送红外码
+ 
+【SceneSetActivity】
+ editor.putString("OPERATION_TYPE","SCENE_INFRA_SET"); //情景设置页面进入，操作类型为红外码设置
+ 
+2016.05.04
+硬件情景开关    themeNo     GatewayId+deviceNo+devState  //硬件情景名称可随便修改
+外网jpush推送设备状态刷新  ok
+
+
+2016.05.05
+【SocketService】
+1、手机从内网加入，插入了手机号码
+
+【DeviceManegeActivity】
+1、删除该手机号下对应的设备
+2、删除该手机号下对应设备的配置信息
+
+
+2016.05.07
+[SocketService]
+安防设备报警加入到列表中，列表中存在，则不弹出报警对话框。
+
+外网撤防10秒后再弹出框。
+
+
+2016.05.09
+定时页面设计完成
+
+2016.05.10
+发送定时到服务器完成，待测试
+
+2016.05.11
+添加定时与服务器交互成功
+
+2016.05.16
+定时的增删查改
+
+2016.05.17
+【DateTimePickDialogUtil】
+1、定时添加
+      设备定时
+       ((TimeTaskActivity) activity).addScheduleList(schedule);
+      情景定时
+2、定时修改
+      设备定时修改,从服务器更新成功后，同步更新本地
+		SystemValue.schedule=schedule;
+	   ((TimeTaskActivity) activity).updateScheduleList();
+       情景定时修改
+       
+========请求最新的设备状态=====
+【BaseActivity】
+  sysnDeviceFromServer();   //手机端从网关认证通过，向网关请求所有设备状态
+  
+【SceneManegeActivity】
+  getThemePacketFromServer();   //从服务器获取情景的设置报文
+  
+2016.05.18
+【BaseActivity】
+  //设备的位置和名称，有配置信息加载配置信息，无配置信息加载默认配置
+   initDeviceNameAndSite(TextView tvSite, TextView tvName,Device devdto)
+
+
+2016.05.22
+【ETPage】
+红外屏蔽位置添加图标
+
+//	group.SetType(ETGlobal.ETGROUP_TYPE_ADD);
+
+2016.05.23
+【SceneSetActivity】
+情景联动设置的item中的state为32字节
+
+1、显示情景红外遥控列表
+2、增删改情景红外遥控列表
+
+2016.05.24 [初步测试通过，bug已经修复]
+1、硬件情景显示时，在情景前加上硬件硬件开关所在位置 如：   主卧/回家
+
+2、网关编号直接输入00AA00DD
+
+2016.05.25 【基本可用】
+1、联动及定时中增加安防设备的撤布防
+
+2、设备的deviceNo,ThemeNo中字母统一为小写
+
+2016.05.31  【修复socket接收不稳定】
+1、SocketService 中buff环大小改为2048
+   //【1】创建字节缓冲区
+   buff=ByteBuffer.allocate(2048);
+   
+2016.06.01
+【GatewayManegeActivity】
+1、显示网关编号为字母：00AA00DD 添加的时候输入的也是00AA00DD
+2、网关在数据库中显示的为字母对应的字节Hex形式
+
+【DeviceManegeActivity】
+1、硬件情景设备，加载默认的情景名称
+ initHardThemeNameByState(etScene1,deviceno,"1000");
+ 
+ 2016.06.02
+ 【SceneSetActivity】
+1、初始化为true;
+2、红外修改，普通设备修改：  sceneSaveFlag=false;
+3、点击返回判断：
+  	if(sceneSaveFlag==true){
+		finish();
+	}else{
+		ToastUtils.showToast(SceneSetActivity.this, "请先点击完成，保存情景设置！", 2000);
+	}
+		  
+2016.06.03  
+ 》》》【IP地址扫描方案】》》》
+1、LoginActivity
+     内网连通后         NetValue.IP_CONNECT_FLAG=true;
+     
+2、HomeActivity
+ 	//内网没有连通开始ping局域网ip
+	if((!NetValue.IP_CONNECT_FLAG)&&(!NetValue.IP_SCAN_FLAG)){
+		NetValue.IP_SCAN_FLAG=true;
+		NetTool ntNetTool=new NetTool(null);
+		ntNetTool.scan();
+	}
+	
+3、GatewayManegeActivity
+	//内网ip已经扫描过，但是没有适配过
+	if((NetValue.IP_SCAN_FLAG)&&(!NetValue.IP_CONNECT_FLAG)){
+		 scanGatewayIp();
+	}
+
+》》》【设备最新状态同步方案】》》》
+1、内网登录成功,SocketService
+  judgeAndConvertPacket(SocketPacket rpacket),认证通过请求最新设备状态
+  if(SystemValue.deviceSysnFlag==false){
+		SystemValue.deviceSysnFlag=true;
+		//手机端从网关认证通过，向网关请求所有设备状态
+		SocketPacket devAllPacket = WebPacketUtil
+				   .getDevAllStatePacket(SystemValue.gatewayid);
+		sentPacket(devAllPacket); // 发送请求所有设备状态
+	}
+  
+2、外网登录成功，LoginActivity
+   if(!VerifyUtils.isEmpty(gatewayid)){
+	   SystemValue.gatewayid=gatewayid;
+	  //请求所有设备的最新状态
+	  if(SystemValue.deviceSysnFlag==false){
+	    //手机端从网关认证通过，向网关请求所有设备状态
+	     sysnDeviceFromServer(socketService);
+	 }
+ }
+
+
+》》》【情景同步方案】》》》
+    HomeActivity中点击SetActivity时，进行情景同步
+	if(!VerifyUtils.isEmpty(SystemValue.gatewayid)){  //只有在网关已经绑定的情况下才同步情景
+			getSceneToLocal(mService);
+	}
+	
+          备注：SocketService中 网关返回情景，情景标志位置SystemValue.sceneSysnFlag=true;  //已经同步过情景
+	
+2016.06.04   【多用户多网关】
+【BaseActivity】点击退出，程序退出时标志位重置为false
+  SystemValue.deviceSysnFlag=false;
+  SystemValue.sceneSysnFlag=false;	
+
+【SpaceManegeActivity】 房间内设备加载方案
+1、在UserSpaceDevice 表中查找对应phoneNum下用户的userSpaceDevList
+2、在userSpaceDevList中逐项取出DeviceNo,然后在devdtoDao中查找对应deviceNo的完整信息
+
+
+2016.06.05
+【DeviceManegeActivity】
+1、 //异步任务从网关刷新设备的最新状态
+   sysnDeviceFormGateway(); 
+2、情景设置，如果输入的情景名称为空，则对应的state情景不生成。
+      二路情景开关，输入前2个情景名称，生成2个情景。
+      
+【GatewayManegeActivity】
+1、在HomeActivity扫描IP
+2、在GatewayManegeActivity中
+  //异步匹配网关IP
+  matchingIpFormGateway();
+  
+【SceneManegeActivity】
+1、 //异步任务从网关加载情景
+   sysnSceneFormGateway(); 
+
+2016.06.06  （最终定稿版一，同步修改七寸屏）
+【GatewayManegeActivity】
+1、新添加网关，修改网关密码后先点击完成，再点击返回，才能推出当前页面
+
+【DeviceManegeActivity】
+1、修改设备的位置后，先点击完成，再点击返回，才能推出当前页面
+
+2016.06.12
+【SocketService】
+1、 else if(sdataType == NetValue.DATA_SCENE){
+  //先清空网关本地的情景联动的设置
+  new ThemeDeviceDao(null).deleteAllByGatewayNo(SystemValue.gatewayid);
+
+2、抽取出布局页面的样式style
+
+
+2016.06.14
+【GatewayManegeActivity】
+checkVersionFromServer
+  	if(pVersion==null){
+			pVersion=SystemValue.getinitVersion(versionType);  //获取系统的版本时间戳
+		}
+		
+【LoginActivity】		
+	SystemValue.gatewayid="";
+	NetValue.LOCAL_IP="";
+	SystemValue.user =null;
+	
+2016.06.24
+【LoginActivity】		
+
+//从服务器同步的网关号后，直接赋值为全局变量
+if(!VerifyUtils.isEmpty(userServer.getGatewayNo())){
+	 SystemValue.gatewayid=userServer.getGatewayNo();
+	 
+【DeviceManager】
+//配置信息发送到网关前，初始化一下数据
+	private void sysnDeviceToServer() {
+		 initDatas();   //初始化一下数据
+}
+
+
+【RegisterInfoFragment】
+
+
+2016.06.28  针对测试修复
+1、修复空调app学习，上一步无效      FragmentWizardsFour   
+
+2、修复ListView 从头刷新 ，   sceneAdpter.notifyDataSetChanged();
+
+2016.06.30
+1、【HomeActivity】 IP适配一步到位
+	//===***===扫描局域网,并连接将网关IP设为全局变量===***===
+		if((!NetValue.IP_CONNECT_FLAG)){
+			NetTool ntNetTool=new NetTool(null);
+			ntNetTool.scan();
+		}
+
+2、改写注册
+  RigsterOneActivity
+  RigsterTwoActivity
+  RigsterThreeActivity
+  
+2016.07.05
+【SocketService】
+1、修复安防报警消息插入数据库
+2、
+【DeviceSwitchActivity】
+【DeviceWindowActivity】
+【DeviceSockActivity】
+【DeviceSensorActivity】
+【DeviceWeiKongActivity】
+initData();中初始化数据的空指针异常问题。
+
+2016.07.08
+【GatewayActivty】
+1、搜索网关IP,采用回调
+	//采用回调刷新网关IP
+	ntNetTool.callSocket(new IPCallBack() {
+		
+		@Override
+		public void callBack(String string) {
+			System.out.println("IP地址已经搜到"+string);
+			Message msg = new Message();
+			msg.what = 0x008;
+			handler.sendMessage(msg);
+		}
+	});
+	
+2016.07.13
+【DeviceTimerSetActivity】
+备注：由于所有的电视、空调等用同一个红外转发器的deviceNo，所以DeviceTimerSetActivity加载所有红外定时schdule.
+    在DateTimePickDialogUtil中对话框中点击进入红外遥控界面设置。
+1、增加红外定时任务
+  showRemoteControlFragment();
+2、删除红外定时任务
+
+
+2016.07.13
+【HomeActivity】
+1、PM25转码
+	 if(devtype ==SystemValue.DEV_PM25){
+		byte[] bpm25=new byte[2];
+		System.arraycopy(b, 0, bpm25, 0, 2);
+		
+		byte bpm25H=bpm25[0];
+		byte bpm25L=bpm25[1];
+		
+		int ipm25h=bpm25H;
+		int ipm25l=(int)bpm25L;
+		int pm25=ipm25h*10+ipm25l/10;
+		
+		String strtemp = Integer.toString(pm25);
+		strhex = strtemp;
+		System.out.println("底层反馈的pm25值为："+strtemp+"高:"+ipm25h+"低:"+ipm25l);
+		
+		
+2016.07.16
+【BaseActivity】
+1、点击退出按钮时发送广播关闭所有的activity
+ //发送广播清空当前的activity栈
+	Intent finishIntent = new Intent();  //Itent就是我们要发送的内容
+	finishIntent.setAction("ACTIVITY_FINISH");   //设置你这个广播的action，只有和这个action一样的接受者才能接受者才能接收广播
+    sendBroadcast(finishIntent);   //发送广播  
+
+/**
+ * 基类中放置广播接收器，关闭所有的activity
+ * @author WSN-520
+ *
+ */
+public class ReceiveBroadCast extends BroadcastReceiver
+{
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+            //得到广播中得到的数据，并显示出来
+        	System.out.println("广播关闭当前activity。。。");
+            finish();
+        }
+}
+ 
+【JpushReceive】
+1、点击通知栏，判断当前用户是否登录，选择性跳转
+	if(SystemValue.loginFlag){
+		Intent a=new Intent(context,DeviceWeiKongActivity.class);
+		a.putExtra("operator_type", "notification");
+		a.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(a);
+	}else{
+		Intent loingIntent=new Intent(context,LoginActivity.class);
+		loingIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(loingIntent);
+	}
+
+【GatewayManegeActivity】
+1、添加网关后，立即设置极光推送别名
+ setAliasAndTags();  //添加网关成功后，立即设置别名
+
+2016.07.18
+【多个子工程集成冲突】
+1、主工程libs下只保留armeabi,armeabi-v7a文件夹
+2、各个子工程中.so文件删除。
+
+【DeviceWeiKongActivity】
+ case 51:    //风扇  51
+
+	if(devstate.equals("1")){   
+  		  holder.tgSock.setChecked(true);
+    }else if(devstate.equals("0")){
+    	 holder.tgSock.setChecked(false);
+    }
+
+
+2016.07.20
+【DeviceManegeActivity】
+getDeviceFromServer添加了gateway参数
+
+2016.07.26
+【activity_set.xml】
+1、修改了设置界面的布局
+2、设置界面中的按钮动态填充
+
+2016.07.27
+【MD5Security16】
+1、登录密码及UUID采用标准MD5加密，并截取前16个字符。
+
+2016.07.28
+【GatewayManegeActivity】
+1、更新网关IP时，网关编号显示为字符串
+updateGatewayIPDialog()
+	if(!VerifyUtils.isEmpty(gateway.getGatewayNo())){
+		byte[] gwIdBytes = DataConvertUtil.toByteArray(gateway.getGatewayNo());
+		strgatewayNo=new String(gwIdBytes);
+	}
+	
+2016.07.29
+【DeviceSockActivity】
+1、修复插座下发指令报空
+
+2016.07.30
+【DeviceTimerSetActivity】
+1、添加红外定时遥控设置时间未抛异常。
+
+2016.07.31
+【SceneManegeActivity】
+1、同步情景报文
+  内网：从网关获取
+ 外网：从服务器直接拉取
+	switch (NetValue.netFlag) {
+	case NetValue.OUTERNET: // 外网
+		getThemePacketFromServer(); //外网从服务器直接拉取情景报文
+		break;
+	case NetValue.INTRANET: // 内网
+
+		if(socketService!=null){
+			SocketPacket sceneAllPacket = WebPacketUtil.getThemeAllPacket();
+			socketService.sentPacket(sceneAllPacket);
+			SystemValue.sceneSysnFlag=true;  //已经同步过情景
+		}else{
+			System.out.println("========socketService为空");
+		}
+		System.out.println("========内网发送");
+		break;
+	}
+	
+【SystemSetActivity】
+1、注销用户
+	new UserDao(SystemSetActivity.this).deleteUserByPhoneno(SystemValue.phonenum);  //删除用户信息
+	new UserSpaceDevDao(SystemSetActivity.this).deleteDevSpaceByPhoneno(SystemValue.phonenum); //删除设备用户配置信息
+	new SpaceDao(SystemSetActivity.this).deleteSpaceByPhoneno(SystemValue.phonenum);//删除用户下的房间信息
+
+
+2016.08.11  摄像机集成到homecoo通过,DoorBell集成到homecoo通过
+部分修改
+1、【RigsterBroadcast】
+       添加广播接收
+	if(action.equals("com.homecoolink.rigsterFlag")){
+		System.out.println("收到了注册广播！"+email_str+pwd_str);
+		new RegisterTask("1", email_str, "", "", pwd_str, pwd_str,
+				"", "1").execute();
+	}else if(action.equals("com.homecoolink.loginFlag")){
+		System.out.println("收到了摄像机登录广播！"+email_str+pwd_str);
+		new LoginTask(email_str, pwd_str).execute();
+	}
+
+
+2、【ContactFrag】
+       添加后退键，处理逻辑采用原先设置中的注销用户，对324、325屏蔽处理
+     else if(id==R.id.contack_back_btn){  //后退到homecoo系统
+			Intent canel = new Intent();
+			canel.setAction(Constants.Action.ACTION_SWITCH_USER);
+			mContext.sendBroadcast(canel);
+    }
+
+    
+==============修复homecoolink和DoorBell冲突=======================
+1、集成自定义view
+   <com.lib.pullToRefresh.PullToRefreshListViewK14
+   xmlns:ptr="@string/NS" 
+
+20160812
+1、修复摄像机设置按钮点击事件
+
+2、定位修复，locationService重新实例化对象，不采用Application单例模式。
+  locationService=new LocationService(LoginActivity.this);
+  
+【WifiSetActivity】
+1、网关桥接配置
+2、网关无线配置  
+
+2016.08.13
+【DateTimePickDialogUtil】
+1、修复定时设置红外崩溃
+  //135行初始化时，回调设置红外任务
+((DeviceTimerSetActivity) activity).callBackName(new InfraTaskCallBack() {
+	
+	@Override
+	public void callBack(String string) {
+		   tvScheduleName.setText("遥控任务:"+string);
+	       tvScheduleName2.setText("遥控任务:"+string);
+	       Log.i("343", "遥控任务:"+string);
+	}
+});
+
+
+2016.08.15
+【DeviceManegeActivity】
+1、本地删除设备，同时删除服务器的设备
+  deleteDeviceFromServer();
+  
+【摄像头报警设置】
+AlarmControlFrag
+点击事件调整》》》
+
+2016.08.16
+【WifiSetActivity】
+linkRouterWifi();   无线桥接网关到路由
+setGatewayWifi();   设置网关无线网
+
+2016.08.21
+【WGToRouterFragment】
+1、记住wifi设置信息到SharedPreferences中
+
+
+2016.08.23
+【DateTimePickDialogUtil】
+//重构时加入scheduleType,红外为1，加入回调函数
+1、	public DateTimePickDialogUtil(Activity activity, String initDateTime,
+    Device device,int scheduleType)
+    
+【红外遥控】
+1、全部种类产品遥控
+
+2016.08.25
+TimePicker  时间点击事件改变异常，new 一个新对象
+【InfraDateTimePickDialogUtil】
+ TimePicker tp=new TimePicker(activity); 
+        dateTimeLayout.addView(tp);
+        
+【HomeCoo Manifest】      
+1、修改HomecooLink 横屏显示
+
+2016.08.27
+【SceneManegeActivity】
+1、每次进入加载一次情景设置的信息
+
+【红外定时遥控全部种类集成】
+
+
+2016.08.28
+【DeviceSwitchActivity】
+1、增加防暴力点击（两次点击间隔小于0.5秒即认为是暴力点击）
+fHolder.tgBtn1.setOnClickListener(new DoubleClickEvent() {
+	@Override
+	public void singleClick(View v) {
+		if (myAdpterOnclick != null) {
+			int which = v.getId();
+			myAdpterOnclick.onApterClick(which, fpostion);
+			if (!fHolder.tgBtn1.isChecked()) { // 当前状态为开，点击的时候发送off
+				cmdControl(fpostion, 1, OFF);
+				fHolder.tgBtn1.setBackgroundResource(R.drawable.icon_switch_off);
+			} else {
+				cmdControl(fpostion, 1, ON);
+				fHolder.tgBtn1.setBackgroundResource(R.drawable.icon_switch_on);
+			}
+		} else {
+			System.out.println("===myAdpterOnclick为空====");
+		}
+
+	}
+});
+
+【DeviceWeiKongActivity】
+1、注释掉下发控制时认为设置接收报警对话框
+//	NetValue.isAcceptAlert=true;
+【SocketService】
+1、判断是否接收弹出对话框
+  NetValue.isAcceptAlert=acceptOrRefuseAlertDailog(deviceNo);  //判断是否弹出报警框
+
+2016.09.01
+【HomeActivity】
+1、网络切换错误，跳到远程
+	case NETMSG:
+	int netstatue = (Integer) tranObject.getObject();
+	if ((NetValue.NONET == netstatue)) { // 本地连接失败
+		ToastUtils.showToast(HomeActivity.this, "本地连接失败,请检查网关是否连接本地网络！", 2000);
+		NetValue.netFlag = NetValue.OUTERNET; // 【调试】内网失败，自动切换为外网
+		tvbttomNetwork.setText("远程");
+	}
+	break;
+【SocketService】
+1、本地情况下，插入报警消息
+private void InserAlarmMsgToLocal(SocketPacket alertPacket,long time)
+
+【AlarmMessageDao】
+1、查询的时候倒序展示
+    public List<AlarmMessage> findAlarmMsgByGatewayid(String  gatewayId)  
+    {  
+        try  
+        {  
+            return alarmMessageDao.queryBuilder()
+            		.orderBy("id", false).where()
+            		.eq("GATEWAY_NO", gatewayId)
+                    .query();  
+        } catch (SQLException e)  
+        {  
+            e.printStackTrace();  
+        }  
+        return null;  
+    } 
+    
+
+2016.09.03
+【DeviceSwitchActivity】修复listview上下滑动一路开关和三路开关重复错乱显示
+【SpaceDevicesActivity】
+【SceneSetActivity】
+1、修复方法：加载一路开关的时候，把其它几路开关的状态设置为View.GONE
+	switch (devtype) {
+		case 1:
+				holder.tgBtn1.setVisibility(View.VISIBLE);
+				holder.tgBtn2.setVisibility(View.GONE);
+				holder.tgBtn3.setVisibility(View.GONE);
+				holder.tgBtn4.setVisibility(View.GONE);
+				holder.sbLight.setVisibility(View.GONE);
+				if (strStaArr[0] == ON) {
+					holder.tgBtn1.setChecked(true);
+					holder.tgBtn1.setBackgroundResource(R.drawable.icon_switch_on);
+				}else {
+					holder.tgBtn1.setChecked(false);
+					holder.tgBtn1.setBackgroundResource(R.drawable.icon_switch_off);
+				} 
+		
+			break;
+		case 51: // 风扇
+			holder.tgBtn1.setVisibility(View.VISIBLE);
+			holder.tgBtn2.setVisibility(View.GONE);
+			holder.tgBtn3.setVisibility(View.GONE);
+			holder.tgBtn4.setVisibility(View.GONE);
+			holder.sbLight.setVisibility(View.GONE);
+			if (strStaArr[0] == ON) {
+				holder.tgBtn1.setChecked(true);
+				holder.tgBtn1.setBackgroundResource(R.drawable.icon_switch_on);
+			}else {
+				holder.tgBtn1.setChecked(false);
+				holder.tgBtn1.setBackgroundResource(R.drawable.icon_switch_off);
+			} 
+			break;
+			
+			
+2016.09.04
+【SceneSetActivity】  //情景设置时，自定义情景triggerNum数量为0
+	if(theme.getThemeType()==4){  //20160904
+		themeData.setTriggerNum(0);
+	}else{
+		themeData.setTriggerNum(1);
+	}
+	
+【WebPackUtil】packetToByteStream（）自定义情景不填充item信息
+	/******** 填充触发器信息 *********/
+	if(themeType!=4){
+	
+		Item itemTrigger = themedata.getTriggerList().get(0);   //一个情景对应的触发器只有一个
+		// 填充触发器硬件识别号
+		byte[] bTriDeviceNo = DataConvertUtil.toByteArray(itemTrigger.getDeviceNo()); // 当为触发器时，item的id代表theme_no
+		for (int i = 0; i < 8; i++) {
+			soc[index++] = bTriDeviceNo[i];
+		}
+		
+		// 填充触发器状态
+		byte[] bTriggerState = ( itemTrigger.getDeviceStateCmd()).getBytes();
+//		DataConvertUtil.tprintHexString(bTriggerState);
+		for (int k = 0; k < bTriggerState.length; k++) {
+			if (bTriggerState[k]==0x31) { // 1的字节码为0x31转换为0x64
+				soc[index++]=0x64;
+			} else if (bTriggerState[k]==0x30) { // 0的字节码为0x30转换为0x00
+				soc[index++]=0x00;
+			}
+		}
+		int triStateLen = 32 - bTriggerState.length; // themestate不够32个字节补全
+		index = index + triStateLen;
+		
+		// 填充触发器datalen
+		byte[] bTriDataLen = DataConvertUtil.intToByte(itemTrigger.getDataLen());
+		for (int i = 0; i < 4; i++) {
+			soc[index++] = bTriDataLen[i];
+		}
+		
+		// 填充触发器devtype
+		byte[] bTriDevType = DataConvertUtil.intToByte(itemTrigger.getDeviceType());
+		for (int i = 0; i < 4; i++) {
+			soc[index++] = bTriDevType[i];
+		}
+		
+	}
+
+【WebPackUtil】//自定义情景无需解析triggerItem
+ //=========安防设备的信息============
+	int k=144;  //120
+	if(themeType!=4){  //20160904
+		byte[] bTriggerItem = new byte[48];
+		System.arraycopy(data, 96, bTriggerItem, 0, 48);
+	}else{
+		//自定义情景无需填充触发器信息
+		k=96;
+	}
+	
+2016.09.05
+【DeviceManageActivity】
+1、getDeviceFromServer
+	//从外网请求所有设备成功，先清空本地设备表
+   new DevdtoDao(DeviceManegeActivity.this).deviceListByGatewayId(SystemValue.gatewayid);
+
+
+2016.09.06
+【LoginActivity】
+1、最近登录的用户列表
+  getLatelyUserList();   //初始化最近登录的用户列表
+  
+  saveLatelyUserList();  //保存格式合法的用户列表
+  
+2016.09.07
+【WebPacketUtil】
+1、解析服务器返回的情景
+
+2016.09.09
+【DeviceManegeActivity】
+1、Runable 周期性生成定时任务
+	Runnable runnable = new Runnable(){ 
+	@Override 
+		public void run() { 
+			String sceneName=sceneNames[i + 1];
+			if(!VerifyUtils.isEmpty(sceneName)){ //情景名称为空，则不生成情景
+				theme.setThemeName(sceneNames[i + 1]);
+				theme.setThemeState(states[i]);
+				generatorHardTheme(theme);
+				i++;
+				ToastUtils.showToast(DeviceManegeActivity.this, "正在生成第"+i+"条情景", 500);
+				handler.postDelayed(this, 500);// 50是延时时长 
+			}else{
+				handler.removeCallbacks(runnable);// 关闭定时器处理
+			}
+		} 
+	};
+
+
+【SpaceManegeActivity】		
+ 1、外网访问服务器设置超时时间
+  HttpUtils utils = new HttpUtils(10000);  //设置超时时间10秒
+  
+2016.09.10
+【GatewayManegeActivity】
+1、添加网关信息时清除字符串中空格
+  addGatewayDialog()
+	strgatewayNo = etgatewayNO.getText().toString().trim();
+	String gatewayIp = etgatewayIP.getText().toString().trim();
+	String gatePWD = etgatewayPWD.getText().toString().trim();
+	
+【SceneManegeActivity】
+1、取消异步加载情景，通过网关或者服务器拉取情景（内外网多次拉取情景）
+  getSceneFromGateway(socketService);
+
+【DeviceManegeActivity】
+1、设备设置位置时为null，则填充"0"
+@Override
+	public void onItemSelected(AdapterView<?> parent, View view,
+			int position, long id) {
+		if(spacelist!=null){
+			vSpacetypeSet = spacelist.get(position);
+		}else{
+			vSpacetypeSet.setSpaceNo("0");
+		}
+		
+	}
+
+
+2016.09.24
+【SocketService】
+1、socket 并行收发线程
+
+
+2016.09.28
+【SceneSetActivity】
+1、情景设置网关返回设置成功后,客户端先关闭socket,然后重新建立socket连接
+	if (datatype == NetValue.ACK_FINISH_SCENE) {
+		socketService.socketClose();
+		SystemValue.deviceSysnFlag=true;    //设置情景重连socket，无需再请求设备的最新状态
+		socketService.socketConnect(NetValue.LOCAL_IP);
+	
+		ToastUtils.showToast(SceneSetActivity.this,"设置情景成功！", 2000);
+	} 
+	
+	
+2、情景设置对话框，名称为"",点击确定对话框不消失
+showSceneSetDialog()
+
+
+【SpaceDao】
+ 1、用户的房间只与phonenum有关
+ 
+ 2016.09.28
+【SceneSetActivity】
+1、情景设置网关返回设置成功后,客户端先关闭socket,然后重新建立socket连接(此方案抛弃)
+	if (datatype == NetValue.ACK_FINISH_SCENE) {
+		socketService.socketClose();
+		SystemValue.deviceSysnFlag=true;    //设置情景重连socket，无需再请求设备的最新状态
+		socketService.socketConnect(NetValue.LOCAL_IP);
+	
+		ToastUtils.showToast(SceneSetActivity.this,"设置情景成功！", 2000);
+	} 
+
+【进一步优化】在内网发送情景设置前,客户端先关闭socket,然后重新建立socket连接
+  case NetValue.INTRANET: // 内网
+		socketService.socketClose();
+		SystemValue.deviceSysnFlag=true;    //设置情景重连socket，无需再请求设备的最新状态
+		socketService.socketConnect(NetValue.LOCAL_IP);
+		
+		new Handler().postDelayed(new Runnable() {
+			public void run() {
+				socketService.sentPacket(socketPacket); // 发送请求认证报文到网关
+			}
+		}, 500);
+		break;
+		
+		
+2016.09.29
+【homecoolink】摄像机后台报警
+【MainActivity】
+else if (intent.getAction().equals(  //后退到homecoo主界面，不停止服务
+					Constants.Action.ACTION_SWITCH_USER)) {
+//				Account account = AccountPersist.getInstance()
+//						.getActiveAccountInfo(mContext);
+//				new ExitTask(account).execute();
+//				AccountPersist.getInstance().setActiveAccount(mContext,
+//						new Account());
+//				NpcCommon.mThreeNum = "";
+//				Intent i = new Intent(MyApp.MAIN_SERVICE_START);
+//				stopService(i);
+				
+//				Intent login = new Intent(mContext, LoginActivity.class);
+//				startActivity(login);
+
+				finish();
+				
+2016.10.12
+homecoolink  
+1、修复登录后，不进入MainActivity摄像机可报警
+  【RigsterBroadcast】
+  }else if(action.equals("com.homecoolink.serverStart")){
+
+			System.out.println("摄像机启动服务！");
+			new ServerStartTask(email_str, pwd_str).execute();
+			
+			try {
+				CrashHandler ch = CrashHandler.getInstance();
+				ch.init(mcontext);
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e("343", Log.getStackTraceString(e));
+			}
+			
+			DataManager.findAlarmMaskByActiveUser(mcontext, "");
+			NpcCommon.verifyNetwork(mcontext);
+			
+			Account activeUser = AccountPersist.getInstance().getActiveAccountInfo(
+					mcontext);
+
+			if (activeUser != null) {
+				NpcCommon.mThreeNum = activeUser.three_number;
+			}
+//			
+			new FList();
+			
+			P2PHandler.getInstance().p2pInit(mcontext, new P2PListener(),
+					new SettingListener());
+			
+			Intent service = new Intent(MyApp.MAIN_SERVICE_START);
+			service.setPackage(mcontext.getPackageName());
+			mcontext.startService(service);
+			  
+			new GetAccountInfoTask().execute();
+ 
+ 2016.10.13 
+ 【MusicManger】修复不进入主界面情况下摄像机报警，无法播放报警音乐 
+ 将Context上下文由MainActivity.mContext改为MyApp.app
+ //	player=MediaPlayer.create(MainActivity.mContext,R.raw.alarm_music);
+	player=MediaPlayer.create(MyApp.app,R.raw.alarm_music);
+	
+备注：所有的MainActivity.mContext，替换为MyApp.app(Fragment除外)
+	
+1、AlarmActivity
+	public void onReceive(Context arg0, Intent intent) {
+		if (intent.getAction().equals(Constants.P2P.RET_GET_REMOTE_DEFENCE)) {
+			int state = intent.getIntExtra("state", -1);
+			String contactId = intent.getStringExtra("contactId");
+			if (contactId.equals(contact.contactId)) {
+
+				if (state == Constants.DefenceState.DEFENCE_STATE_WARNING_NET) {
+					if (null != contact && contact.isClickGetDefenceState) {
+						T.showShort(mContext, R.string.net_error);
+					}
+				} else if (state == Constants.DefenceState.DEFENCE_STATE_WARNING_PWD) {
+					if (null != contact && contact.isClickGetDefenceState) {
+						T.showShort(mContext, R.string.password_error);
+					}
+				}else if (intent.getAction().equals(  //20161013
+						Constants.P2P.RET_GET_REMOTE_DEFENCE)) {
+					    contact = FList.getInstance().isContact(contactId);
+				}
+				Log.i("343", "AlarmActivity刷新布防状态"+state);
+				getdefensestate();
+			}
+  
+2、605行  ,未登录情况下报警，弹出报警框，第一次显示布防状态
+		contact.defenceState=Constants.DefenceState.DEFENCE_STATE_ON;  //20161013
+
+		getdefensestate();   //获取设备撤布防状态，图片显示
+		// alarm_go.setOnClickListener(this);
+		monitor_btn.setOnClickListener(this);
+		ignore_btn.setOnClickListener(this);
+		alarm_defence_btn.setOnClickListener(this);
+  
+2016.10.14  摄像机修复情况汇总
+
+1. 系列设置里的时间设置   下面上下滑动选择时间有问题  （已修复）
+2、安全设置 里 设置管理者密码 访问修改  无法修改，修改导致崩溃 （已修复）
+3.主界面上  点击 影像 里 我的视频无法查看  旁边的删除键无法使用 （已修复）
+4，主界面上点击设置界面  里面的系统设置点击会导致系统崩溃（已修复）
+5、摄像头 那个点击一次就会往上拉的BUG （已修复，待测试）
+
+6、未登录摄像机主界面即可报警（已修复）
+7、修复报警弹框中撤布防（已修复）
+
+【SceneManegeActivity】
+1、外网请求情景返回成功，清空本地软件情景及其设置
+@Override
+	public void onSuccess(ResponseInfo<String> arg0) {
+	  if(SystemValue.themeClean==true){ //第一次同步情景时清空本地情景及其设置
+		  new ThemeDao(null).deleteAllByGatewayNo(SystemValue.gatewayid);		
+		  new ThemeDeviceDao(null).deleteAllByGatewayNo(SystemValue.gatewayid);
+		  SystemValue.themeClean=false;
+	  }
+【WetPacketUtil】
+1、内网请求情景返回成功，清空本地软件情景及其设置
+@Override
+	public void onSuccess(ResponseInfo<String> arg0) {
+	  if(SystemValue.themeClean==true){ //第一次同步情景时清空本地情景及其设置
+		  new ThemeDao(null).deleteAllByGatewayNo(SystemValue.gatewayid);		
+		  new ThemeDeviceDao(null).deleteAllByGatewayNo(SystemValue.gatewayid);
+		  SystemValue.themeClean=false;
+	  }
+	  
+	  
+2016.10.18
+【DeviceManegeActivity】  
+1、外网同步设备请求成功，先清空本地数据库
+if (message.getResult().equals(NetValue.SUCCESS_MESSAGE)) {
+		//从外网请求所有设备成功，先清空本地设备表
+		new DevdtoDao(DeviceManegeActivity.this).deleteAllByGatewayNo(SystemValue.gatewayid);
+
+【SocketService】
+1、 内网同步设备请求成功，先清空本地数据库
+   //===***===同步设备的最新状态===***===
+	if(SystemValue.deviceSysnFlag==false){
+		//同步设备前，先清空本地设备表
+		new DevdtoDao(SocketService.this).deleteAllByGatewayNo(SystemValue.gatewayid);
+		
+		
+		
+2016.10.25
+【MessageActivity】
+1、消息迅速下滑，listview来不及查询数据库，安防设备的名称和位置
+修复：
+     //list数据适配器
+	  public  class AlarmMsgAdapter extends BaseAdapter{
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			if(alarmMsglist.size()>30){    //显示最新的30条数据
+				return 30;
+			}else{
+				return alarmMsglist.size();
+			}
+			
+		}
+		
+		
+【DeviceManegeActivity】安防设备从服务器同步防区问题
+
+1、由于手机端只同步设备配置信息（UserSpaceDevice）给服务，因此spaceTypeId放入设备配置信息内。
+
+2016.10.26  异常闪退后，重新启动
+1【MyApp】homecoolink
+	
+	/*********************APP闪退后捕获异常重新启动*************************/
+	public void init(){  
+        //设置该CrashHandler为程序的默认处理器    
+        UnCeHandler catchExcep = new UnCeHandler(this);  
+        Thread.setDefaultUncaughtExceptionHandler(catchExcep);   
+    }  
+      
+    /** 
+     * Activity关闭时，删除Activity列表中的Activity对象*/  
+    public void removeActivity(Activity a){  
+        list.remove(a);  
+    }  
+      
+    /** 
+     * 向Activity列表中添加Activity对象*/  
+    public void addActivity(Activity a){  
+        list.add(a);  
+    }  
+      
+    /** 
+     * 关闭Activity列表中的所有Activity*/  
+    public void finishActivity(){  
+        for (Activity activity : list) {    
+            if (null != activity) {    
+                activity.finish();    
+            }    
+        }  
+        //杀死该应用进程  
+       android.os.Process.killProcess(android.os.Process.myPid());    
+    }  
+    
+2【UnCeHandler】   com.homecoolink.global
+ 
+3 【startService】
+	Intent intent = new Intent();  //Itent就是我们要发送的内容
+	intent.setAction("restart");   //设置你这个广播的action，只有和这个action一样的接受者才能接受者才能接收广播
+	sendBroadcast(intent);  
+	
+4【LoginActivity】
+5【GatewayManegeActivity】
+	PreferencesUtils.putString(LoginActivity.this, "wgid",SystemValue.gatewayid);  //保存网关号为共享变量
+    
+
+
+6【BaseActivity】
+MyApp.app.addActivity(this); 
+
+7【SocketService】
+MyApp.app.init();   //初始化异常捕获
+
+8【Manifest.xml】
+1、添加后台服务
+  <service android:name="com.homecoolink.startService" >
+  <rvice>
+  
+2、添加广播接收过滤
+   <receiver android:name=".alarmreceiver">
+           <intent-filter>
+                <action android:name="restart" />
+           </intent-filter>
+    </receiver>
+    
+    
+ 2016.11.07
+ 【DeviceManegeActivity】硬件情景生成时，themestate全部为8位
+ 1、	/**
+	 * 生成硬件情景
+	 */
+	private void generateSceneTask (){
+		if(VerifyUtils.isEmpty(sceneNames[1])){
+			ToastUtils.showToast(DeviceManegeActivity.this, "请输入情景名称！",500);
+		}else{
+			
+			ToastUtils.showToast(DeviceManegeActivity.this, "正在生成第1条情景",500);
+			theme = new Theme();
+			theme.setDeviceNo(sceneNames[0]);
+			theme.setThemeType(1);
+			theme.setGatewayNo(SystemValue.gatewayid);
+			states = new String[] { "10000000", "01000000", "00100000", "00010000" };
+			handler.postDelayed(runnable, 500);// 打开定时器，执行操作 
+		}
+	}
+	
+2、	initHardThemeNameByState(etScene1,deviceno,"10000000");
+	initHardThemeNameByState(etScene2,deviceno,"01000000");
+	initHardThemeNameByState(etScene3,deviceno,"00100000");
+	initHardThemeNameByState(etScene4,deviceno,"00010000");
+    
+
+2016.12.13
+【DefenceAreaActivity】
+【DevdtoDao】
+/**
+	 * 根据UserSpaceDevice查找对应防区传感器类设备
+	 */
+    public List<Device> findSensorDevicesByAlertypeId(int spaceTypeId)  
+    {  
+    	List<Device> devSensorList=new ArrayList<Device>();
+    	String gatewayNo=SystemValue.gatewayid;
+    	int categoryId=SystemValue.SENSOR;
+        try  
+        {  
+        	devSensorList= devdtoDao.queryBuilder().where()
+            		.eq("GATEWAY_NO", gatewayNo).and()
+            		.eq("DEVICE_CATEGORY_ID",categoryId).query();  
+        } catch (SQLException e)  
+        {  
+            e.printStackTrace();  
+        }  
+        
+        List<Device> devAlertList=new ArrayList<Device>();
+        for(int i=0;i<devSensorList.size();i++){
+        	Device devSensor=devSensorList.get(i);
+        	int devType=devSensor.getDeviceTypeId();
+        	if(devType!=SystemValue.DEV_FANS){
+        		UserSpaceDevice userDevice=new UserSpaceDevDao(null).
+            			findDeviceSpace(SystemValue.phonenum, devSensor.getDeviceNo());
+                int spaceType=userDevice.getSpaceType();
+            	if(spaceType==spaceTypeId){
+            		devAlertList.add(devSensor);
+            	}
+        	}
+        }
+        return devAlertList;  
+    }
+    
+    
+【LoginActivity】
+//修复密码格式验证错误，对话框不消失
+resetPasswordToServerDialog()
+
+
+2016.12.17  修复安防设备室内室外撤布防
+【DeviceManegeActivity】
+1、
+		public void initDeviceNameAndSite(TextView tvSite, TextView tvName,
+				Device devdto) {
+		
+			UserSpaceDevice userSpace = new UserSpaceDevDao(BaseActivity.this)
+					.findDeviceSpace(SystemValue.phonenum, devdto.getDeviceNo());
+			if (userSpace != null) {
+				String spacename = WebPacketUtil.getSpaceName(userSpace
+						.getSpaceNo()); // 根据phonespaceid获取spacename
+				tvSite.setText(spacename+"/" );
+				tvName.setText(userSpace.getDeviceName());
+				devdto.setSpaceNo(userSpace.getSpaceNo());
+			} else {
+				
+				tvSite.setText("位置待定"+"/" );
+				tvName.setText(devdto.getDeviceName());
+
+			}
+		}
+		
+2、sysnDeviceToServer（）//同步成功，不需更新版本
+
+【SpaceDao】
+	public String getSpacenameBySpaceNo(String spaceNo) {
+		Space space = null;
+		try {
+			space = spaceTypeDao.queryBuilder().where().eq("SPACE_NO", spaceNo)
+					.queryForFirst();
+			if (space != null) {
+				return space.getSpaceName();
+			}else{
+				return "位置待定";
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
+ 【DevdtoDao】
+ 	/**
+	 * 根据Device查找对应防区传感器类设备
+	 */
+	    public List<Device> findSensorDevicesByAlertypeId(int spaceTypeId)  
+	    {  
+	    	List<Device> devicelist=new ArrayList<Device>();
+	    	String gatewayNo=SystemValue.gatewayid;
+	    	int categoryId=SystemValue.SENSOR;
+	        try  
+	        {  
+	        	devicelist= devdtoDao.queryBuilder().where()
+	            		.eq("GATEWAY_NO", gatewayNo).and()
+	            		.eq("SPACE_TYPE_ID", spaceTypeId).and()
+	            		.eq("DEVICE_CATEGORY_ID",categoryId).query();  
+	        } catch (SQLException e)  
+	        {  
+	            e.printStackTrace();  
+	        }  
+	        return devicelist;  
+	    } 
+  
+  
+  2016.12.18
+【DeviceManegeActivity】
+devUpdateDialog();
+
+// 传感器类设备显示防区设置
+		int devType=devset.getDeviceTypeId();
+		int categoryId =devdtoList.get(point).getDeviceCategoryId();
+		if (categoryId == SystemValue.SENSOR&&devType!=SystemValue.DEV_FANS) {
+			layout_alertAreaSet.setVisibility(View.VISIBLE);
+			int spaceTypeId =0;
+			
+			spaceTypeId=devset.getSpaceTypeId();  //从Device表中获取空间类型20161215
+			
+			if (spaceTypeId == 1) { // 室内
+				rb_indoor.setChecked(true);
+			} else if (spaceTypeId == 2) { // 室外
+				rb_outdoor.setChecked(true);
+			}
+
+		}
+  
+  
+  2017-01-07
+【DSceneSetActivity】
+  更新了外网设置情景音乐暂停，传送歌曲名称  而不是 00
+    2093/2254行
+  
+

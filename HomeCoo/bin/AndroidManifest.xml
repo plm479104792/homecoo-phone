@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tuwa.smarthome"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="19" />
+
+    <permission
+        android:name="com.tuwa.smarthome.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="com.tuwa.smarthome.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="suibian"
+        android:targetPackage="com.tuwa.smarthome" >
+    </instrumentation>
+
+    <application
+        android:name="com.homecoolink.global.MyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_homecoo1"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- 单元检测类库 -->
+        <uses-library android:name="android.test.runner" />
+
+        <!-- 友盟版本更新检测 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="56d6ea2ce0f55a9671001e1c" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" />
+
+        <!-- 百度定位需要的服务 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="yWcNux7EPzGi0ZGxYpcnsjPW" />
+        <!-- http://lbsyun.baidu.com/apiconsole/key -->
+        <!-- meta-data需要写在application中  (获取当前城市需要在百度上注册 for android) -->
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.UserRegisterActivity"
+            android:label="@string/title_activity_user_register"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.RigsterOneActivity"
+            android:label="@string/title_activity_rigster_one"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.MusicMainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.RigsterTwoActivity"
+            android:label="@string/title_activity_rigster_one"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.RigsterThreeActivity"
+            android:label="@string/title_activity_rigster_one"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.SetActivity"
+            android:label="@string/title_activity_set"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.GatewayManegeActivity"
+            android:label="@string/title_activity_gateway_set"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.SpaceManegeActivity"
+            android:label="@string/title_activity_space_manege"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DeviceManegeActivity"
+            android:label="@string/title_activity_device_manege"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DeviceSwitchActivity"
+            android:label="@string/title_activity_device_kind"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DeviceSockActivity"
+            android:label="@string/title_activity_device_sock"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.MessageActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DeviceWindowActivity"
+            android:label="@string/title_activity_device_window"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.SpaceDevicesActivity"
+            android:label="@string/title_activity_space_devices"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DeviceSensorActivity"
+            android:label="@string/title_activity_device_sensor"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.SceneSetActivity"
+            android:label="@string/title_activity_scene_set"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.SceneManegeActivity"
+            android:label="@string/title_activity_scene_list"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.SceneModelActivity"
+            android:label="@string/title_activity_scene_model"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.CameraKindsActivity"
+            android:label="@string/title_activity_camera_type"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DefenceAreaSetActivity"
+            android:label="@string/title_activity_defence_area_set"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DefenceAreaActivity"
+            android:label="@string/title_activity_defence_area"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DefenceAreaManegeActivity"
+            android:label="@string/title_activity_defence_area_manege"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DeviceWeiKongActivity"
+            android:label="@string/title_activity_device_wei_kong"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.TimeTaskActivity"
+            android:label="@string/title_activity_time_task"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        
+         <activity
+            android:name=".activity.SystemSetActivity"
+            android:label="@string/title_activity_system_set"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.WifiSetActivity"
+            android:label="@string/title_activity_system_set"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name=".activity.DeviceTimerSetActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        
+
+        <service android:name=".network.SocketService" >
+        </service>
+        <service android:name="com.homecoolink.startService" >
+        </service>
+        
+        <service android:name=".network.MulticastSocketService" >
+        </service>
+         <service android:name=".network.DatagramSocketService" >
+        </service> 
+        <!--  手机APP端作为server端 -->
+        <service android:name=".network.DatagramSocketPhoneServer" >
+        </service> 
+        
+        
+        <!-- 友盟更新集成 -->
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" >
+        </service>
+
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <receiver android:name=".alarmreceiver">
+            <intent-filter>
+                <action android:name="restart" />
+           </intent-filter>
+        </receiver>
+
+
+        <!--可视对讲SDK集成 -->
+        <activity
+            android:name="object.dbnewgo.client.MainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden|adjustUnspecified" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.IpcamClientActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan|stateHidden|adjustUnspecified" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.AddCameraActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="Add Camera"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.PlayActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="play"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.ListeningPlayActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="play"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.AboutActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="about"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="setting"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.ShowLocalVideoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="localvideopicture"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.LocalPictureListActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="LocalPicture"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.ShowLocalPictureActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="ShowLocPicture"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingWifiActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="WifiSetting"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingUserActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="UserSetting"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingFtpActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="FtpSetting"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingAlarmActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingDelayActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingDNSActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingNetworkActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingDateActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingSystemActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingInterfaceActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.AlarmLogActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.PlayBackTFActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.PlayBackActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.ShowLocalPicGridActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.AlarmActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.PictureActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingMailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.VideoActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.p2pipcam.zxingtwodimensioncode.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.SettingSDCardActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.ListeningActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.other.AllPicterCheckActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.other.AllVideoCheckActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+        <activity
+            android:name="object.dbnewgo.client.OneSetActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".IpcamClientActivityFourTest"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan|stateHidden|adjustUnspecified" >
+        </activity>
+
+        <service android:name="object.dbnewgo.client.BridgeService" >
+        </service>
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+      
+        <receiver android:name="object.dbnewgo.client.BootBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+
+        <!-- 红外遥控集成 -->
+        <activity
+            android:name="et.song.remotestar.ActivitySplash"
+            android:configChanges="orientation|keyboard"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="et.song.remotestar.ActivityMain"
+            android:configChanges="orientation|screenSize|keyboard|locale"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity>
+        <activity
+            android:name="et.song.remotestar.ActivityCapture"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="et.song.remotestar.PopupWindow"
+            android:theme="@style/PopDialogStyleBottom" />
+
+        <service android:name="et.song.shake.service.ShakeService" />
+
+      
+        <!-- JPush -->
+
+
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.tuwa.smarthome" />
+            </intent-filter>
+        </activity>
+        <!-- Required SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+        <!-- Required SDK 核心功能 -->
+        <!-- option since 2.0.5 可配置android:process 参数将PushService设置为独立进程 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+        <!-- Required SDK 核心功能 since 1.8.0 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="com.tuwa.smarthome" />
+            </intent-filter>
+        </service>
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter android:priority="1000" >
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+                <!-- Required 显示通知栏 -->
+                <category android:name="com.tuwa.smarthome" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- Required SDK核心功能 -->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+
+        <!-- User defined. 用户自定义的广播接收器 -->
+        <receiver
+            android:name=".network.JpushReceive"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.tuwa.smarthome" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="f01169052651936b1a139e18" />
+        <!-- </>值来自开发者平台取得的AppKey -->
+
+
+             <!--摄像机集成 -->
+        
+		<receiver android:name="com.homecoolink.RigsterBroadcast" android:exported="false">
+		    <intent-filter>
+		        <action android:name="com.homecoolink.rigsterFlag">
+		        </action>
+		         <action android:name="com.homecoolink.loginFlag">
+		        </action>
+		        <action android:name="com.homecoolink.serverStart">
+		        </action>
+		    </intent-filter>
+		</receiver>
+		
+			<activity
+            android:name="com.homecoolink.activity.LogoActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+          <activity
+            android:name="com.homecoolink.activity.MainActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.LoginActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+		
+		 <activity
+            android:name="com.homecoolink.CallActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>        
+        <activity
+            android:name="com.homecoolink.activity.RegisterActivity2"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateVisible" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>        
+        
+        <activity
+            android:name="com.homecoolink.MonitorActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.VideoActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.SettingSystemActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>        
+        <activity
+            android:name="com.homecoolink.activity.AccountInfoActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.LocalDeviceListActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.SettingBellRingActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.SettingSdBellActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.MainControlActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.AlarmActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.DeviceUpdateActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTranslucent1"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>    
+        <activity
+            android:name="com.homecoolink.activity.QRCodeActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTranslucent3"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.ForwardActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.ForwardDownActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>        
+        <activity
+            android:name="com.homecoolink.activity.AlarmSetActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>                      
+        <activity
+            android:name="com.homecoolink.PlayBackActivity"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>          
+        <activity
+            android:name="com.homecoolink.activity.SearchListActivity"
+            android:configChanges="locale|orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>        
+        <activity
+            android:name="com.homecoolink.activity.ModifyBoundEmailActivity"
+            android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateVisible" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>               
+        <activity
+            android:name="com.homecoolink.activity.ModifyNpcPasswordActivity"
+            android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateVisible" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.AddContactActivity"
+            android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateVisible" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.AddContactNextActivity"
+            android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateVisible" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.ModifyContactActivity"
+            android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateVisible" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.ModifyLoginPasswordActivity"
+            android:alwaysRetainTaskState="true"
+            android:clearTaskOnLaunch="false"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateVisible" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>        
+        <activity
+            android:name="com.homecoolink.activity.UnbindPhoneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.ModifyAccountEmailActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.ModifyAccountPhoneActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.ModifyAccountPhoneActivity2"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.ForgetPassword"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>        
+        <activity
+            android:name="com.homecoolink.activity.ModifyNpcVisitorPasswordActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>                   
+        <activity
+            android:name="com.homecoolink.activity.QRcodeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.CreateQRcodeActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.AlarmPushAccountActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.AlarmRecordFromDeviceActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.RadarAddFirstActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.RadarAddActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.homecoolink.activity.AddWaitActicity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="locale|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.homecoolink.global.AutoStartReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.homecoolink.activity.AlarmReordDetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity 
+            android:name="com.homecoolink.activity.ForgetPasswordEdit"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity 
+            android:name="com.homecoolink.activity.AlarmReordVideo"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <service android:name="com.homecoolink.global.MainService" >
+            <intent-filter>
+                <action android:name="com.homecoolink.service.MAINSERVICE" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".TimeTestActivity"
+            android:label="@string/title_activity_time_test" 
+            android:screenOrientation="landscape"
+            android:theme="@style/ActivityTheme" >
+        </activity>
+    </application>
+
+</manifest>
