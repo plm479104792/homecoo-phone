@@ -8,10 +8,10 @@ import butterknife.ButterKnife.ViewBinder;
 public class SpaceManegeActivity$$ViewBinder<T extends com.tuwa.smarthome.activity.SpaceManegeActivity> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131231880, "field 'tvtitle'");
-    target.tvtitle = finder.castView(view, 2131231880, "field 'tvtitle'");
     view = finder.findRequiredView(source, 2131231881, "field 'tvSubmit'");
     target.tvSubmit = finder.castView(view, 2131231881, "field 'tvSubmit'");
+    view = finder.findRequiredView(source, 2131231880, "field 'tvtitle'");
+    target.tvtitle = finder.castView(view, 2131231880, "field 'tvtitle'");
     view = finder.findRequiredView(source, 2131231066, "field 'gvSpace'");
     target.gvSpace = finder.castView(view, 2131231066, "field 'gvSpace'");
     view = finder.findRequiredView(source, 2131231878, "field 'tvBack' and method 'back'");
@@ -27,8 +27,8 @@ public class SpaceManegeActivity$$ViewBinder<T extends com.tuwa.smarthome.activi
   }
 
   @Override public void unbind(T target) {
-    target.tvtitle = null;
     target.tvSubmit = null;
+    target.tvtitle = null;
     target.gvSpace = null;
     target.tvBack = null;
   }

@@ -8,18 +8,6 @@ import butterknife.ButterKnife.ViewBinder;
 public class GatewayManegeActivity$$ViewBinder<T extends com.tuwa.smarthome.activity.GatewayManegeActivity> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
-    view = finder.findRequiredView(source, 2131231878, "field 'tvBack' and method 'back'");
-    target.tvBack = finder.castView(view, 2131231878, "field 'tvBack'");
-    view.setOnClickListener(
-      new butterknife.internal.DebouncingOnClickListener() {
-        @Override public void doClick(
-          android.view.View p0
-        ) {
-          target.back();
-        }
-      });
-    view = finder.findRequiredView(source, 2131230960, "field 'gvGateway'");
-    target.gvGateway = finder.castView(view, 2131230960, "field 'gvGateway'");
     view = finder.findRequiredView(source, 2131231830, "field 'tvbttomNetwork' and method 'networkSwitchClick'");
     target.tvbttomNetwork = finder.castView(view, 2131231830, "field 'tvbttomNetwork'");
     view.setOnClickListener(
@@ -28,6 +16,18 @@ public class GatewayManegeActivity$$ViewBinder<T extends com.tuwa.smarthome.acti
           android.view.View p0
         ) {
           target.networkSwitchClick();
+        }
+      });
+    view = finder.findRequiredView(source, 2131230960, "field 'gvGateway'");
+    target.gvGateway = finder.castView(view, 2131230960, "field 'gvGateway'");
+    view = finder.findRequiredView(source, 2131231878, "field 'tvBack' and method 'back'");
+    target.tvBack = finder.castView(view, 2131231878, "field 'tvBack'");
+    view.setOnClickListener(
+      new butterknife.internal.DebouncingOnClickListener() {
+        @Override public void doClick(
+          android.view.View p0
+        ) {
+          target.back();
         }
       });
     view = finder.findRequiredView(source, 2131231880, "field 'tvtitle'");
@@ -40,16 +40,6 @@ public class GatewayManegeActivity$$ViewBinder<T extends com.tuwa.smarthome.acti
           android.view.View p0
         ) {
           target.systemExit();
-        }
-      });
-    view = finder.findRequiredView(source, 2131231829, "method 'sceneMode'");
-    ((android.widget.CompoundButton) view).setOnCheckedChangeListener(
-      new android.widget.CompoundButton.OnCheckedChangeListener() {
-        @Override public void onCheckedChanged(
-          android.widget.CompoundButton p0,
-          boolean p1
-        ) {
-          target.sceneMode();
         }
       });
     view = finder.findRequiredView(source, 2131231831, "method 'DefenceAreaClick'");
@@ -82,6 +72,16 @@ public class GatewayManegeActivity$$ViewBinder<T extends com.tuwa.smarthome.acti
           target.systemSet();
         }
       });
+    view = finder.findRequiredView(source, 2131231829, "method 'sceneMode'");
+    ((android.widget.CompoundButton) view).setOnCheckedChangeListener(
+      new android.widget.CompoundButton.OnCheckedChangeListener() {
+        @Override public void onCheckedChanged(
+          android.widget.CompoundButton p0,
+          boolean p1
+        ) {
+          target.sceneMode();
+        }
+      });
     view = finder.findRequiredView(source, 2131230959, "method 'gatewayRefresh'");
     view.setOnClickListener(
       new butterknife.internal.DebouncingOnClickListener() {
@@ -94,9 +94,9 @@ public class GatewayManegeActivity$$ViewBinder<T extends com.tuwa.smarthome.acti
   }
 
   @Override public void unbind(T target) {
-    target.tvBack = null;
-    target.gvGateway = null;
     target.tvbttomNetwork = null;
+    target.gvGateway = null;
+    target.tvBack = null;
     target.tvtitle = null;
     target.tvSubmit = null;
   }

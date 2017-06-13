@@ -8,6 +8,18 @@ import butterknife.ButterKnife.ViewBinder;
 public class SceneModelActivity$$ViewBinder<T extends com.tuwa.smarthome.activity.SceneModelActivity> implements ViewBinder<T> {
   @Override public void bind(final Finder finder, final T target, Object source) {
     View view;
+    view = finder.findRequiredView(source, 2131231881, "field 'tvExit' and method 'systemExit'");
+    target.tvExit = finder.castView(view, 2131231881, "field 'tvExit'");
+    view.setOnClickListener(
+      new butterknife.internal.DebouncingOnClickListener() {
+        @Override public void doClick(
+          android.view.View p0
+        ) {
+          target.systemExit();
+        }
+      });
+    view = finder.findRequiredView(source, 2131231880, "field 'tvTitle'");
+    target.tvTitle = finder.castView(view, 2131231880, "field 'tvTitle'");
     view = finder.findRequiredView(source, 2131231830, "field 'tvbttomNetwork' and method 'networkSwitchClick'");
     target.tvbttomNetwork = finder.castView(view, 2131231830, "field 'tvbttomNetwork'");
     view.setOnClickListener(
@@ -18,8 +30,6 @@ public class SceneModelActivity$$ViewBinder<T extends com.tuwa.smarthome.activit
           target.networkSwitchClick();
         }
       });
-    view = finder.findRequiredView(source, 2131231880, "field 'tvTitle'");
-    target.tvTitle = finder.castView(view, 2131231880, "field 'tvTitle'");
     view = finder.findRequiredView(source, 2131231878, "field 'tvBack' and method 'back'");
     target.tvBack = finder.castView(view, 2131231878, "field 'tvBack'");
     view.setOnClickListener(
@@ -28,16 +38,6 @@ public class SceneModelActivity$$ViewBinder<T extends com.tuwa.smarthome.activit
           android.view.View p0
         ) {
           target.back();
-        }
-      });
-    view = finder.findRequiredView(source, 2131231881, "field 'tvExit' and method 'systemExit'");
-    target.tvExit = finder.castView(view, 2131231881, "field 'tvExit'");
-    view.setOnClickListener(
-      new butterknife.internal.DebouncingOnClickListener() {
-        @Override public void doClick(
-          android.view.View p0
-        ) {
-          target.systemExit();
         }
       });
     view = finder.findRequiredView(source, 2131231050, "field 'gvScene'");
@@ -75,10 +75,10 @@ public class SceneModelActivity$$ViewBinder<T extends com.tuwa.smarthome.activit
   }
 
   @Override public void unbind(T target) {
-    target.tvbttomNetwork = null;
-    target.tvTitle = null;
-    target.tvBack = null;
     target.tvExit = null;
+    target.tvTitle = null;
+    target.tvbttomNetwork = null;
+    target.tvBack = null;
     target.gvScene = null;
   }
 }
